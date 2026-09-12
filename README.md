@@ -8,7 +8,7 @@ Test documents and expected extraction outputs for the [Acessilia](https://githu
 
 **Acessilia Dataset** provides a shared collection of test documents, intermediate processing artifacts, and expected accessible outputs for projects in the Acessilia ecosystem, including:
 
-- [acessilia-structure-extractor](https://github.com/A11yDevs/acessilia-structure-extractor) — document structure extraction service
+- [Acessilia Toolbox](https://github.com/A11yDevs/acessilia-toolbox) — document structure extraction and accessibility processing toolbox
 - [acessilia](https://github.com/A11yDevs/acessilia) — main accessibility processing platform
 
 By maintaining documents, intermediate artifacts, and expected outputs in a single repository, all consuming projects can validate their extraction and accessibility pipelines against the same reference data, ensuring consistent behavior across the ecosystem.
@@ -240,7 +240,7 @@ The `intermediate/manifest.csv` is updated automatically after each run.
 This repository is part of the [Acessilia](https://github.com/A11yDevs/acessilia) ecosystem. It provides shared test infrastructure for:
 
 - **acessilia** — main accessibility processing platform
-- **acessilia-structure-extractor** — standalone document structure extraction service
+- **Acessilia Toolbox** — document structure extraction and accessibility processing toolbox
 - Future projects that consume or produce Acessilia canonical structures
 
 ## Copyright and License
