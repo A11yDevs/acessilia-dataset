@@ -115,7 +115,8 @@ acessilia-dataset/
 
 Each top-level directory contains a `manifest.csv` that serves as the index:
 
-- **`input/manifest.csv`** — metadata per source document (id, original filename, format, media type, byte size, pages, language, domain, tables, formulas, images, callouts, chapters, notes)
+- **`input/manifest.csv`** — metadata per source document (id, original filename, format, media type, byte size, pages, language, domain, subdirectory, tables, formulas, images, callouts, chapters, notes)
+  - `subdirectory`: subdirectory name for thematic groups (e.g., `formula-images`), empty for documents in `input/` root
 - **`input/formula-images/ground_truth.csv`** — expected LaTeX for formula extraction test fixtures, linked to `input/manifest.csv` via `manifest_id` column
 - **`intermediate/manifest.csv`** — maps `input_id` → intermediate artifacts (processing-manifest, canonical-document, pddl-plan) with extractor version and configuration
 - **`outputs/manifest.csv`** — maps `input_id` → output files per format (txt, html, pdf, pdf_ua, mp3, epub) with generator version
@@ -139,7 +140,24 @@ DATASET_DIR = Path("tests/dataset")
 
 
 def get_inputs() -> list[Path]:
-    return sorted(DATASET_DIR.glob("input/*"))
+    """List all input files, recursing into subdirectories."""
+    return sorted(
+        p for p in DATASET_DIR.glob("input/**/*")
+        if p.is_file() and p.name != "manifest.csv"
+    )
+
+
+def resolve_input_path(row: dict, dataset_dir: Path = DATASET_DIR) -> Path:
+    """Resolve the full path of an input document from its manifest row.
+
+    Handles documents in thematic subdirectories (e.g., formula-images/)
+    via the ``subdirectory`` column.
+    """
+    subdir = (row.get("subdirectory") or "").strip()
+    filename = row["original_filename"]
+    if subdir:
+        return dataset_dir / "input" / subdir / filename
+    return dataset_dir / "input" / filename
 
 
 def get_manifest(path: str) -> list[dict]:
@@ -167,7 +185,9 @@ Contributions of new test documents are welcome. Please follow these guidelines:
 
 1. Add the source document to `input/` with the next sequential number (`036`, `037`, …)
 2. If the document belongs to a thematic group (e.g., formula extraction fixtures), place it in a descriptive subdirectory under `input/` (e.g., `input/formula-images/`)
-3. Record its metadata in `input/manifest.csv` — use only the filename (not the subdirectory path) in the `original_filename` column
+3. Record its metadata in `input/manifest.csv`:
+   - `original_filename`: only the filename (e.g., `simples_limpa.png`)
+   - `subdirectory`: the subdirectory name if placed in a thematic folder (e.g., `formula-images`), leave empty for documents in the root of `input/`
 4. If the document has associated ground truth (e.g., expected LaTeX for formulas), add it to a `ground_truth.csv` in the same subdirectory, with a `manifest_id` column linking back to the central manifest
 5. Generate the intermediate artifacts using the reference pipeline (see below)
 6. Ensure the document is small (prefer under 1 MB) and does not contain copyrighted material unless properly licensed
