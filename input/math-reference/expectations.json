@@ -1,6 +1,6 @@
 {
   "manifest_id": "036",
-  "description": "Checks on the accessible outputs of velocidade-instantanea.pdf that the formula ground truth (ground_truth.csv) does not cover: repaired text, document structure and formula speech. Patterns are Python regular expressions applied to the plain-text output (TXT, or text extracted from the PDF/UA) unless 'target' says otherwise.",
+  "description": "Checks on the accessible outputs of velocidade-instantanea.pdf that the formula ground truth (ground_truth.csv) does not cover: repaired text, document structure and formula speech. Patterns are Python regular expressions applied to the plain-text output (TXT, or text extracted from the PDF/UA) unless 'target' says otherwise. They target the artifacts of the Acessilia pipeline's extraction (Docling through the Toolbox's document.structure.extract), which keeps TeX spacing accents, split ligatures and a detached U+0338 for ≠; a different extractor shows other artifacts (pdftotext composes accents and ligatures but prints ≠ as '6='), so the checks are meant for the pipeline's outputs, not for an arbitrary text extraction of the PDF.",
   "text": {
     "must_match": [
       {"id": "header-university", "pattern": "Universidade de Brasília", "why": "dotless i + acute in the TeX text layer"},
@@ -18,18 +18,18 @@
       {"id": "spacing-grave", "pattern": "[‘`]\\s?a\\b", "why": "unrepaired TeX grave accent"},
       {"id": "orphan-negation", "pattern": "(?<![=<>∈⊂≤≥∼≡])\\u0338", "why": "a combining long solidus that did not compose into ≠"},
       {"id": "split-ligature", "pattern": "\\bfi ca\\b"},
-      {"id": "page-number-line", "pattern": "(?m)^\\s*[1-5]\\s*$", "why": "page numbers are page furniture, not body text"}
+      {"id": "six-equals", "pattern": "\\b6\\s?=", "why": "≠ drawn as the glyphs '6' and '=' (the form pdftotext gives); the body has no legitimate '6='"}
     ]
   },
   "structure": {
     "headings": [
-      {"text": "Cálculo 1", "level": 1},
-      {"text": "O problema da velocidade instantânea", "level": 2},
-      {"text": "Tarefa", "level": 2}
+      {"page": 1, "text": "Cálculo 1", "level": 1},
+      {"page": 1, "text": "O problema da velocidade instantânea", "level": 2},
+      {"page": 5, "text": "Tarefa", "level": 2}
     ],
     "auto_numbered_headings": false,
     "page_header": {"pages": [1], "text": "Universidade de Brasília Departamento de Matemática", "is_furniture": true},
-    "page_numbers": {"pages": [1, 2, 3, 4, 5], "is_furniture": true},
+    "page_numbers": {"pages": [1, 2, 3, 4, 5], "is_furniture": true, "check": "no body block on page N whose whole text is N (a structural check, because a lone digit line also comes from flattened fractions and table values)"},
     "images": [
       {"page": 1, "role": "logo", "note": "the UnB logo next to the header text; a description should not repeat the header text"}
     ],

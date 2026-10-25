@@ -32,7 +32,8 @@ acessilia-dataset/
 │   ├── math-reference/              # Whole-document math accessibility reference
 │   │   ├── velocidade-instantanea.pdf  # 036: Calculus 1 handout (pdfTeX/dvips)
 │   │   ├── ground_truth.csv         # Expected LaTeX per display/inline/table formula
-│   │   └── expectations.json        # Text, structure and speech checks
+│   │   ├── expectations.json        # Text, structure and speech checks
+│   │   └── PERMISSIONS.md           # Redistribution permission record
 │   └── formula-images/              # Formula extraction test fixtures
 │       ├── ground_truth.csv         # Expected LaTeX per formula image
 │       ├── *_limpa.png              # Clean formula renders (CodeCogs)
@@ -262,4 +263,4 @@ See the [LICENSE](LICENSE) file for the full license text.
 
 ### Third-party documents
 
-- `input/math-reference/velocidade-instantanea.pdf` (`036`) — *Cálculo 1: O problema da velocidade instantânea*, Universidade de Brasília, Departamento de Matemática. Redistributed here with permission, as a test document only; it is not covered by the MIT License above.
+- `input/math-reference/velocidade-instantanea.pdf` (`036`) — *Cálculo 1: O problema da velocidade instantânea*, Universidade de Brasília, Departamento de Matemática. Redistributed here with permission, as a test document only; it is not covered by the MIT License above. The permission is recorded in [`input/math-reference/PERMISSIONS.md`](input/math-reference/PERMISSIONS.md).

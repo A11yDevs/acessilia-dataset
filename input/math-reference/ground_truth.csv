@@ -56,7 +56,7 @@ p3-d03,036,3,display,"vm_2(h) = 12 + 6h + h^2.","ou ainda",
 p3-i08,036,3,inline,"vm_2","o domínio da função vm2 continua sendo",
 p3-i09,036,3,inline,"[-2, 0) \cup (0, +\infty)","continua sendo [−2, 0) ∪ (0, +∞)",
 p3-i10,036,3,inline,"vm_2(h)","os valores de vm2(h) da tabela anterior",
-p3-i11,036,3,inline,"vm_2(h)","o que acontence com vm2(h) quando h",
+p3-i11,036,3,inline,"vm_2(h)","o que acontence com vm2(h) quando h","the source prints acontence, a typo for acontece; the context keeps it to match the page"
 p3-i12,036,3,inline,"6h","como os termos 6h e h2",
 p3-i13,036,3,inline,"h^2","como os termos 6h e h2",
 p3-i14,036,3,inline,"vm_2(h)","concluímos que vm2(h) se aproxima de 12",
