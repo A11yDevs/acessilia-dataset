@@ -34,3 +34,4 @@ id,original_filename,format,media_type,byte_size,pages,language,domain,subdirect
 033,texto_paragrafo.png,image,image/png,45702,1,pt-BR,general,formula-images,0,0,1,0,0,"Paragrafo de texto renderizado — teste de falso positivo (gerado localmente)"
 034,diagrama_fluxo.png,image,image/png,11443,1,pt-BR,general,formula-images,0,0,1,0,0,"Diagrama de fluxo — teste de falso positivo (gerado localmente)"
 035,grafico_barras.png,image,image/png,9489,1,pt-BR,general,formula-images,0,0,1,0,0,"Grafico de barras — teste de falso positivo (gerado localmente)"
+036,velocidade-instantanea.pdf,pdf,application/pdf,53109,5,pt-BR,mathematics,math-reference,2,16,1,2,2,"Apostila de Calculo 1 (UnB, Departamento de Matematica; pdfTeX/dvips 2016) — caso de referencia de acessibilidade matematica; redistribuida com permissao (ver PERMISSIONS.md)"

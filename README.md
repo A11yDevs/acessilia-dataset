@@ -29,6 +29,11 @@ acessilia-dataset/
 │   ├── 006.pdf                      # grandezas-e-medidas-42pgs (apostila matemática)
 │   ├── 007.pdf                      # grandezas-e-medidas-pg3-42 (fórmulas)
 │   ├── 008.pdf                      # grandezas-e-medidas-pg7-42 (tabela)
+│   ├── math-reference/              # Whole-document math accessibility reference
+│   │   ├── velocidade-instantanea.pdf  # 036: Calculus 1 handout (pdfTeX/dvips)
+│   │   ├── ground_truth.csv         # Expected LaTeX per display/inline/table formula
+│   │   ├── expectations.json        # Text, structure and speech checks
+│   │   └── PERMISSIONS.md           # Redistribution permission record
 │   └── formula-images/              # Formula extraction test fixtures
 │       ├── ground_truth.csv         # Expected LaTeX per formula image
 │       ├── *_limpa.png              # Clean formula renders (CodeCogs)
@@ -110,6 +115,7 @@ acessilia-dataset/
 | `033` | `texto_paragrafo.png` | image | 1 | pt-BR | general | False positive: rendered paragraph |
 | `034` | `diagrama_fluxo.png` | image | 1 | pt-BR | general | False positive: flow diagram |
 | `035` | `grafico_barras.png` | image | 1 | pt-BR | general | False positive: bar chart |
+| `036` | `velocidade-instantanea.pdf` | pdf | 5 | pt-BR | mathematics | Calculus 1 handout (UnB) — math accessibility reference case |
 
 ## Manifests (CSV)
 
@@ -118,6 +124,10 @@ Each top-level directory contains a `manifest.csv` that serves as the index:
 - **`input/manifest.csv`** — metadata per source document (id, original filename, format, media type, byte size, pages, language, domain, subdirectory, tables, formulas, images, callouts, chapters, notes)
   - `subdirectory`: subdirectory name for thematic groups (e.g., `formula-images`), empty for documents in `input/` root
 - **`input/formula-images/ground_truth.csv`** — expected LaTeX for formula extraction test fixtures, linked to `input/manifest.csv` via `manifest_id` column
+- **`input/math-reference/ground_truth.csv`** — expected LaTeX for every formula of document `036`, in reading order: `id` (`p<page>-d<n>` display, `p<page>-i<n>` inline, `p<page>-t<n>` table header or cell), `manifest_id`, `page`, `kind` (`display`, `inline`, `table-header`, `table-cell`), `expected_latex`, `context` (nearby source text, to locate the formula) and `notes`
+  - The LaTeX transcribes the printed page, including its mistakes: equation (1) prints `2^8` where `2^3` is meant, and the ground truth keeps `2^8`, because an accessible version must say what the page says
+  - Inline entries cover expressions that lose meaning as flat text (operators, subscripts, exponents, function application); a lone variable such as `h` in prose is not listed
+- **`input/math-reference/expectations.json`** — checks on the accessible outputs of `036` that formulas do not cover: repaired text (`must_match` / `must_not_match` regular expressions), structure (headings, page furniture, ordered lists, tables, callouts, equation numbers) and words each formula's spoken form must contain
 - **`intermediate/manifest.csv`** — maps `input_id` → intermediate artifacts (processing-manifest, canonical-document, pddl-plan) with extractor version and configuration
 - **`outputs/manifest.csv`** — maps `input_id` → output files per format (txt, html, pdf, pdf_ua, mp3, epub) with generator version
 
@@ -250,3 +260,7 @@ Copyright (c) 2026 Marcelo Inuzuka and Acessilia Dataset contributors
 
 This project is licensed under the MIT License.
 See the [LICENSE](LICENSE) file for the full license text.
+
+### Third-party documents
+
+- `input/math-reference/velocidade-instantanea.pdf` (`036`) — *Cálculo 1: O problema da velocidade instantânea*, Universidade de Brasília, Departamento de Matemática. Redistributed here with permission, as a test document only; it is not covered by the MIT License above. The permission is recorded in [`input/math-reference/PERMISSIONS.md`](input/math-reference/PERMISSIONS.md).
