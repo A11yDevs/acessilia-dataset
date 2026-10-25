@@ -1,0 +1,64 @@
+{
+  "manifest_id": "036",
+  "description": "Checks on the accessible outputs of velocidade-instantanea.pdf that the formula ground truth (ground_truth.csv) does not cover: repaired text, document structure and formula speech. Patterns are Python regular expressions applied to the plain-text output (TXT, or text extracted from the PDF/UA) unless 'target' says otherwise.",
+  "text": {
+    "must_match": [
+      {"id": "header-university", "pattern": "Universidade de Brasília", "why": "dotless i + acute in the TeX text layer"},
+      {"id": "header-department", "pattern": "Departamento de Matemática"},
+      {"id": "title", "pattern": "Cálculo 1"},
+      {"id": "subtitle", "pattern": "O problema da velocidade instantânea"},
+      {"id": "crase-medida", "pattern": "à medida", "why": "TeX grave accent (\\`a) extracts as a spacing ‘ or ` before the letter"},
+      {"id": "crase-exaustao", "pattern": "à exaustão"},
+      {"id": "ligature-fica", "pattern": "fica próximo", "why": "the fi ligature extracts as 'fi ca'"},
+      {"id": "not-equal", "pattern": "≠|\\\\neq?\\b|diferente de", "why": "h ≠ 0 appears five times; losing the slash inverts the meaning"},
+      {"id": "negative-velocity", "pattern": "[−-]\\s?0\\s?,\\s?0833", "why": "table cell; the sign carries the meaning"}
+    ],
+    "must_not_match": [
+      {"id": "spacing-accent", "pattern": "[´˜¸ˆ]\\s?[A-Za-zıȷ]", "why": "unrepaired TeX spacing accent"},
+      {"id": "spacing-grave", "pattern": "[‘`]\\s?a\\b", "why": "unrepaired TeX grave accent"},
+      {"id": "orphan-negation", "pattern": "(?<![=<>∈⊂≤≥∼≡])\\u0338", "why": "a combining long solidus that did not compose into ≠"},
+      {"id": "split-ligature", "pattern": "\\bfi ca\\b"},
+      {"id": "page-number-line", "pattern": "(?m)^\\s*[1-5]\\s*$", "why": "page numbers are page furniture, not body text"}
+    ]
+  },
+  "structure": {
+    "headings": [
+      {"text": "Cálculo 1", "level": 1},
+      {"text": "O problema da velocidade instantânea", "level": 2},
+      {"text": "Tarefa", "level": 2}
+    ],
+    "auto_numbered_headings": false,
+    "page_header": {"pages": [1], "text": "Universidade de Brasília Departamento de Matemática", "is_furniture": true},
+    "page_numbers": {"pages": [1, 2, 3, 4, 5], "is_furniture": true},
+    "images": [
+      {"page": 1, "role": "logo", "note": "the UnB logo next to the header text; a description should not repeat the header text"}
+    ],
+    "ordered_lists": [
+      {"page": 4, "items": 4, "first_item_starts": "O método desenvolvido aqui"},
+      {"page": 5, "items": 3, "first_item_starts": "Com o auxílio de uma calculadora", "why": "the text later refers to 'item 2 acima'"}
+    ],
+    "tables": [
+      {"page": 2, "rows": 7, "columns": 3, "header_rows": 1, "math_headers": ["p2-t01", "p2-t02", "p2-t03"]},
+      {"page": 5, "rows": 5, "columns": 3, "header_rows": 1, "math_headers": ["p5-t01", "p5-t02", "p5-t03"], "math_cells": ["p5-t04"], "empty_cells_expected": true}
+    ],
+    "callouts": [
+      {"page": 1, "starts": "Problema:"},
+      {"page": 4, "starts": "Solução do problema:"}
+    ],
+    "equation_numbers": [{"formula": "p2-d03", "number": "1"}]
+  },
+  "speech": {
+    "description": "Each listed display formula must have a spoken form (alt text / verbalization) that contains at least one of the words in any_of, case-insensitively. The words name the structure a listener must not lose; they do not pin an exact verbalizer output.",
+    "language": "pt-BR",
+    "formulas": [
+      {"formula": "p1-d01", "any_of": ["meio", "sobre 2", "sobre dois", "dividido por 2", "dividido por dois", "fração"]},
+      {"formula": "p2-d01", "any_of": ["sobre", "dividido", "fração"]},
+      {"formula": "p2-d03", "any_of": ["sobre", "dividido", "fração"]},
+      {"formula": "p3-d01", "any_of": ["infinito"]},
+      {"formula": "p3-d04", "any_of": ["limite"]},
+      {"formula": "p3-d05", "any_of": ["limite"]},
+      {"formula": "p3-d07", "any_of": ["limite"]},
+      {"formula": "p5-d02", "any_of": ["sobre", "dividido", "fração"]}
+    ]
+  }
+}
