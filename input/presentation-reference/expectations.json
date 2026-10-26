@@ -1,0 +1,136 @@
+{
+  "manifest_id": "006",
+  "description": "Checks on the accessible outputs of 006.pdf (grandezas-e-medidas-42pgs.pdf, a 42-slide chemistry deck) that the object ground truth (ground_truth.csv) does not cover: text that must never reach a reader, slide structure, and what the pipeline must keep when a description fails. Patterns are Python regular expressions applied to the plain-text output (TXT, or text extracted from the PDF/UA), section by section, a section being the text from one 'Slide N de 42' heading to the next, unless 'scope' says 'document'.",
+  "text": {
+    "must_not_match": [
+      {
+        "id": "undescribed-picture",
+        "pattern": "Imagem sem descrição textual|Imagem detectada sem descricao textual|Image without a text description",
+        "why": "the vision model left a picture without a description; v5 had ten slides like this"
+      },
+      {
+        "id": "label-list-alt",
+        "pattern": "(?:[^;\\s](?:[^;]{0,13}[^;\\s])?;\\s){3}",
+        "why": "three or more short fragments each closed by '; ' with no space before it: the labels folded into an undescribed picture (#283 fallback). A printed list spaced as 'NaCl ; C ; Na' (slide 35) does not match"
+      },
+      {
+        "id": "raw-chemfig",
+        "pattern": "\\\\chemfig",
+        "why": "a drawn molecule transcribed as LaTeX (#284)"
+      },
+      {
+        "id": "raw-latex-text",
+        "pattern": "\\\\(?:quad|text\\{|mathrm\\{)",
+        "why": "raw LaTeX that a screen reader reads letter by letter"
+      },
+      {
+        "id": "english-table-row",
+        "pattern": "\\bRow \\d+:",
+        "why": "the TXT table linearization in English under pt-BR"
+      },
+      {
+        "id": "collapsed-prefix-row",
+        "pattern": "yota zeta exa peta",
+        "why": "slide 5's prefix table collapsed into one row (#295)"
+      },
+      {
+        "id": "doubled-cell",
+        "pattern": "\\b(34\\.97|36\\.97|75\\.76|24\\.24) \\1\\b",
+        "why": "slide 15's isotope table with every cell doubled (#295)"
+      },
+      {
+        "id": "cross-slide-text",
+        "pattern": "Molécula macromolécula Sobre a vitamina",
+        "why": "slide 37's text inside a slide 26 paragraph (#291)"
+      },
+      {
+        "id": "nuclide-fragment",
+        "pattern": "^\\s*E Z\\s*$",
+        "why": "slide 12's nuclide notation as a meaningless fragment (#293)"
+      }
+    ]
+  },
+  "structure": {
+    "slide_count": 42,
+    "slide_heading": {
+      "pattern": "^Slide (\\d+) de 42(?::\\s*(.*))?$",
+      "level": 2,
+      "why": "every slide opens with its own heading, before any picture (#293 kept a grown picture from moving above it)"
+    },
+    "deck_title": {
+      "text": "Grandezas e Medidas",
+      "level": 1
+    },
+    "slide_titles": [
+      {
+        "page": 1,
+        "title": "Grandezas e Medidas"
+      },
+      {
+        "page": 10,
+        "title": "Número Atômico / Número de Massa / Massa Atômica relativa/Massa Molar"
+      },
+      {
+        "page": 12,
+        "title": "Recordando"
+      },
+      {
+        "page": 13,
+        "title": "Massa atômica"
+      },
+      {
+        "page": 16,
+        "title": "Espectrometria de massas"
+      },
+      {
+        "page": 19,
+        "title": "O conceito de MOL"
+      },
+      {
+        "page": 20,
+        "title": "Novo conceito de mol"
+      },
+      {
+        "page": 21,
+        "title": "O conceito de Massa Molar"
+      },
+      {
+        "page": 24,
+        "title": "Fórmulas, moléculas e íons"
+      },
+      {
+        "page": 29,
+        "title": "iônico"
+      },
+      {
+        "page": 35,
+        "title": "Determinação da fórmula química"
+      },
+      {
+        "page": 36,
+        "title": "Composição percentual em massa"
+      }
+    ],
+    "tables": "ground_truth.csv rows of kind 'table' give each table's slide, rows, columns and header; 'table-header' and 'table-row' give its cells",
+    "chemical_structures_are_descriptions": {
+      "pages": [
+        25,
+        26,
+        30,
+        37
+      ],
+      "why": "a drawn molecule must be a described picture, never a formula block (#284)"
+    },
+    "slides_of_text_as_a_picture": {
+      "pages": [
+        41
+      ],
+      "why": "a slide replaced by one picture of the whole slide must keep its text when the description fails (replaced_text)"
+    }
+  },
+  "degraded": {
+    "description": "What a run whose vision provider fails must still deliver. The 'text' kind of ground_truth.csv must appear even then, and the run must not be cached.",
+    "text_ids_always_present": "every ground_truth.csv row of kind 'text'",
+    "not_cacheable": true
+  }
+}
