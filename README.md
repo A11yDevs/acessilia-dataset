@@ -34,6 +34,9 @@ acessilia-dataset/
 │   │   ├── ground_truth.csv         # Expected LaTeX per display/inline/table formula
 │   │   ├── expectations.json        # Text, structure and speech checks
 │   │   └── PERMISSIONS.md           # Redistribution permission record
+│   ├── presentation-reference/      # Slide-deck accessibility reference (006.pdf)
+│   │   ├── ground_truth.csv         # Expected text, pictures, tables and formulas per slide
+│   │   └── expectations.json        # Text that must never reach a reader; slide structure
 │   └── formula-images/              # Formula extraction test fixtures
 │       ├── ground_truth.csv         # Expected LaTeX per formula image
 │       ├── *_limpa.png              # Clean formula renders (CodeCogs)
@@ -128,6 +131,11 @@ Each top-level directory contains a `manifest.csv` that serves as the index:
   - The LaTeX transcribes the printed page, including its mistakes: equation (1) prints `2^8` where `2^3` is meant, and the ground truth keeps `2^8`, because an accessible version must say what the page says
   - Inline entries cover expressions that lose meaning as flat text (operators, subscripts, exponents, function application); a lone variable such as `h` in prose is not listed
 - **`input/math-reference/expectations.json`** — checks on the accessible outputs of `036` that formulas do not cover: repaired text (`must_match` / `must_not_match` regular expressions), structure (headings, page furniture, ordered lists, tables, callouts, equation numbers) and words each formula's spoken form must contain
+- **`input/presentation-reference/ground_truth.csv`** — expected content of every slide of document `006` (`006.pdf`, a 42-slide chemistry deck; the PDF stays in `input/`), in reading order: `id` (`s<slide>-<x|i|c|f|t><n>`, table rows `s<slide>-t<n>-r<n>`, header `-h`), `manifest_id`, `page` (the slide), `kind`, `expected`, `context` and `notes`
+  - `kind` and the form of `expected`: `text` (a passage the output must contain), `image` and `chemical-structure` (terms the description must contain: `;` between terms, `|` between alternatives; a drawn molecule must be described, not transcribed as a formula), `table` (`rows=N;columns=M;header=1`), `table-header` and `table-row` (the cells, separated by ` | `), `formula` (LaTeX)
+  - Values transcribe the printed slides, including their mistakes: S²⁻ is printed as "Sulfito", the sulfate of slide 30 as SO₄⁻, and the prefixes "yota", "fento" and "ato" keep their spelling
+  - Matching is meant to be lenient on form (Unicode normalization, case, spaces), strict on content: superscripts and charges count, because 10⁻³ and 10³ are different distances
+- **`input/presentation-reference/expectations.json`** — checks on the accessible outputs of `006` that the objects do not cover: text that must never reach a reader (`must_not_match`: an undescribed picture, labels listed in place of a description, raw LaTeX, a collapsed or doubled table, text from another slide), the slide structure, and what a run whose vision provider fails must still deliver
 - **`intermediate/manifest.csv`** — maps `input_id` → intermediate artifacts (processing-manifest, canonical-document, pddl-plan) with extractor version and configuration
 - **`outputs/manifest.csv`** — maps `input_id` → output files per format (txt, html, pdf, pdf_ua, mp3, epub) with generator version
 
