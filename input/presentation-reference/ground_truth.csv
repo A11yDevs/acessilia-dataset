@@ -143,7 +143,7 @@ s26-x02,006,26,text,PET,,
 s26-c02,006,26,chemical-structure,colchetes|repet|polímero;n;benzeno|anel|aromático,repeating unit of PET between brackets with n,"must be a description, never \chemfig (#284)"
 s26-x03,006,26,text,macromolécula,caption under PET,
 s27-i01,006,27,image,balão|frasco|recipiente;roxo|roxa|violeta|púrpura,round flask with purple iodine vapour,
-s27-i02,006,27,image,cristais|grãos|pó;escur|pret|cinza,dark iodine crystals in a Petri dish,
+s27-i02,006,27,image,cristais|grãos|granul|pó;escur|pret|cinza,dark iodine crystals in a Petri dish,
 s27-x01,006,27,text,I₂ (s),,
 s27-x02,006,27,text,molecular,,
 s28-i01,006,28,image,pentaceno|pentacene;quatro|4|painéis,four panels: a model of pentacene and its STM/AFM images,
