@@ -11,7 +11,7 @@
       {"id": "crase-exaustao", "pattern": "à exaustão"},
       {"id": "ligature-fica", "pattern": "fica próximo", "why": "the fi ligature extracts as 'fi ca'"},
       {"id": "not-equal", "pattern": "≠|\\\\neq?\\b|diferente de", "why": "h ≠ 0 appears five times; losing the slash inverts the meaning"},
-      {"id": "negative-velocity", "pattern": "[−-]\\s?0\\s?,\\s?0833", "why": "table cell; the sign carries the meaning"}
+      {"id": "negative-velocity", "pattern": "(?:[−-]|menos)\\s?0\\s?,\\s?0833", "why": "table cell; the sign carries the meaning, as a character or spoken (the TXT reads cell math: 'menos 0,0833')"}
     ],
     "must_not_match": [
       {"id": "spacing-accent", "pattern": "[´˜¸ˆ]\\s?[A-Za-zıȷ]", "why": "unrepaired TeX spacing accent"},
