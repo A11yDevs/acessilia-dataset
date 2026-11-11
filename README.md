@@ -228,7 +228,7 @@ The existing `input/` reference paths, `outputs/` split and `intermediate/` snap
 | 0 — pin the legacy base | Existing layout at `9ed07b2` | Toolbox #141 replaces floating `main` with the exact legacy revision; Core #388 records that revision for `tests/dataset`. This happens before publishing the new layout. |
 | 1 — dual-layout contract | Add `references/`, schema `1.2.0`, selectors, provenance, per-file content schemas and validation while preserving old `input/` references, `outputs/` and `intermediate/`; mark the compatible revision `dataset-references-v1.2.0`. | Both consumers point to the marked revision. The Dataset commit is the source revision they record. |
 | 2 — consumer migration | No legacy paths removed. | Toolbox #141 reads explicit paths and selectors from the pinned revision. Core #388 migrates the 036/006 evaluators and fixtures and adds a CI smoke test that reads only the pinned manifests/references, without importing or calling the Toolbox. Preserve the 036/006 baselines and canonical comparison fixtures with source revision, hashes, schema and purpose. |
-| 3 — cleanup release | In a later revision tagged `dataset-cleanup-v2.0.0`, remove old reference copies, `outputs/` and `intermediate/`. | Only after both consumers use the phase-1 revision, their relevant tests pass, and fixture provenance is recorded. |
+| 3 — cleanup release | In a later revision tagged `dataset-cleanup-v2.0.0`, remove old reference copies, `outputs/` and `intermediate/`. | Both consumers must use the phase-1 revision and pass the relevant tests with traceable fixtures. The Toolbox must ship at least one release advertising the deprecated API splits before removing them from the default revision. |
 
 Phases 0 and 2 are cross-repository work. This local Dataset branch has not created or published either tag.
 
@@ -238,8 +238,8 @@ The existing `intermediate/` directory is a compatibility archive, not evaluatio
 
 | Consumer | Current dependency | Handoff before removing `intermediate/` |
 |---|---|---|
-| Core comparison | `scripts/compare_pipelines.py` and `tests/test_compare_pipelines_e2e.py` read `canonical-document/`. The E2E cases use IDs `001`, `004`, `005`, `007` and `008`; the archive also has `003`. | Preserve `canonical-document/{001,003,004,005,007,008}.json` under the Core fixture area proposed in [Core #388](https://github.com/A11yDevs/acessilia/issues/388). Record the source Dataset commit, each file hash, schema `1.0.0` and its regression purpose. |
-| Toolbox snapshot tests | `tests/snapshot/test_structure_extract.py` reads `intermediate/manifest.csv` and completed `processing-manifest/` rows for IDs `001`, `003`, `004`, `005`, `007` and `008`. | Preserve the manifest information and six snapshots in Toolbox-owned test fixtures before updating the fixture checkout. Record the source Dataset commit, hashes, ProcessingManifest schema `1.1.0`, Docling version/configuration and regression purpose. |
+| Core comparison | `scripts/compare_pipelines.py` and `tests/test_compare_pipelines_e2e.py` use five historical canonical documents for IDs `001`, `004`, `005`, `007` and `008`. | [Core #388](https://github.com/A11yDevs/acessilia/issues/388) preserves these documents in `tests/fixtures/pipeline-comparison/`, with the source revision, file and input hashes, schema `1.0.0` and regression purpose. |
+| Toolbox snapshot tests | `tests/snapshot/test_structure_extract.py` uses six processing manifests for IDs `001`, `003`, `004`, `005`, `007` and `008`. | [Toolbox #141](https://github.com/A11yDevs/acessilia-toolbox/issues/141) preserves these snapshots in `tests/snapshot/references/`, with the source revision, hashes, ProcessingManifest schema `1.1.0`, Docling configuration and regression purpose. |
 | Toolbox GitHub provider | `src/acessilia_toolbox/providers/dataset_github.py` currently exposes `intermediate` and `outputs` splits. | Retire those API splits as part of [Toolbox #141](https://github.com/A11yDevs/acessilia-toolbox/issues/141), while keeping the snapshot-test fixtures above available. |
 
 The Dataset manifest records the completed processing runs with Docling `2.87.0`, OCR and table structure enabled, and remote services disabled. The embedded ProcessingManifest records schema `1.1.0` and the `docling-serve` endpoint. New run artifacts belong to the run that produced them; after the consumer-owned copies are in place and their tests pass, remove this legacy directory and its manifest in the phase-3 cleanup release.
@@ -257,17 +257,12 @@ This repository is part of the [Acessilia](https://github.com/A11yDevs/acessilia
 Copyright (c) 2026 Jhonata Fernandes Cordeiro
 Copyright (c) 2026 Marcelo Inuzuka and Acessilia Dataset contributors
 
-This project is licensed under the MIT License.
-See the [LICENSE](LICENSE) file for the full license text.
-
-The repository license applies to project-authored content. It does not relicense third-party input documents; use the per-input source and permission fields in `input/manifest.csv`.
+Project-authored content is licensed under the [MIT License](LICENSE). Third-party inputs and material derived from them are subject to the terms applicable to their sources. The [input manifest](input/manifest.csv) records the available provenance and permission evidence for each input.
 
 ### Input source and permission inventory
 
-- IDs `001`–`004` come from Caelum's *Java e Orientação a Objetos*. The source PDF `002` explicitly reserves rights and prohibits copying/distribution. The Dataset has no permission record for this source; these IDs require a rights decision before a new release. `001`, `003` and `004` inherit the source restriction from `002`.
-- ID `005` has no source URL, creator or license record. IDs `006`–`008` identify `Patricia Confessori` in the PDF metadata, but their source URL and redistribution terms are not recorded; `007` and `008` derive from `006`.
-- Formula images `009`, `011`, `013`, `015`, `017` and `019` record CodeCogs as their renderer. The current official [CodeCogs licensing documentation](https://editor.codecogs.com/docs/0-licensing.php) states that generated equation output belongs to the user; the manifest records that the historical account and rendering date are unknown. Degraded and synthetic files inherit the parent-family rights recorded in `input/manifest.csv`.
-- Locally generated negative fixtures `033`–`035` are recorded as project content under MIT.
-- `input/math-reference/velocidade-instantanea.pdf` (`036`) — *Cálculo 1: O problema da velocidade instantânea*, Universidade de Brasília, Departamento de Matemática. Redistribution is permitted only as a test document in this repository; it is not covered by the MIT License. Preserve [`input/math-reference/PERMISSIONS.md`](input/math-reference/PERMISSIONS.md) and the link to `references/math/036/`.
-
-`input/manifest.csv` is the per-input inventory. A value of `unknown` or `review_required` makes missing evidence visible; it does not authorize distribution or resolve rights.
+- `001`–`004` — Redistribution permission is pending for Caelum's *Java e Orientação a Objetos* and its derivatives. The source PDF `002` contains a copyright notice restricting copying and distribution.
+- `005`–`008` — License and redistribution terms are pending. The provenance of `005` is unverified. The PDF metadata for `006` names Patricia Confessori, and `007`–`008` derive from `006`.
+- `009`–`032` — License and redistribution terms are pending for the formula images and their derivatives. The manifest records CodeCogs as the renderer for the source images. The account, rendering date, and terms applicable to those files remain unverified.
+- `033`–`035` — The manifest identifies these locally generated negative fixtures as project-authored content under MIT.
+- `036` — The [permission record](input/math-reference/PERMISSIONS.md) covers redistribution of *Cálculo 1: O problema da velocidade instantânea* in this repository as a test document. Contact the maintainers about use outside this scope.
