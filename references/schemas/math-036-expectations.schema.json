@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:a11ydevs:acessilia-dataset:math-036-expectations:1.0.0",
+  "title": "Math 036 expectations document",
+  "x-schema-version": "1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["manifest_id", "description", "text", "structure", "speech"],
+  "properties": {
+    "manifest_id": {"const": "036"},
+    "description": {"type": "string", "minLength": 1},
+    "text": {
+      "type": "object", "additionalProperties": false,
+      "required": ["must_match", "must_not_match"],
+      "properties": {
+        "must_match": {"$ref": "#/$defs/textRules"},
+        "must_not_match": {"$ref": "#/$defs/textRules"}
+      }
+    },
+    "structure": {
+      "type": "object", "additionalProperties": false,
+      "required": ["headings", "auto_numbered_headings", "page_header", "page_numbers", "images", "ordered_lists", "tables", "callouts", "equation_numbers"],
+      "properties": {
+        "headings": {"type": "array", "items": {"type": "object", "required": ["page", "text", "level"], "properties": {"page": {"type": "integer", "minimum": 1, "maximum": 5}, "text": {"type": "string"}, "level": {"type": "integer", "minimum": 1}}}},
+        "auto_numbered_headings": {"type": "boolean"},
+        "page_header": {"$ref": "#/$defs/pageFurniture"},
+        "page_numbers": {"type": "object", "required": ["pages", "is_furniture", "check"], "properties": {"pages": {"$ref": "#/$defs/pages"}, "is_furniture": {"type": "boolean"}, "check": {"type": "string"}}},
+        "images": {"type": "array", "items": {"type": "object", "required": ["page", "role", "note"], "properties": {"page": {"type": "integer", "minimum": 1, "maximum": 5}, "role": {"type": "string"}, "note": {"type": "string"}}}},
+        "ordered_lists": {"type": "array", "items": {"type": "object", "required": ["page", "items", "first_item_starts"], "properties": {"page": {"type": "integer", "minimum": 1, "maximum": 5}, "items": {"type": "integer", "minimum": 1}, "first_item_starts": {"type": "string"}}}},
+        "tables": {"type": "array", "items": {"type": "object", "required": ["page", "rows", "columns", "header_rows", "math_headers"], "properties": {"page": {"type": "integer", "minimum": 1, "maximum": 5}, "rows": {"type": "integer", "minimum": 1}, "columns": {"type": "integer", "minimum": 1}, "header_rows": {"type": "integer", "minimum": 0}, "math_headers": {"type": "array", "items": {"type": "string"}}}}},
+        "callouts": {"type": "array", "items": {"type": "object", "required": ["page", "starts"], "properties": {"page": {"type": "integer", "minimum": 1, "maximum": 5}, "starts": {"type": "string"}}}},
+        "equation_numbers": {"type": "array", "items": {"type": "object", "required": ["formula", "number"], "properties": {"formula": {"type": "string"}, "number": {"type": "string"}}}}
+      }
+    },
+    "speech": {
+      "type": "object", "additionalProperties": false,
+      "required": ["description", "language", "formulas"],
+      "properties": {
+        "description": {"type": "string", "minLength": 1},
+        "language": {"const": "pt-BR"},
+        "formulas": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["formula", "any_of"], "properties": {"formula": {"type": "string"}, "any_of": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}}}}
+      }
+    }
+  },
+  "$defs": {
+    "textRules": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "pattern"], "properties": {"id": {"type": "string", "minLength": 1}, "pattern": {"type": "string", "minLength": 1}, "why": {"type": "string", "minLength": 1}}}},
+    "pages": {"type": "array", "items": {"type": "integer", "minimum": 1, "maximum": 5}},
+    "pageFurniture": {"type": "object", "required": ["pages", "text", "is_furniture"], "properties": {"pages": {"$ref": "#/$defs/pages"}, "text": {"type": "string"}, "is_furniture": {"type": "boolean"}}}
+  }
+}

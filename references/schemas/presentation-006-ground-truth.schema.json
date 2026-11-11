@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:a11ydevs:acessilia-dataset:presentation-006-ground-truth:1.0.0",
+  "title": "Presentation 006 ground-truth CSV row",
+  "description": "CSV values are strings. Delimited alternatives and table-cell notation retain their existing interpretation.",
+  "x-schema-version": "1.0.0",
+  "x-csv-columns": ["id", "manifest_id", "page", "kind", "expected", "context", "notes"],
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "manifest_id", "page", "kind", "expected", "context", "notes"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "manifest_id": {"const": "006"},
+    "page": {"type": "string", "pattern": "^(?:[1-9]|[1-3][0-9]|4[0-2])$"},
+    "kind": {"enum": ["text", "image", "chemical-structure", "table", "table-header", "table-row", "formula"]},
+    "expected": {"type": "string", "minLength": 1},
+    "context": {"type": "string"},
+    "notes": {"type": "string"}
+  }
+}
