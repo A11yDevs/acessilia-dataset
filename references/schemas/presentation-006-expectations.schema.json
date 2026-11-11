@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:a11ydevs:acessilia-dataset:presentation-006-expectations:1.0.0",
+  "title": "Presentation 006 expectations document",
+  "x-schema-version": "1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["manifest_id", "description", "text", "structure", "degraded"],
+  "properties": {
+    "manifest_id": {"const": "006"},
+    "description": {"type": "string", "minLength": 1},
+    "text": {"type": "object", "additionalProperties": false, "required": ["must_not_match"], "properties": {"must_not_match": {"$ref": "#/$defs/textRules"}}},
+    "structure": {
+      "type": "object", "additionalProperties": false,
+      "required": ["slide_count", "slide_heading", "deck_title", "slide_titles", "tables", "chemical_structures_are_descriptions", "slides_of_text_as_a_picture"],
+      "properties": {
+        "slide_count": {"const": 42},
+        "slide_heading": {"type": "object", "required": ["pattern", "level", "why"], "properties": {"pattern": {"type": "string", "minLength": 1}, "level": {"type": "integer", "minimum": 1}, "why": {"type": "string", "minLength": 1}}},
+        "deck_title": {"type": "object", "required": ["text", "level"], "properties": {"text": {"type": "string", "minLength": 1}, "level": {"type": "integer", "minimum": 1}}},
+        "slide_titles": {"type": "array", "items": {"type": "object", "required": ["page", "title"], "properties": {"page": {"type": "integer", "minimum": 1, "maximum": 42}, "title": {"type": "string", "minLength": 1}}}},
+        "tables": {"type": "string", "minLength": 1},
+        "chemical_structures_are_descriptions": {"$ref": "#/$defs/pageRule"},
+        "slides_of_text_as_a_picture": {"$ref": "#/$defs/pageRule"}
+      }
+    },
+    "degraded": {"type": "object", "additionalProperties": false, "required": ["description", "text_ids_always_present", "not_cacheable"], "properties": {"description": {"type": "string", "minLength": 1}, "text_ids_always_present": {"type": "string", "minLength": 1}, "not_cacheable": {"type": "boolean"}}}
+  },
+  "$defs": {
+    "textRules": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "pattern", "why"], "properties": {"id": {"type": "string", "minLength": 1}, "pattern": {"type": "string", "minLength": 1}, "why": {"type": "string", "minLength": 1}}}},
+    "pageRule": {"type": "object", "required": ["pages", "why"], "properties": {"pages": {"type": "array", "items": {"type": "integer", "minimum": 1, "maximum": 42}}, "why": {"type": "string", "minLength": 1}}}
+  }
+}

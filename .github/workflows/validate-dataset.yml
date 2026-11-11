@@ -1,0 +1,27 @@
+name: Validate dataset manifests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install validation dependency
+        run: python -m pip install -r requirements-validation.txt
+      - name: Validate manifests and references
+        run: python scripts/validate_dataset.py
+      - name: Test the Dataset validator
+        run: python -m unittest discover -s tests
