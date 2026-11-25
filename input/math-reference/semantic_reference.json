@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "manifest_id": "036",
   "purpose": "permanent source-based mathematical accessibility regression reference; this file specifies semantics, not an implemented output evaluator",
   "source": {
@@ -23,7 +23,24 @@
     "punctuation": "sentence commas/periods are not mathematical operands; decimal commas are numbers; equation tags and list numbering are structural",
     "hyphenation": "join introduzire-mos (p4) and ex-pressão (p5) as layout hyphenation; preserve mathematical minus signs and intervals",
     "empty_cells": "empty means an intentionally blank exercise slot; never fill it by calculation, by 0 or by a placeholder interpreted as source content",
-    "inline_rendering": "inline is a source-content role. Complete quantities with units may remain accessible prose; equivalent MathML or spoken math may represent expressions if tied to the correct occurrence. The legacy as_math metric measures markup, not all valid accessible representations."
+    "inline_rendering": "inline is a source-content role. Complete quantities with units may remain accessible prose; equivalent MathML or spoken math may represent expressions if tied to the correct occurrence. The legacy as_math metric measures markup, not all valid accessible representations.",
+    "ordinal_grouping": {
+      "key": [
+        "page",
+        "kind",
+        "expected_latex"
+      ],
+      "normalization": {
+        "unicode": "none",
+        "whitespace": "preserve",
+        "case": "preserve",
+        "latex_macros": "literal",
+        "mathematical_equivalence": "not used"
+      },
+      "ordinal": "positive integer, unique and consecutive from 1 in each literal group; bool is not an ordinal",
+      "order": "reading_order is the authoritative editorial sequence inspected in the PDF: top-to-bottom, left-to-right within each line, row-major for tables. It breaks ties in shared line bands; CSV order and ID suffixes are not reading-order evidence",
+      "geometry": "non-overlapping source regions provide additional order evidence; overlapping line bands use the explicit editorial sequence. No coordinate equality with transformed outputs is required"
+    }
   },
   "ast_schema": {
     "node": "op plus optional args and named attributes; all args are nodes; number.literal keeps decimal notation",
@@ -68,7 +85,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p1-i02": {
       "page": 1,
@@ -82,7 +100,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p1-i03": {
       "page": 1,
@@ -96,7 +115,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p1-i04": {
       "page": 1,
@@ -110,7 +130,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p1-i05": {
       "page": 1,
@@ -124,7 +145,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p1-i06": {
       "page": 1,
@@ -138,7 +160,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p1-i07": {
       "page": 1,
@@ -152,7 +175,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p1-d01": {
       "page": 1,
@@ -166,7 +190,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "expression"
     },
     "p1-d02": {
       "page": 1,
@@ -180,7 +205,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "expression"
     },
     "p1-i08": {
       "page": 1,
@@ -194,7 +220,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p1-i09": {
       "page": 1,
@@ -208,7 +235,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p1-i10": {
       "page": 1,
@@ -222,7 +250,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 2
+      "same_latex_ordinal_on_page": 2,
+      "localization_granularity": "line"
     },
     "p1-i11": {
       "page": 1,
@@ -236,7 +265,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 2
+      "same_latex_ordinal_on_page": 2,
+      "localization_granularity": "line"
     },
     "p1-i12": {
       "page": 1,
@@ -250,7 +280,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 3
+      "same_latex_ordinal_on_page": 3,
+      "localization_granularity": "line"
     },
     "p1-i13": {
       "page": 1,
@@ -264,7 +295,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 4
+      "same_latex_ordinal_on_page": 4,
+      "localization_granularity": "line"
     },
     "p1-i14": {
       "page": 1,
@@ -278,7 +310,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p1-i15": {
       "page": 1,
@@ -292,7 +325,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p1-i16": {
       "page": 1,
@@ -306,7 +340,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 2
+      "same_latex_ordinal_on_page": 2,
+      "localization_granularity": "line"
     },
     "p1-i17": {
       "page": 1,
@@ -320,7 +355,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 2
+      "same_latex_ordinal_on_page": 2,
+      "localization_granularity": "line"
     },
     "p1-i18": {
       "page": 1,
@@ -334,7 +370,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 5
+      "same_latex_ordinal_on_page": 5,
+      "localization_granularity": "line"
     },
     "p1-i19": {
       "page": 1,
@@ -348,7 +385,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p1-i20": {
       "page": 1,
@@ -362,7 +400,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p2-i01": {
       "page": 2,
@@ -376,7 +415,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p2-i02": {
       "page": 2,
@@ -390,7 +430,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p2-i03": {
       "page": 2,
@@ -404,7 +445,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p2-i04": {
       "page": 2,
@@ -418,7 +460,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p2-d01": {
       "page": 2,
@@ -432,7 +475,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "expression"
     },
     "p2-i05": {
       "page": 2,
@@ -446,7 +490,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p2-i06": {
       "page": 2,
@@ -460,7 +505,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 2
+      "same_latex_ordinal_on_page": 2,
+      "localization_granularity": "line"
     },
     "p2-d02": {
       "page": 2,
@@ -474,7 +520,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "expression"
     },
     "p2-i07": {
       "page": 2,
@@ -488,7 +535,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p2-i08": {
       "page": 2,
@@ -502,7 +550,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 2
+      "same_latex_ordinal_on_page": 2,
+      "localization_granularity": "line"
     },
     "p2-i09": {
       "page": 2,
@@ -516,7 +565,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p2-t01": {
       "page": 2,
@@ -530,7 +580,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 2
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t02": {
       "page": 2,
@@ -544,7 +595,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 2
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t03": {
       "page": 2,
@@ -558,7 +610,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-i10": {
       "page": 2,
@@ -572,7 +625,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p2-i11": {
       "page": 2,
@@ -586,7 +640,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 3
+      "same_latex_ordinal_on_page": 2,
+      "localization_granularity": "line"
     },
     "p2-i12": {
       "page": 2,
@@ -600,7 +655,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 3
+      "same_latex_ordinal_on_page": 3,
+      "localization_granularity": "line"
     },
     "p2-i13": {
       "page": 2,
@@ -614,7 +670,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 3
+      "same_latex_ordinal_on_page": 2,
+      "localization_granularity": "line"
     },
     "p2-d03": {
       "page": 2,
@@ -628,7 +685,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "expression"
     },
     "p2-i14": {
       "page": 2,
@@ -642,7 +700,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 4
+      "same_latex_ordinal_on_page": 4,
+      "localization_granularity": "line"
     },
     "p2-i15": {
       "page": 2,
@@ -656,7 +715,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 4
+      "same_latex_ordinal_on_page": 3,
+      "localization_granularity": "line"
     },
     "p2-i16": {
       "page": 2,
@@ -670,7 +730,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 4
+      "same_latex_ordinal_on_page": 3,
+      "localization_granularity": "line"
     },
     "p2-i17": {
       "page": 2,
@@ -684,7 +745,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p2-i18": {
       "page": 2,
@@ -698,7 +760,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p2-i19": {
       "page": 2,
@@ -712,7 +775,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p2-i20": {
       "page": 2,
@@ -726,7 +790,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p2-i21": {
       "page": 2,
@@ -740,7 +805,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p2-i22": {
       "page": 2,
@@ -754,7 +820,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 2
+      "same_latex_ordinal_on_page": 2,
+      "localization_granularity": "line"
     },
     "p2-i23": {
       "page": 2,
@@ -768,7 +835,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 3
+      "same_latex_ordinal_on_page": 3,
+      "localization_granularity": "line"
     },
     "p2-t04": {
       "page": 2,
@@ -782,7 +850,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t05": {
       "page": 2,
@@ -796,7 +865,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t06": {
       "page": 2,
@@ -810,7 +880,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t07": {
       "page": 2,
@@ -824,7 +895,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t08": {
       "page": 2,
@@ -838,7 +910,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t09": {
       "page": 2,
@@ -852,7 +925,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t10": {
       "page": 2,
@@ -866,7 +940,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t11": {
       "page": 2,
@@ -880,7 +955,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t12": {
       "page": 2,
@@ -894,7 +970,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t13": {
       "page": 2,
@@ -908,7 +985,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t14": {
       "page": 2,
@@ -922,7 +1000,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t15": {
       "page": 2,
@@ -936,7 +1015,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t16": {
       "page": 2,
@@ -950,7 +1030,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t17": {
       "page": 2,
@@ -964,7 +1045,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t18": {
       "page": 2,
@@ -978,7 +1060,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t19": {
       "page": 2,
@@ -992,7 +1075,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t20": {
       "page": 2,
@@ -1006,7 +1090,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p2-t21": {
       "page": 2,
@@ -1020,7 +1105,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p3-i01": {
       "page": 3,
@@ -1034,7 +1120,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p3-i02": {
       "page": 3,
@@ -1048,7 +1135,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p3-d01": {
       "page": 3,
@@ -1062,7 +1150,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "expression"
     },
     "p3-i03": {
       "page": 3,
@@ -1076,7 +1165,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p3-i04": {
       "page": 3,
@@ -1090,7 +1180,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 2
+      "same_latex_ordinal_on_page": 2,
+      "localization_granularity": "line"
     },
     "p3-i05": {
       "page": 3,
@@ -1104,7 +1195,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p3-i06": {
       "page": 3,
@@ -1118,7 +1210,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p3-i07": {
       "page": 3,
@@ -1132,7 +1225,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 2
+      "same_latex_ordinal_on_page": 2,
+      "localization_granularity": "line"
     },
     "p3-d02": {
       "page": 3,
@@ -1146,7 +1240,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "expression"
     },
     "p3-d03": {
       "page": 3,
@@ -1160,7 +1255,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "expression"
     },
     "p3-i08": {
       "page": 3,
@@ -1174,7 +1270,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 3
+      "same_latex_ordinal_on_page": 3,
+      "localization_granularity": "line"
     },
     "p3-i09": {
       "page": 3,
@@ -1188,7 +1285,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p3-i10": {
       "page": 3,
@@ -1202,7 +1300,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 3
+      "same_latex_ordinal_on_page": 3,
+      "localization_granularity": "line"
     },
     "p3-i11": {
       "page": 3,
@@ -1216,7 +1315,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 4
+      "same_latex_ordinal_on_page": 4,
+      "localization_granularity": "line"
     },
     "p3-i12": {
       "page": 3,
@@ -1230,7 +1330,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p3-i13": {
       "page": 3,
@@ -1244,7 +1345,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p3-i14": {
       "page": 3,
@@ -1258,7 +1360,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 5
+      "same_latex_ordinal_on_page": 5,
+      "localization_granularity": "line"
     },
     "p3-d04": {
       "page": 3,
@@ -1272,7 +1375,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "expression"
     },
     "p3-i15": {
       "page": 3,
@@ -1286,7 +1390,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p3-i16": {
       "page": 3,
@@ -1300,7 +1405,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 2
+      "same_latex_ordinal_on_page": 2,
+      "localization_granularity": "line"
     },
     "p3-i17": {
       "page": 3,
@@ -1314,7 +1420,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p3-i18": {
       "page": 3,
@@ -1328,7 +1435,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 2
+      "same_latex_ordinal_on_page": 2,
+      "localization_granularity": "line"
     },
     "p3-d05": {
       "page": 3,
@@ -1342,7 +1450,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "expression"
     },
     "p3-d06": {
       "page": 3,
@@ -1356,7 +1465,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "expression"
     },
     "p3-d07": {
       "page": 3,
@@ -1370,7 +1480,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "expression"
     },
     "p3-i19": {
       "page": 3,
@@ -1384,7 +1495,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p3-i20": {
       "page": 3,
@@ -1398,7 +1510,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 2
+      "same_latex_ordinal_on_page": 2,
+      "localization_granularity": "line"
     },
     "p3-i21": {
       "page": 3,
@@ -1412,7 +1525,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 3
+      "same_latex_ordinal_on_page": 3,
+      "localization_granularity": "line"
     },
     "p3-i22": {
       "page": 3,
@@ -1426,7 +1540,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 4
+      "same_latex_ordinal_on_page": 4,
+      "localization_granularity": "line"
     },
     "p4-i01": {
       "page": 4,
@@ -1440,7 +1555,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p4-i02": {
       "page": 4,
@@ -1454,7 +1570,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p4-i03": {
       "page": 4,
@@ -1468,7 +1585,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p4-i04": {
       "page": 4,
@@ -1482,7 +1600,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p4-i05": {
       "page": 4,
@@ -1496,7 +1615,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p4-i06": {
       "page": 4,
@@ -1510,7 +1630,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 2
+      "same_latex_ordinal_on_page": 2,
+      "localization_granularity": "line"
     },
     "p4-i07": {
       "page": 4,
@@ -1524,7 +1645,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p4-d01": {
       "page": 4,
@@ -1538,7 +1660,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "expression"
     },
     "p4-i08": {
       "page": 4,
@@ -1552,7 +1675,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p4-i09": {
       "page": 4,
@@ -1566,7 +1690,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p4-i10": {
       "page": 4,
@@ -1580,7 +1705,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p4-i11": {
       "page": 4,
@@ -1594,7 +1720,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p4-i12": {
       "page": 4,
@@ -1608,7 +1735,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p4-i13": {
       "page": 4,
@@ -1622,7 +1750,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 2
+      "same_latex_ordinal_on_page": 2,
+      "localization_granularity": "line"
     },
     "p4-i14": {
       "page": 4,
@@ -1636,7 +1765,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 3
+      "same_latex_ordinal_on_page": 3,
+      "localization_granularity": "line"
     },
     "p4-i15": {
       "page": 4,
@@ -1650,7 +1780,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 4
+      "same_latex_ordinal_on_page": 4,
+      "localization_granularity": "line"
     },
     "p5-d01": {
       "page": 5,
@@ -1664,7 +1795,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "expression"
     },
     "p5-i01": {
       "page": 5,
@@ -1678,7 +1810,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p5-t01": {
       "page": 5,
@@ -1692,7 +1825,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p5-t02": {
       "page": 5,
@@ -1706,7 +1840,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p5-t03": {
       "page": 5,
@@ -1720,7 +1855,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p5-t04": {
       "page": 5,
@@ -1734,7 +1870,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p5-d02": {
       "page": 5,
@@ -1748,7 +1885,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "expression"
     },
     "p5-i02": {
       "page": 5,
@@ -1762,7 +1900,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p5-d03": {
       "page": 5,
@@ -1776,7 +1915,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "expression"
     },
     "p5-i03": {
       "page": 5,
@@ -1790,7 +1930,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p5-i04": {
       "page": 5,
@@ -1804,7 +1945,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "line"
     },
     "p5-t05": {
       "page": 5,
@@ -1818,7 +1960,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p5-t06": {
       "page": 5,
@@ -1832,7 +1975,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p5-t07": {
       "page": 5,
@@ -1846,7 +1990,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p5-t08": {
       "page": 5,
@@ -1860,7 +2005,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p5-t09": {
       "page": 5,
@@ -1874,7 +2020,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     },
     "p5-t10": {
       "page": 5,
@@ -1888,7 +2035,8 @@
       ],
       "region_precision": "line band or table cell; not glyph-tight",
       "source": "vector/text-layer; visually verified",
-      "same_latex_ordinal_on_page": 1
+      "same_latex_ordinal_on_page": 1,
+      "localization_granularity": "cell"
     }
   },
   "display_formulas": {
@@ -2016,62 +2164,6 @@
           }
         ]
       },
-      "node_counts": {
-        "add": 1,
-        "call": 1,
-        "divide": 1,
-        "equality_chain": 1,
-        "greater_than": 1,
-        "multiply": 2,
-        "number": 6,
-        "power": 1,
-        "subscript": 2,
-        "symbol": 8,
-        "with_condition": 1
-      },
-      "semantic_invariants": {
-        "/op": "with_condition",
-        "/args/0/op": "equality_chain",
-        "/args/0/args/0/op": "call",
-        "/args/0/args/0/args/0/op": "symbol",
-        "/args/0/args/0/args/0/name": "s",
-        "/args/0/args/0/args/1/op": "symbol",
-        "/args/0/args/0/args/1/name": "t",
-        "/args/0/args/1/op": "add",
-        "/args/0/args/1/args/0/op": "subscript",
-        "/args/0/args/1/args/0/args/0/op": "symbol",
-        "/args/0/args/1/args/0/args/0/name": "s",
-        "/args/0/args/1/args/0/args/1/op": "number",
-        "/args/0/args/1/args/0/args/1/literal": "0",
-        "/args/0/args/1/args/1/op": "multiply",
-        "/args/0/args/1/args/1/notation": "implicit",
-        "/args/0/args/1/args/1/args/0/op": "subscript",
-        "/args/0/args/1/args/1/args/0/args/0/op": "symbol",
-        "/args/0/args/1/args/1/args/0/args/0/name": "v",
-        "/args/0/args/1/args/1/args/0/args/1/op": "number",
-        "/args/0/args/1/args/1/args/0/args/1/literal": "0",
-        "/args/0/args/1/args/1/args/1/op": "symbol",
-        "/args/0/args/1/args/1/args/1/name": "t",
-        "/args/0/args/1/args/2/op": "multiply",
-        "/args/0/args/1/args/2/notation": "implicit",
-        "/args/0/args/1/args/2/args/0/op": "divide",
-        "/args/0/args/1/args/2/args/0/args/0/op": "number",
-        "/args/0/args/1/args/2/args/0/args/0/literal": "1",
-        "/args/0/args/1/args/2/args/0/args/1/op": "number",
-        "/args/0/args/1/args/2/args/0/args/1/literal": "2",
-        "/args/0/args/1/args/2/args/1/op": "symbol",
-        "/args/0/args/1/args/2/args/1/name": "a",
-        "/args/0/args/1/args/2/args/2/op": "power",
-        "/args/0/args/1/args/2/args/2/args/0/op": "symbol",
-        "/args/0/args/1/args/2/args/2/args/0/name": "t",
-        "/args/0/args/1/args/2/args/2/args/1/op": "number",
-        "/args/0/args/1/args/2/args/2/args/1/literal": "2",
-        "/args/1/op": "greater_than",
-        "/args/1/args/0/op": "symbol",
-        "/args/1/args/0/name": "t",
-        "/args/1/args/1/op": "number",
-        "/args/1/args/1/literal": "0"
-      },
       "speech": {
         "language": "pt-BR",
         "evaluation_status": "specified; relation-level speech assessment is not implemented by the current evaluator",
@@ -2080,10 +2172,11 @@
           "condição t maior que zero; subscritos zero não são expoentes"
         ],
         "acceptable_examples": [
-          "A posição s de t é s zero mais v zero vezes t mais um meio de a vezes t ao quadrado, para t maior que zero.",
-          "Para tempos positivos, s de t é a soma da posição inicial, do produto v subscrito zero por t e da metade do produto de a por t ao quadrado."
+          "S de t é igual a s subscrito zero, mais v subscrito zero multiplicado por t, mais um meio multiplicado por a e por t ao quadrado. A condição é t maior que zero.",
+          "Para t maior que zero, a posição s de t é a soma de três parcelas: s índice zero; o produto de v índice zero por t; e o produto de um sobre dois por a e pelo quadrado de t."
         ],
-        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation"
+        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation",
+        "examples_role": "complete illustrative readings; not pedagogical summaries or exact-match acceptance strings"
       },
       "segmentation": {
         "allowed": "one block or multiple associated ordered blocks",
@@ -2171,43 +2264,6 @@
           }
         ]
       },
-      "node_counts": {
-        "add": 1,
-        "call": 1,
-        "equality_chain": 1,
-        "greater_than": 1,
-        "multiply": 1,
-        "number": 2,
-        "subscript": 1,
-        "symbol": 6,
-        "with_condition": 1
-      },
-      "semantic_invariants": {
-        "/op": "with_condition",
-        "/args/0/op": "equality_chain",
-        "/args/0/args/0/op": "call",
-        "/args/0/args/0/args/0/op": "symbol",
-        "/args/0/args/0/args/0/name": "v",
-        "/args/0/args/0/args/1/op": "symbol",
-        "/args/0/args/0/args/1/name": "t",
-        "/args/0/args/1/op": "add",
-        "/args/0/args/1/args/0/op": "subscript",
-        "/args/0/args/1/args/0/args/0/op": "symbol",
-        "/args/0/args/1/args/0/args/0/name": "v",
-        "/args/0/args/1/args/0/args/1/op": "number",
-        "/args/0/args/1/args/0/args/1/literal": "0",
-        "/args/0/args/1/args/1/op": "multiply",
-        "/args/0/args/1/args/1/notation": "implicit",
-        "/args/0/args/1/args/1/args/0/op": "symbol",
-        "/args/0/args/1/args/1/args/0/name": "a",
-        "/args/0/args/1/args/1/args/1/op": "symbol",
-        "/args/0/args/1/args/1/args/1/name": "t",
-        "/args/1/op": "greater_than",
-        "/args/1/args/0/op": "symbol",
-        "/args/1/args/0/name": "t",
-        "/args/1/args/1/op": "number",
-        "/args/1/args/1/literal": "0"
-      },
       "speech": {
         "language": "pt-BR",
         "evaluation_status": "specified; relation-level speech assessment is not implemented by the current evaluator",
@@ -2216,10 +2272,11 @@
           "t maior que zero"
         ],
         "acceptable_examples": [
-          "V de t é v zero mais a vezes t, com t maior que zero.",
-          "Para t positivo, a velocidade v de t é a velocidade inicial v subscrito zero somada a a multiplicado por t."
+          "V de t é igual a v subscrito zero mais o produto de a por t, com t maior que zero.",
+          "Para t maior que zero, v de t é a soma de v índice zero e a multiplicado por t."
         ],
-        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation"
+        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation",
+        "examples_role": "complete illustrative readings; not pedagogical summaries or exact-match acceptance strings"
       },
       "segmentation": {
         "allowed": "one block or multiple associated ordered blocks",
@@ -2368,62 +2425,6 @@
           }
         ]
       },
-      "node_counts": {
-        "call": 2,
-        "divide": 3,
-        "equality_chain": 1,
-        "number": 14,
-        "power": 2,
-        "subtract": 5,
-        "symbol": 2
-      },
-      "semantic_invariants": {
-        "/op": "equality_chain",
-        "/args/0/op": "divide",
-        "/args/0/args/0/op": "subtract",
-        "/args/0/args/0/args/0/op": "call",
-        "/args/0/args/0/args/0/args/0/op": "symbol",
-        "/args/0/args/0/args/0/args/0/name": "s",
-        "/args/0/args/0/args/0/args/1/op": "number",
-        "/args/0/args/0/args/0/args/1/literal": "4",
-        "/args/0/args/0/args/1/op": "call",
-        "/args/0/args/0/args/1/args/0/op": "symbol",
-        "/args/0/args/0/args/1/args/0/name": "s",
-        "/args/0/args/0/args/1/args/1/op": "number",
-        "/args/0/args/0/args/1/args/1/literal": "2",
-        "/args/0/args/1/op": "subtract",
-        "/args/0/args/1/args/0/op": "number",
-        "/args/0/args/1/args/0/literal": "4",
-        "/args/0/args/1/args/1/op": "number",
-        "/args/0/args/1/args/1/literal": "2",
-        "/args/1/op": "divide",
-        "/args/1/args/0/op": "subtract",
-        "/args/1/args/0/args/0/op": "power",
-        "/args/1/args/0/args/0/args/0/op": "number",
-        "/args/1/args/0/args/0/args/0/literal": "4",
-        "/args/1/args/0/args/0/args/1/op": "number",
-        "/args/1/args/0/args/0/args/1/literal": "3",
-        "/args/1/args/0/args/1/op": "power",
-        "/args/1/args/0/args/1/args/0/op": "number",
-        "/args/1/args/0/args/1/args/0/literal": "2",
-        "/args/1/args/0/args/1/args/1/op": "number",
-        "/args/1/args/0/args/1/args/1/literal": "3",
-        "/args/1/args/1/op": "subtract",
-        "/args/1/args/1/args/0/op": "number",
-        "/args/1/args/1/args/0/literal": "4",
-        "/args/1/args/1/args/1/op": "number",
-        "/args/1/args/1/args/1/literal": "2",
-        "/args/2/op": "divide",
-        "/args/2/args/0/op": "subtract",
-        "/args/2/args/0/args/0/op": "number",
-        "/args/2/args/0/args/0/literal": "64",
-        "/args/2/args/0/args/1/op": "number",
-        "/args/2/args/0/args/1/literal": "8",
-        "/args/2/args/1/op": "number",
-        "/args/2/args/1/literal": "2",
-        "/args/3/op": "number",
-        "/args/3/literal": "28"
-      },
       "speech": {
         "language": "pt-BR",
         "evaluation_status": "specified; relation-level speech assessment is not implemented by the current evaluator",
@@ -2432,10 +2433,11 @@
           "diferenças s(4)−s(2) e 4−2 no primeiro quociente; potências 4³ e 2³ no segundo; (64−8)/2; resultado 28"
         ],
         "acceptable_examples": [
-          "A diferença s de quatro menos s de dois, dividida por quatro menos dois, é igual a quatro ao cubo menos dois ao cubo sobre quatro menos dois; é igual a sessenta e quatro menos oito sobre dois; é igual a vinte e oito.",
-          "O quociente de s de quatro menos s de dois por quatro menos dois coincide com o de quatro elevado a três menos dois elevado a três por quatro menos dois; em seguida, sessenta e quatro menos oito dividido por dois, resultando em vinte e oito."
+          "A fração cujo numerador é s de quatro menos s de dois e cujo denominador é quatro menos dois é igual à fração cujo numerador é quatro ao cubo menos dois ao cubo e cujo denominador é quatro menos dois. É igual à fração cujo numerador é sessenta e quatro menos oito e cujo denominador é dois. É igual a vinte e oito.",
+          "O quociente entre a diferença s de quatro menos s de dois e a diferença quatro menos dois é igual ao quociente entre a diferença de quatro elevado a três e dois elevado a três e a diferença quatro menos dois. Esse quociente é igual à diferença sessenta e quatro menos oito, toda dividida por dois, e é igual a vinte e oito."
         ],
-        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation"
+        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation",
+        "examples_role": "complete illustrative readings; not pedagogical summaries or exact-match acceptance strings"
       },
       "segmentation": {
         "allowed": "one block or multiple associated ordered blocks",
@@ -2535,44 +2537,6 @@
           }
         ]
       },
-      "node_counts": {
-        "call": 2,
-        "divide": 2,
-        "equality_chain": 1,
-        "number": 8,
-        "subtract": 3,
-        "symbol": 2
-      },
-      "semantic_invariants": {
-        "/op": "equality_chain",
-        "/args/0/op": "divide",
-        "/args/0/args/0/op": "subtract",
-        "/args/0/args/0/args/0/op": "call",
-        "/args/0/args/0/args/0/args/0/op": "symbol",
-        "/args/0/args/0/args/0/args/0/name": "s",
-        "/args/0/args/0/args/0/args/1/op": "number",
-        "/args/0/args/0/args/0/args/1/literal": "3",
-        "/args/0/args/0/args/1/op": "call",
-        "/args/0/args/0/args/1/args/0/op": "symbol",
-        "/args/0/args/0/args/1/args/0/name": "s",
-        "/args/0/args/0/args/1/args/1/op": "number",
-        "/args/0/args/0/args/1/args/1/literal": "2",
-        "/args/0/args/1/op": "subtract",
-        "/args/0/args/1/args/0/op": "number",
-        "/args/0/args/1/args/0/literal": "3",
-        "/args/0/args/1/args/1/op": "number",
-        "/args/0/args/1/args/1/literal": "2",
-        "/args/1/op": "divide",
-        "/args/1/args/0/op": "subtract",
-        "/args/1/args/0/args/0/op": "number",
-        "/args/1/args/0/args/0/literal": "27",
-        "/args/1/args/0/args/1/op": "number",
-        "/args/1/args/0/args/1/literal": "8",
-        "/args/1/args/1/op": "number",
-        "/args/1/args/1/literal": "1",
-        "/args/2/op": "number",
-        "/args/2/literal": "19"
-      },
       "speech": {
         "language": "pt-BR",
         "evaluation_status": "specified; relation-level speech assessment is not implemented by the current evaluator",
@@ -2580,10 +2544,11 @@
           "cadeia ordenada: diferença s(3)−s(2) dividida por 3−2, seguida de (27−8)/1 e resultado 19"
         ],
         "acceptable_examples": [
-          "S de três menos s de dois, tudo sobre três menos dois, é igual a vinte e sete menos oito sobre um, igual a dezenove.",
-          "O quociente entre a diferença de s nos instantes três e dois e a diferença três menos dois é vinte e sete menos oito dividido por um e é dezenove."
+          "A fração cujo numerador é s de três menos s de dois e cujo denominador é três menos dois é igual à fração cujo numerador é vinte e sete menos oito e cujo denominador é um. É igual a dezenove.",
+          "O quociente da diferença s de três menos s de dois pela diferença três menos dois é igual ao quociente da diferença vinte e sete menos oito por um, que é igual a dezenove."
         ],
-        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation"
+        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation",
+        "examples_role": "complete illustrative readings; not pedagogical summaries or exact-match acceptance strings"
       },
       "segmentation": {
         "allowed": "one block or multiple associated ordered blocks",
@@ -2756,71 +2721,6 @@
           }
         ]
       },
-      "node_counts": {
-        "add": 3,
-        "call": 3,
-        "divide": 2,
-        "equality_chain": 1,
-        "group": 2,
-        "number": 9,
-        "power": 2,
-        "subscript": 1,
-        "subtract": 3,
-        "symbol": 8
-      },
-      "semantic_invariants": {
-        "/op": "equality_chain",
-        "/args/0/op": "call",
-        "/args/0/args/0/op": "subscript",
-        "/args/0/args/0/args/0/op": "symbol",
-        "/args/0/args/0/args/0/name": "vm",
-        "/args/0/args/0/args/1/op": "number",
-        "/args/0/args/0/args/1/literal": "2",
-        "/args/0/args/1/op": "symbol",
-        "/args/0/args/1/name": "h",
-        "/args/1/op": "divide",
-        "/args/1/args/0/op": "subtract",
-        "/args/1/args/0/args/0/op": "call",
-        "/args/1/args/0/args/0/args/0/op": "symbol",
-        "/args/1/args/0/args/0/args/0/name": "s",
-        "/args/1/args/0/args/0/args/1/op": "add",
-        "/args/1/args/0/args/0/args/1/args/0/op": "number",
-        "/args/1/args/0/args/0/args/1/args/0/literal": "2",
-        "/args/1/args/0/args/0/args/1/args/1/op": "symbol",
-        "/args/1/args/0/args/0/args/1/args/1/name": "h",
-        "/args/1/args/0/args/1/op": "call",
-        "/args/1/args/0/args/1/args/0/op": "symbol",
-        "/args/1/args/0/args/1/args/0/name": "s",
-        "/args/1/args/0/args/1/args/1/op": "number",
-        "/args/1/args/0/args/1/args/1/literal": "2",
-        "/args/1/args/1/op": "subtract",
-        "/args/1/args/1/args/0/op": "group",
-        "/args/1/args/1/args/0/args/0/op": "add",
-        "/args/1/args/1/args/0/args/0/args/0/op": "number",
-        "/args/1/args/1/args/0/args/0/args/0/literal": "2",
-        "/args/1/args/1/args/0/args/0/args/1/op": "symbol",
-        "/args/1/args/1/args/0/args/0/args/1/name": "h",
-        "/args/1/args/1/args/1/op": "number",
-        "/args/1/args/1/args/1/literal": "2",
-        "/args/2/op": "divide",
-        "/args/2/args/0/op": "subtract",
-        "/args/2/args/0/args/0/op": "power",
-        "/args/2/args/0/args/0/args/0/op": "group",
-        "/args/2/args/0/args/0/args/0/args/0/op": "add",
-        "/args/2/args/0/args/0/args/0/args/0/args/0/op": "number",
-        "/args/2/args/0/args/0/args/0/args/0/args/0/literal": "2",
-        "/args/2/args/0/args/0/args/0/args/0/args/1/op": "symbol",
-        "/args/2/args/0/args/0/args/0/args/0/args/1/name": "h",
-        "/args/2/args/0/args/0/args/1/op": "number",
-        "/args/2/args/0/args/0/args/1/literal": "3",
-        "/args/2/args/0/args/1/op": "power",
-        "/args/2/args/0/args/1/args/0/op": "number",
-        "/args/2/args/0/args/1/args/0/literal": "2",
-        "/args/2/args/0/args/1/args/1/op": "number",
-        "/args/2/args/0/args/1/args/1/literal": "8",
-        "/args/2/args/1/op": "symbol",
-        "/args/2/args/1/name": "h"
-      },
       "speech": {
         "language": "pt-BR",
         "evaluation_status": "specified; relation-level speech assessment is not implemented by the current evaluator",
@@ -2830,10 +2730,11 @@
           "preservar oitava potência impressa mesmo sendo inconsistente; rótulo equação (1) separado dos operandos"
         ],
         "acceptable_examples": [
-          "V m índice dois de h é s de dois mais h menos s de dois, tudo dividido por dois mais h menos dois; é igual a dois mais h, entre parênteses, ao cubo, menos dois à oitava, tudo sobre h. Equação um.",
-          "A equação de número um define vm subscrito dois em h como a razão da diferença s de dois mais h menos s de dois pela diferença dois mais h menos dois; em seguida mostra o cubo de dois mais h menos dois elevado a oito dividido por h."
+          "V m subscrito dois aplicado a h é igual à fração cujo numerador é s avaliada na soma de dois e h menos s de dois, e cujo denominador é a soma de dois e h, entre parênteses, menos dois. É igual à fração cujo numerador é o cubo da soma de dois e h menos dois elevado a oito, e cujo denominador é h. Equação um.",
+          "Na equação de número um, v m índice dois de h é igual ao quociente da diferença entre s na soma dois mais h e s de dois pela diferença entre a soma dois mais h e dois. É igual ao quociente da diferença entre o cubo da soma de dois e h e a oitava potência de dois, dividido por h."
         ],
-        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation"
+        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation",
+        "examples_role": "complete illustrative readings; not pedagogical summaries or exact-match acceptance strings"
       },
       "segmentation": {
         "allowed": "one block or multiple associated ordered blocks",
@@ -2966,66 +2867,6 @@
           }
         ]
       },
-      "node_counts": {
-        "and": 1,
-        "domain": 1,
-        "equality_chain": 1,
-        "greater_equal": 1,
-        "infinity": 1,
-        "interval": 2,
-        "member": 1,
-        "not_equal": 1,
-        "number": 6,
-        "set_builder": 1,
-        "subscript": 1,
-        "symbol": 6,
-        "union": 1
-      },
-      "semantic_invariants": {
-        "/op": "equality_chain",
-        "/args/0/op": "domain",
-        "/args/0/named_operator": "Dom",
-        "/args/0/args/0/op": "subscript",
-        "/args/0/args/0/args/0/op": "symbol",
-        "/args/0/args/0/args/0/name": "vm",
-        "/args/0/args/0/args/1/op": "number",
-        "/args/0/args/0/args/1/literal": "2",
-        "/args/1/op": "union",
-        "/args/1/args/0/op": "interval",
-        "/args/1/args/0/left_closed": true,
-        "/args/1/args/0/right_closed": false,
-        "/args/1/args/0/args/0/op": "number",
-        "/args/1/args/0/args/0/literal": "-2",
-        "/args/1/args/0/args/1/op": "number",
-        "/args/1/args/0/args/1/literal": "0",
-        "/args/1/args/1/op": "interval",
-        "/args/1/args/1/left_closed": false,
-        "/args/1/args/1/right_closed": false,
-        "/args/1/args/1/args/0/op": "number",
-        "/args/1/args/1/args/0/literal": "0",
-        "/args/1/args/1/args/1/op": "infinity",
-        "/args/1/args/1/args/1/sign": "+",
-        "/args/2/op": "set_builder",
-        "/args/2/args/0/op": "symbol",
-        "/args/2/args/0/name": "h",
-        "/args/2/args/1/op": "member",
-        "/args/2/args/1/set_name": "real numbers",
-        "/args/2/args/1/args/0/op": "symbol",
-        "/args/2/args/1/args/0/name": "h",
-        "/args/2/args/1/args/1/op": "symbol",
-        "/args/2/args/1/args/1/name": "R",
-        "/args/2/args/2/op": "and",
-        "/args/2/args/2/args/0/op": "greater_equal",
-        "/args/2/args/2/args/0/args/0/op": "symbol",
-        "/args/2/args/2/args/0/args/0/name": "h",
-        "/args/2/args/2/args/0/args/1/op": "number",
-        "/args/2/args/2/args/0/args/1/literal": "-2",
-        "/args/2/args/2/args/1/op": "not_equal",
-        "/args/2/args/2/args/1/args/0/op": "symbol",
-        "/args/2/args/2/args/1/args/0/name": "h",
-        "/args/2/args/2/args/1/args/1/op": "number",
-        "/args/2/args/2/args/1/args/1/literal": "0"
-      },
       "speech": {
         "language": "pt-BR",
         "evaluation_status": "specified; relation-level speech assessment is not implemented by the current evaluator",
@@ -3036,10 +2877,11 @@
           "duas igualdades ligam as três representações do domínio"
         ],
         "acceptable_examples": [
-          "O domínio de v m índice dois é o intervalo fechado em menos dois e aberto em zero, unido ao intervalo aberto de zero a mais infinito. É o conjunto dos h reais tais que h é maior ou igual a menos dois e h é diferente de zero.",
-          "Para vm subscrito dois, o domínio inclui menos dois, exclui zero e segue até infinito positivo: de menos dois a zero com a primeira ponta fechada e a segunda aberta, união com zero a mais infinito aberto; equivalentemente, h pertence aos reais, h é pelo menos menos dois e não é zero."
+          "O domínio de v m subscrito dois é igual à união de dois intervalos: de menos dois, incluído, a zero, excluído; e de zero, excluído, a mais infinito, aberto. É igual ao conjunto dos h pertencentes aos números reais tais que h é maior ou igual a menos dois e h é diferente de zero.",
+          "O domínio da função v m índice dois é o intervalo fechado à esquerda em menos dois e aberto à direita em zero, união com o intervalo aberto de zero a infinito positivo. Esse domínio é igual ao conjunto de h nos reais que satisfazem conjuntamente h maior ou igual a menos dois e h não igual a zero."
         ],
-        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation"
+        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation",
+        "examples_role": "complete illustrative readings; not pedagogical summaries or exact-match acceptance strings"
       },
       "segmentation": {
         "allowed": "one block or multiple associated ordered blocks",
@@ -3317,113 +3159,6 @@
           }
         ]
       },
-      "node_counts": {
-        "add": 3,
-        "call": 1,
-        "divide": 3,
-        "equality_chain": 1,
-        "group": 3,
-        "multiply": 4,
-        "number": 19,
-        "power": 8,
-        "subscript": 1,
-        "subtract": 2,
-        "symbol": 12
-      },
-      "semantic_invariants": {
-        "/op": "equality_chain",
-        "/args/0/op": "call",
-        "/args/0/args/0/op": "subscript",
-        "/args/0/args/0/args/0/op": "symbol",
-        "/args/0/args/0/args/0/name": "vm",
-        "/args/0/args/0/args/1/op": "number",
-        "/args/0/args/0/args/1/literal": "2",
-        "/args/0/args/1/op": "symbol",
-        "/args/0/args/1/name": "h",
-        "/args/1/op": "divide",
-        "/args/1/args/0/op": "subtract",
-        "/args/1/args/0/args/0/op": "power",
-        "/args/1/args/0/args/0/args/0/op": "group",
-        "/args/1/args/0/args/0/args/0/args/0/op": "add",
-        "/args/1/args/0/args/0/args/0/args/0/args/0/op": "number",
-        "/args/1/args/0/args/0/args/0/args/0/args/0/literal": "2",
-        "/args/1/args/0/args/0/args/0/args/0/args/1/op": "symbol",
-        "/args/1/args/0/args/0/args/0/args/0/args/1/name": "h",
-        "/args/1/args/0/args/0/args/1/op": "number",
-        "/args/1/args/0/args/0/args/1/literal": "3",
-        "/args/1/args/0/args/1/op": "power",
-        "/args/1/args/0/args/1/args/0/op": "number",
-        "/args/1/args/0/args/1/args/0/literal": "2",
-        "/args/1/args/0/args/1/args/1/op": "number",
-        "/args/1/args/0/args/1/args/1/literal": "3",
-        "/args/1/args/1/op": "symbol",
-        "/args/1/args/1/name": "h",
-        "/args/2/op": "divide",
-        "/args/2/args/0/op": "subtract",
-        "/args/2/args/0/args/0/op": "group",
-        "/args/2/args/0/args/0/args/0/op": "add",
-        "/args/2/args/0/args/0/args/0/args/0/op": "power",
-        "/args/2/args/0/args/0/args/0/args/0/args/0/op": "number",
-        "/args/2/args/0/args/0/args/0/args/0/args/0/literal": "2",
-        "/args/2/args/0/args/0/args/0/args/0/args/1/op": "number",
-        "/args/2/args/0/args/0/args/0/args/0/args/1/literal": "3",
-        "/args/2/args/0/args/0/args/0/args/1/op": "multiply",
-        "/args/2/args/0/args/0/args/0/args/1/notation": "dot",
-        "/args/2/args/0/args/0/args/0/args/1/args/0/op": "number",
-        "/args/2/args/0/args/0/args/0/args/1/args/0/literal": "3",
-        "/args/2/args/0/args/0/args/0/args/1/args/1/op": "power",
-        "/args/2/args/0/args/0/args/0/args/1/args/1/args/0/op": "number",
-        "/args/2/args/0/args/0/args/0/args/1/args/1/args/0/literal": "2",
-        "/args/2/args/0/args/0/args/0/args/1/args/1/args/1/op": "number",
-        "/args/2/args/0/args/0/args/0/args/1/args/1/args/1/literal": "2",
-        "/args/2/args/0/args/0/args/0/args/1/args/2/op": "symbol",
-        "/args/2/args/0/args/0/args/0/args/1/args/2/name": "h",
-        "/args/2/args/0/args/0/args/0/args/2/op": "multiply",
-        "/args/2/args/0/args/0/args/0/args/2/notation": "dot",
-        "/args/2/args/0/args/0/args/0/args/2/args/0/op": "number",
-        "/args/2/args/0/args/0/args/0/args/2/args/0/literal": "3",
-        "/args/2/args/0/args/0/args/0/args/2/args/1/op": "number",
-        "/args/2/args/0/args/0/args/0/args/2/args/1/literal": "2",
-        "/args/2/args/0/args/0/args/0/args/2/args/2/op": "power",
-        "/args/2/args/0/args/0/args/0/args/2/args/2/args/0/op": "symbol",
-        "/args/2/args/0/args/0/args/0/args/2/args/2/args/0/name": "h",
-        "/args/2/args/0/args/0/args/0/args/2/args/2/args/1/op": "number",
-        "/args/2/args/0/args/0/args/0/args/2/args/2/args/1/literal": "2",
-        "/args/2/args/0/args/0/args/0/args/3/op": "power",
-        "/args/2/args/0/args/0/args/0/args/3/args/0/op": "symbol",
-        "/args/2/args/0/args/0/args/0/args/3/args/0/name": "h",
-        "/args/2/args/0/args/0/args/0/args/3/args/1/op": "number",
-        "/args/2/args/0/args/0/args/0/args/3/args/1/literal": "3",
-        "/args/2/args/0/args/1/op": "power",
-        "/args/2/args/0/args/1/args/0/op": "number",
-        "/args/2/args/0/args/1/args/0/literal": "2",
-        "/args/2/args/0/args/1/args/1/op": "number",
-        "/args/2/args/0/args/1/args/1/literal": "3",
-        "/args/2/args/1/op": "symbol",
-        "/args/2/args/1/name": "h",
-        "/args/3/op": "divide",
-        "/args/3/args/0/op": "multiply",
-        "/args/3/args/0/notation": "implicit",
-        "/args/3/args/0/args/0/op": "symbol",
-        "/args/3/args/0/args/0/name": "h",
-        "/args/3/args/0/args/1/op": "group",
-        "/args/3/args/0/args/1/args/0/op": "add",
-        "/args/3/args/0/args/1/args/0/args/0/op": "number",
-        "/args/3/args/0/args/1/args/0/args/0/literal": "12",
-        "/args/3/args/0/args/1/args/0/args/1/op": "multiply",
-        "/args/3/args/0/args/1/args/0/args/1/notation": "implicit",
-        "/args/3/args/0/args/1/args/0/args/1/args/0/op": "number",
-        "/args/3/args/0/args/1/args/0/args/1/args/0/literal": "6",
-        "/args/3/args/0/args/1/args/0/args/1/args/1/op": "symbol",
-        "/args/3/args/0/args/1/args/0/args/1/args/1/name": "h",
-        "/args/3/args/0/args/1/args/0/args/2/op": "power",
-        "/args/3/args/0/args/1/args/0/args/2/args/0/op": "symbol",
-        "/args/3/args/0/args/1/args/0/args/2/args/0/name": "h",
-        "/args/3/args/0/args/1/args/0/args/2/args/1/op": "number",
-        "/args/3/args/0/args/1/args/0/args/2/args/1/literal": "2",
-        "/args/3/args/1/op": "symbol",
-        "/args/3/args/1/name": "h"
-      },
       "speech": {
         "language": "pt-BR",
         "evaluation_status": "specified; relation-level speech assessment is not implemented by the current evaluator",
@@ -3433,10 +3168,11 @@
           "produtos e agrupamentos explícitos; a continuação da segunda linha pertence à mesma cadeia; 2³ é o impresso nesta página"
         ],
         "acceptable_examples": [
-          "V m índice dois de h é o cubo de dois mais h menos dois ao cubo, dividido por h; é a soma dois ao cubo mais três vezes dois ao quadrado vezes h mais três vezes dois vezes h ao quadrado mais h ao cubo, toda menos dois ao cubo e dividida por h; é igual a h vezes a soma doze mais seis h mais h ao quadrado, sobre h.",
-          "A cadeia começa em vm subscrito dois de h, passa pelo quociente de dois mais h ao cubo menos dois ao cubo por h, depois pela expansão completa do cubo menos dois ao cubo sobre h e termina, na linha seguinte, em h multiplicado por doze mais seis h mais h ao quadrado, tudo dividido por h."
+          "V m subscrito dois de h é igual à fração cujo numerador é o cubo da soma de dois e h menos dois ao cubo e cujo denominador é h. É igual à fração cujo numerador é a soma, entre parênteses, de dois ao cubo, três vezes dois ao quadrado vezes h, três vezes dois vezes h ao quadrado e h ao cubo, menos dois ao cubo; o denominador é h. É igual à fração cujo numerador é h multiplicado pela soma de doze, seis vezes h e h ao quadrado, e cujo denominador é h.",
+          "V m índice dois aplicado a h é igual ao quociente da diferença entre a terceira potência da soma de dois e h e dois elevado a três por h. É igual ao quociente cujo numerador é, entre parênteses, dois elevado a três mais três multiplicado por dois elevado a dois e por h, mais três multiplicado por dois e por h elevado a dois, mais h elevado a três, fechando os parênteses e subtraindo dois elevado a três; o denominador desse quociente é h. É igual ao quociente do produto de h por toda a soma doze mais seis multiplicado por h mais o quadrado de h, dividido por h."
         ],
-        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation"
+        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation",
+        "examples_role": "complete illustrative readings; not pedagogical summaries or exact-match acceptance strings"
       },
       "segmentation": {
         "allowed": "one block or multiple associated ordered blocks",
@@ -3520,41 +3256,6 @@
           }
         ]
       },
-      "node_counts": {
-        "add": 1,
-        "call": 1,
-        "equality_chain": 1,
-        "multiply": 1,
-        "number": 4,
-        "power": 1,
-        "subscript": 1,
-        "symbol": 4
-      },
-      "semantic_invariants": {
-        "/op": "equality_chain",
-        "/args/0/op": "call",
-        "/args/0/args/0/op": "subscript",
-        "/args/0/args/0/args/0/op": "symbol",
-        "/args/0/args/0/args/0/name": "vm",
-        "/args/0/args/0/args/1/op": "number",
-        "/args/0/args/0/args/1/literal": "2",
-        "/args/0/args/1/op": "symbol",
-        "/args/0/args/1/name": "h",
-        "/args/1/op": "add",
-        "/args/1/args/0/op": "number",
-        "/args/1/args/0/literal": "12",
-        "/args/1/args/1/op": "multiply",
-        "/args/1/args/1/notation": "implicit",
-        "/args/1/args/1/args/0/op": "number",
-        "/args/1/args/1/args/0/literal": "6",
-        "/args/1/args/1/args/1/op": "symbol",
-        "/args/1/args/1/args/1/name": "h",
-        "/args/1/args/2/op": "power",
-        "/args/1/args/2/args/0/op": "symbol",
-        "/args/1/args/2/args/0/name": "h",
-        "/args/1/args/2/args/1/op": "number",
-        "/args/1/args/2/args/1/literal": "2"
-      },
       "speech": {
         "language": "pt-BR",
         "evaluation_status": "specified; relation-level speech assessment is not implemented by the current evaluator",
@@ -3562,10 +3263,11 @@
           "vm₂(h) igual à soma 12+6h+h²; preservar subscrito, multiplicação e quadrado"
         ],
         "acceptable_examples": [
-          "V m índice dois de h é doze mais seis vezes h mais h ao quadrado.",
-          "Vm subscrito dois aplicado a h é a soma de doze, seis h e o quadrado de h."
+          "V m subscrito dois aplicado a h é igual a doze mais seis multiplicado por h mais h ao quadrado.",
+          "V m índice dois de h é a soma de doze, do produto de seis por h e do quadrado de h."
         ],
-        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation"
+        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation",
+        "examples_role": "complete illustrative readings; not pedagogical summaries or exact-match acceptance strings"
       },
       "segmentation": {
         "allowed": "one block or multiple associated ordered blocks",
@@ -3693,59 +3395,6 @@
           }
         ]
       },
-      "node_counts": {
-        "add": 1,
-        "call": 3,
-        "divide": 1,
-        "equality_chain": 1,
-        "limit": 2,
-        "number": 6,
-        "subscript": 1,
-        "subtract": 1,
-        "symbol": 8
-      },
-      "semantic_invariants": {
-        "/op": "equality_chain",
-        "/args/0/op": "limit",
-        "/args/0/direction": "two-sided",
-        "/args/0/args/0/op": "symbol",
-        "/args/0/args/0/name": "h",
-        "/args/0/args/1/op": "number",
-        "/args/0/args/1/literal": "0",
-        "/args/0/args/2/op": "call",
-        "/args/0/args/2/args/0/op": "subscript",
-        "/args/0/args/2/args/0/args/0/op": "symbol",
-        "/args/0/args/2/args/0/args/0/name": "vm",
-        "/args/0/args/2/args/0/args/1/op": "number",
-        "/args/0/args/2/args/0/args/1/literal": "2",
-        "/args/0/args/2/args/1/op": "symbol",
-        "/args/0/args/2/args/1/name": "h",
-        "/args/1/op": "limit",
-        "/args/1/direction": "two-sided",
-        "/args/1/args/0/op": "symbol",
-        "/args/1/args/0/name": "h",
-        "/args/1/args/1/op": "number",
-        "/args/1/args/1/literal": "0",
-        "/args/1/args/2/op": "divide",
-        "/args/1/args/2/args/0/op": "subtract",
-        "/args/1/args/2/args/0/args/0/op": "call",
-        "/args/1/args/2/args/0/args/0/args/0/op": "symbol",
-        "/args/1/args/2/args/0/args/0/args/0/name": "s",
-        "/args/1/args/2/args/0/args/0/args/1/op": "add",
-        "/args/1/args/2/args/0/args/0/args/1/args/0/op": "number",
-        "/args/1/args/2/args/0/args/0/args/1/args/0/literal": "2",
-        "/args/1/args/2/args/0/args/0/args/1/args/1/op": "symbol",
-        "/args/1/args/2/args/0/args/0/args/1/args/1/name": "h",
-        "/args/1/args/2/args/0/args/1/op": "call",
-        "/args/1/args/2/args/0/args/1/args/0/op": "symbol",
-        "/args/1/args/2/args/0/args/1/args/0/name": "s",
-        "/args/1/args/2/args/0/args/1/args/1/op": "number",
-        "/args/1/args/2/args/0/args/1/args/1/literal": "2",
-        "/args/1/args/2/args/1/op": "symbol",
-        "/args/1/args/2/args/1/name": "h",
-        "/args/2/op": "number",
-        "/args/2/literal": "12"
-      },
       "speech": {
         "language": "pt-BR",
         "evaluation_status": "specified; relation-level speech assessment is not implemented by the current evaluator",
@@ -3754,10 +3403,11 @@
           "primeiro operando vm₂(h); segundo a diferença s(2+h)−s(2) dividida por h; cadeia termina em 12"
         ],
         "acceptable_examples": [
-          "O limite de v m índice dois de h quando h tende a zero é igual ao limite de s de dois mais h menos s de dois sobre h, quando h tende a zero, e é doze.",
-          "Quando h se aproxima de zero, o limite de vm subscrito dois de h coincide com o limite da razão da diferença s de dois mais h menos s de dois por h; ambos valem doze."
+          "O limite de v m subscrito dois de h, quando h tende a zero, é igual ao limite, quando h tende a zero, da fração cujo numerador é s avaliada na soma de dois e h menos s de dois e cujo denominador é h. É igual a doze.",
+          "Quando h se aproxima de zero, o limite de v m índice dois aplicado a h é igual ao limite do quociente da diferença entre s na soma dois mais h e s de dois por h, também quando h tende a zero. Essa cadeia é igual a doze."
         ],
-        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation"
+        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation",
+        "examples_role": "complete illustrative readings; not pedagogical summaries or exact-match acceptance strings"
       },
       "segmentation": {
         "allowed": "one block or multiple associated ordered blocks",
@@ -3949,80 +3599,6 @@
           }
         ]
       },
-      "node_counts": {
-        "add": 3,
-        "call": 3,
-        "divide": 2,
-        "equality_chain": 1,
-        "group": 2,
-        "limit": 2,
-        "number": 4,
-        "power": 2,
-        "subtract": 3,
-        "symbol": 16
-      },
-      "semantic_invariants": {
-        "/op": "equality_chain",
-        "/args/0/op": "call",
-        "/args/0/args/0/op": "symbol",
-        "/args/0/args/0/name": "v",
-        "/args/0/args/1/op": "symbol",
-        "/args/0/args/1/name": "t",
-        "/args/1/op": "limit",
-        "/args/1/direction": "two-sided",
-        "/args/1/args/0/op": "symbol",
-        "/args/1/args/0/name": "h",
-        "/args/1/args/1/op": "number",
-        "/args/1/args/1/literal": "0",
-        "/args/1/args/2/op": "divide",
-        "/args/1/args/2/args/0/op": "subtract",
-        "/args/1/args/2/args/0/args/0/op": "call",
-        "/args/1/args/2/args/0/args/0/args/0/op": "symbol",
-        "/args/1/args/2/args/0/args/0/args/0/name": "s",
-        "/args/1/args/2/args/0/args/0/args/1/op": "add",
-        "/args/1/args/2/args/0/args/0/args/1/args/0/op": "symbol",
-        "/args/1/args/2/args/0/args/0/args/1/args/0/name": "t",
-        "/args/1/args/2/args/0/args/0/args/1/args/1/op": "symbol",
-        "/args/1/args/2/args/0/args/0/args/1/args/1/name": "h",
-        "/args/1/args/2/args/0/args/1/op": "call",
-        "/args/1/args/2/args/0/args/1/args/0/op": "symbol",
-        "/args/1/args/2/args/0/args/1/args/0/name": "s",
-        "/args/1/args/2/args/0/args/1/args/1/op": "symbol",
-        "/args/1/args/2/args/0/args/1/args/1/name": "t",
-        "/args/1/args/2/args/1/op": "subtract",
-        "/args/1/args/2/args/1/args/0/op": "group",
-        "/args/1/args/2/args/1/args/0/args/0/op": "add",
-        "/args/1/args/2/args/1/args/0/args/0/args/0/op": "symbol",
-        "/args/1/args/2/args/1/args/0/args/0/args/0/name": "t",
-        "/args/1/args/2/args/1/args/0/args/0/args/1/op": "symbol",
-        "/args/1/args/2/args/1/args/0/args/0/args/1/name": "h",
-        "/args/1/args/2/args/1/args/1/op": "symbol",
-        "/args/1/args/2/args/1/args/1/name": "t",
-        "/args/2/op": "limit",
-        "/args/2/direction": "two-sided",
-        "/args/2/args/0/op": "symbol",
-        "/args/2/args/0/name": "h",
-        "/args/2/args/1/op": "number",
-        "/args/2/args/1/literal": "0",
-        "/args/2/args/2/op": "divide",
-        "/args/2/args/2/args/0/op": "subtract",
-        "/args/2/args/2/args/0/args/0/op": "power",
-        "/args/2/args/2/args/0/args/0/args/0/op": "group",
-        "/args/2/args/2/args/0/args/0/args/0/args/0/op": "add",
-        "/args/2/args/2/args/0/args/0/args/0/args/0/args/0/op": "symbol",
-        "/args/2/args/2/args/0/args/0/args/0/args/0/args/0/name": "t",
-        "/args/2/args/2/args/0/args/0/args/0/args/0/args/1/op": "symbol",
-        "/args/2/args/2/args/0/args/0/args/0/args/0/args/1/name": "h",
-        "/args/2/args/2/args/0/args/0/args/1/op": "number",
-        "/args/2/args/2/args/0/args/0/args/1/literal": "3",
-        "/args/2/args/2/args/0/args/1/op": "power",
-        "/args/2/args/2/args/0/args/1/args/0/op": "symbol",
-        "/args/2/args/2/args/0/args/1/args/0/name": "t",
-        "/args/2/args/2/args/0/args/1/args/1/op": "number",
-        "/args/2/args/2/args/0/args/1/args/1/literal": "3",
-        "/args/2/args/2/args/1/op": "symbol",
-        "/args/2/args/2/args/1/name": "h"
-      },
       "speech": {
         "language": "pt-BR",
         "evaluation_status": "specified; relation-level speech assessment is not implemented by the current evaluator",
@@ -4032,10 +3608,11 @@
           "segundo quociente tem numerador (t+h)³−t³ e denominador h; preservar cadeia"
         ],
         "acceptable_examples": [
-          "V de t é o limite, quando h tende a zero, de s avaliada na soma t mais h menos s de t, dividido pela diferença entre a soma t mais h e t; é igual ao limite, quando h tende a zero, do cubo da soma de t e h menos t ao cubo, tudo dividido por h.",
-          "A velocidade em t é dada pelo limite em h zero do quociente da diferença s de t mais h menos s de t pela diferença da soma t mais h e t, igual ao limite em h zero da diferença entre o cubo da soma de t e h e o cubo de t, sobre h."
+          "V de t é igual ao limite, quando h tende a zero, da fração cujo numerador é s avaliada na soma de t e h menos s de t e cujo denominador é a soma de t e h, entre parênteses, menos t. É igual ao limite, quando h tende a zero, da fração cujo numerador é o cubo da soma de t e h menos t ao cubo e cujo denominador é h.",
+          "V de t é igual ao limite do quociente da diferença entre s na soma t mais h e s de t pela diferença entre a soma t mais h e t, quando h tende a zero. É igual ao limite do quociente da diferença entre a terceira potência da soma de t e h e a terceira potência de t por h, quando h tende a zero."
         ],
-        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation"
+        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation",
+        "examples_role": "complete illustrative readings; not pedagogical summaries or exact-match acceptance strings"
       },
       "segmentation": {
         "allowed": "one block or multiple associated ordered blocks",
@@ -4287,102 +3864,6 @@
           }
         ]
       },
-      "node_counts": {
-        "add": 3,
-        "equality_chain": 1,
-        "group": 3,
-        "multiply": 5,
-        "number": 13,
-        "power": 9,
-        "subtract": 2,
-        "symbol": 15
-      },
-      "semantic_invariants": {
-        "/op": "equality_chain",
-        "/args/0/op": "subtract",
-        "/args/0/args/0/op": "power",
-        "/args/0/args/0/args/0/op": "group",
-        "/args/0/args/0/args/0/args/0/op": "add",
-        "/args/0/args/0/args/0/args/0/args/0/op": "symbol",
-        "/args/0/args/0/args/0/args/0/args/0/name": "t",
-        "/args/0/args/0/args/0/args/0/args/1/op": "symbol",
-        "/args/0/args/0/args/0/args/0/args/1/name": "h",
-        "/args/0/args/0/args/1/op": "number",
-        "/args/0/args/0/args/1/literal": "3",
-        "/args/0/args/1/op": "power",
-        "/args/0/args/1/args/0/op": "symbol",
-        "/args/0/args/1/args/0/name": "t",
-        "/args/0/args/1/args/1/op": "number",
-        "/args/0/args/1/args/1/literal": "3",
-        "/args/1/op": "subtract",
-        "/args/1/args/0/op": "group",
-        "/args/1/args/0/args/0/op": "add",
-        "/args/1/args/0/args/0/args/0/op": "power",
-        "/args/1/args/0/args/0/args/0/args/0/op": "symbol",
-        "/args/1/args/0/args/0/args/0/args/0/name": "t",
-        "/args/1/args/0/args/0/args/0/args/1/op": "number",
-        "/args/1/args/0/args/0/args/0/args/1/literal": "3",
-        "/args/1/args/0/args/0/args/1/op": "multiply",
-        "/args/1/args/0/args/0/args/1/notation": "implicit",
-        "/args/1/args/0/args/0/args/1/args/0/op": "number",
-        "/args/1/args/0/args/0/args/1/args/0/literal": "3",
-        "/args/1/args/0/args/0/args/1/args/1/op": "power",
-        "/args/1/args/0/args/0/args/1/args/1/args/0/op": "symbol",
-        "/args/1/args/0/args/0/args/1/args/1/args/0/name": "t",
-        "/args/1/args/0/args/0/args/1/args/1/args/1/op": "number",
-        "/args/1/args/0/args/0/args/1/args/1/args/1/literal": "2",
-        "/args/1/args/0/args/0/args/1/args/2/op": "symbol",
-        "/args/1/args/0/args/0/args/1/args/2/name": "h",
-        "/args/1/args/0/args/0/args/2/op": "multiply",
-        "/args/1/args/0/args/0/args/2/notation": "implicit",
-        "/args/1/args/0/args/0/args/2/args/0/op": "number",
-        "/args/1/args/0/args/0/args/2/args/0/literal": "3",
-        "/args/1/args/0/args/0/args/2/args/1/op": "symbol",
-        "/args/1/args/0/args/0/args/2/args/1/name": "t",
-        "/args/1/args/0/args/0/args/2/args/2/op": "power",
-        "/args/1/args/0/args/0/args/2/args/2/args/0/op": "symbol",
-        "/args/1/args/0/args/0/args/2/args/2/args/0/name": "h",
-        "/args/1/args/0/args/0/args/2/args/2/args/1/op": "number",
-        "/args/1/args/0/args/0/args/2/args/2/args/1/literal": "2",
-        "/args/1/args/0/args/0/args/3/op": "power",
-        "/args/1/args/0/args/0/args/3/args/0/op": "symbol",
-        "/args/1/args/0/args/0/args/3/args/0/name": "h",
-        "/args/1/args/0/args/0/args/3/args/1/op": "number",
-        "/args/1/args/0/args/0/args/3/args/1/literal": "3",
-        "/args/1/args/1/op": "power",
-        "/args/1/args/1/args/0/op": "symbol",
-        "/args/1/args/1/args/0/name": "t",
-        "/args/1/args/1/args/1/op": "number",
-        "/args/1/args/1/args/1/literal": "3",
-        "/args/2/op": "multiply",
-        "/args/2/notation": "implicit",
-        "/args/2/args/0/op": "symbol",
-        "/args/2/args/0/name": "h",
-        "/args/2/args/1/op": "group",
-        "/args/2/args/1/args/0/op": "add",
-        "/args/2/args/1/args/0/args/0/op": "multiply",
-        "/args/2/args/1/args/0/args/0/notation": "implicit",
-        "/args/2/args/1/args/0/args/0/args/0/op": "number",
-        "/args/2/args/1/args/0/args/0/args/0/literal": "3",
-        "/args/2/args/1/args/0/args/0/args/1/op": "power",
-        "/args/2/args/1/args/0/args/0/args/1/args/0/op": "symbol",
-        "/args/2/args/1/args/0/args/0/args/1/args/0/name": "t",
-        "/args/2/args/1/args/0/args/0/args/1/args/1/op": "number",
-        "/args/2/args/1/args/0/args/0/args/1/args/1/literal": "2",
-        "/args/2/args/1/args/0/args/1/op": "multiply",
-        "/args/2/args/1/args/0/args/1/notation": "implicit",
-        "/args/2/args/1/args/0/args/1/args/0/op": "number",
-        "/args/2/args/1/args/0/args/1/args/0/literal": "3",
-        "/args/2/args/1/args/0/args/1/args/1/op": "symbol",
-        "/args/2/args/1/args/0/args/1/args/1/name": "t",
-        "/args/2/args/1/args/0/args/1/args/2/op": "symbol",
-        "/args/2/args/1/args/0/args/1/args/2/name": "h",
-        "/args/2/args/1/args/0/args/2/op": "power",
-        "/args/2/args/1/args/0/args/2/args/0/op": "symbol",
-        "/args/2/args/1/args/0/args/2/args/0/name": "h",
-        "/args/2/args/1/args/0/args/2/args/1/op": "number",
-        "/args/2/args/1/args/0/args/2/args/1/literal": "2"
-      },
       "speech": {
         "language": "pt-BR",
         "evaluation_status": "specified; relation-level speech assessment is not implemented by the current evaluator",
@@ -4391,10 +3872,11 @@
           "último membro é o produto de h pelo grupo 3t²+3th+h²; produtos implícitos não são chamadas de função"
         ],
         "acceptable_examples": [
-          "O cubo da soma de t e h menos t ao cubo é igual à soma agrupada de t ao cubo, três t ao quadrado h, três t h ao quadrado e h ao cubo, menos t ao cubo; é igual a h vezes o grupo três t ao quadrado mais três t h mais h ao quadrado.",
-          "A diferença entre a soma de t e h elevada a três e t elevado a três é a expansão t ao cubo mais três vezes t ao quadrado vezes h mais três vezes t vezes h ao quadrado mais h ao cubo, menos t ao cubo; a fatoração é h multiplicando três t ao quadrado mais três t h mais h ao quadrado."
+          "O cubo da soma de t e h menos t ao cubo é igual à soma, entre parênteses, de t ao cubo, três vezes t ao quadrado vezes h, três vezes t vezes h ao quadrado e h ao cubo, menos t ao cubo. É igual a h multiplicado por toda a soma três vezes t ao quadrado mais três vezes t vezes h mais h ao quadrado.",
+          "A diferença entre a terceira potência da soma de t e h e a terceira potência de t é igual à expressão entre parênteses t elevado a três mais três multiplicado pelo quadrado de t e por h, mais três multiplicado por t e pelo quadrado de h, mais h elevado a três, fechando os parênteses e subtraindo t elevado a três. É igual ao produto de h pela soma de três multiplicado pelo quadrado de t, três multiplicado por t e por h, e o quadrado de h."
         ],
-        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation"
+        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation",
+        "examples_role": "complete illustrative readings; not pedagogical summaries or exact-match acceptance strings"
       },
       "segmentation": {
         "allowed": "one block or multiple associated ordered blocks",
@@ -4666,116 +4148,6 @@
           }
         ]
       },
-      "node_counts": {
-        "add": 3,
-        "call": 1,
-        "divide": 1,
-        "equality_chain": 1,
-        "group": 2,
-        "limit": 2,
-        "multiply": 7,
-        "number": 16,
-        "power": 6,
-        "symbol": 16
-      },
-      "semantic_invariants": {
-        "/op": "equality_chain",
-        "/args/0/op": "call",
-        "/args/0/args/0/op": "symbol",
-        "/args/0/args/0/name": "v",
-        "/args/0/args/1/op": "symbol",
-        "/args/0/args/1/name": "t",
-        "/args/1/op": "limit",
-        "/args/1/direction": "two-sided",
-        "/args/1/args/0/op": "symbol",
-        "/args/1/args/0/name": "h",
-        "/args/1/args/1/op": "number",
-        "/args/1/args/1/literal": "0",
-        "/args/1/args/2/op": "divide",
-        "/args/1/args/2/args/0/op": "multiply",
-        "/args/1/args/2/args/0/notation": "implicit",
-        "/args/1/args/2/args/0/args/0/op": "symbol",
-        "/args/1/args/2/args/0/args/0/name": "h",
-        "/args/1/args/2/args/0/args/1/op": "group",
-        "/args/1/args/2/args/0/args/1/args/0/op": "add",
-        "/args/1/args/2/args/0/args/1/args/0/args/0/op": "multiply",
-        "/args/1/args/2/args/0/args/1/args/0/args/0/notation": "implicit",
-        "/args/1/args/2/args/0/args/1/args/0/args/0/args/0/op": "number",
-        "/args/1/args/2/args/0/args/1/args/0/args/0/args/0/literal": "3",
-        "/args/1/args/2/args/0/args/1/args/0/args/0/args/1/op": "power",
-        "/args/1/args/2/args/0/args/1/args/0/args/0/args/1/args/0/op": "symbol",
-        "/args/1/args/2/args/0/args/1/args/0/args/0/args/1/args/0/name": "t",
-        "/args/1/args/2/args/0/args/1/args/0/args/0/args/1/args/1/op": "number",
-        "/args/1/args/2/args/0/args/1/args/0/args/0/args/1/args/1/literal": "2",
-        "/args/1/args/2/args/0/args/1/args/0/args/1/op": "multiply",
-        "/args/1/args/2/args/0/args/1/args/0/args/1/notation": "implicit",
-        "/args/1/args/2/args/0/args/1/args/0/args/1/args/0/op": "number",
-        "/args/1/args/2/args/0/args/1/args/0/args/1/args/0/literal": "3",
-        "/args/1/args/2/args/0/args/1/args/0/args/1/args/1/op": "symbol",
-        "/args/1/args/2/args/0/args/1/args/0/args/1/args/1/name": "t",
-        "/args/1/args/2/args/0/args/1/args/0/args/1/args/2/op": "symbol",
-        "/args/1/args/2/args/0/args/1/args/0/args/1/args/2/name": "h",
-        "/args/1/args/2/args/0/args/1/args/0/args/2/op": "power",
-        "/args/1/args/2/args/0/args/1/args/0/args/2/args/0/op": "symbol",
-        "/args/1/args/2/args/0/args/1/args/0/args/2/args/0/name": "h",
-        "/args/1/args/2/args/0/args/1/args/0/args/2/args/1/op": "number",
-        "/args/1/args/2/args/0/args/1/args/0/args/2/args/1/literal": "2",
-        "/args/1/args/2/args/1/op": "symbol",
-        "/args/1/args/2/args/1/name": "h",
-        "/args/2/op": "limit",
-        "/args/2/direction": "two-sided",
-        "/args/2/args/0/op": "symbol",
-        "/args/2/args/0/name": "h",
-        "/args/2/args/1/op": "number",
-        "/args/2/args/1/literal": "0",
-        "/args/2/args/2/op": "group",
-        "/args/2/args/2/args/0/op": "add",
-        "/args/2/args/2/args/0/args/0/op": "multiply",
-        "/args/2/args/2/args/0/args/0/notation": "implicit",
-        "/args/2/args/2/args/0/args/0/args/0/op": "number",
-        "/args/2/args/2/args/0/args/0/args/0/literal": "3",
-        "/args/2/args/2/args/0/args/0/args/1/op": "power",
-        "/args/2/args/2/args/0/args/0/args/1/args/0/op": "symbol",
-        "/args/2/args/2/args/0/args/0/args/1/args/0/name": "t",
-        "/args/2/args/2/args/0/args/0/args/1/args/1/op": "number",
-        "/args/2/args/2/args/0/args/0/args/1/args/1/literal": "2",
-        "/args/2/args/2/args/0/args/1/op": "multiply",
-        "/args/2/args/2/args/0/args/1/notation": "implicit",
-        "/args/2/args/2/args/0/args/1/args/0/op": "number",
-        "/args/2/args/2/args/0/args/1/args/0/literal": "3",
-        "/args/2/args/2/args/0/args/1/args/1/op": "symbol",
-        "/args/2/args/2/args/0/args/1/args/1/name": "t",
-        "/args/2/args/2/args/0/args/1/args/2/op": "symbol",
-        "/args/2/args/2/args/0/args/1/args/2/name": "h",
-        "/args/2/args/2/args/0/args/2/op": "power",
-        "/args/2/args/2/args/0/args/2/args/0/op": "symbol",
-        "/args/2/args/2/args/0/args/2/args/0/name": "h",
-        "/args/2/args/2/args/0/args/2/args/1/op": "number",
-        "/args/2/args/2/args/0/args/2/args/1/literal": "2",
-        "/args/3/op": "add",
-        "/args/3/args/0/op": "multiply",
-        "/args/3/args/0/notation": "implicit",
-        "/args/3/args/0/args/0/op": "number",
-        "/args/3/args/0/args/0/literal": "3",
-        "/args/3/args/0/args/1/op": "power",
-        "/args/3/args/0/args/1/args/0/op": "symbol",
-        "/args/3/args/0/args/1/args/0/name": "t",
-        "/args/3/args/0/args/1/args/1/op": "number",
-        "/args/3/args/0/args/1/args/1/literal": "2",
-        "/args/3/args/1/op": "number",
-        "/args/3/args/1/literal": "0",
-        "/args/3/args/2/op": "number",
-        "/args/3/args/2/literal": "0",
-        "/args/4/op": "multiply",
-        "/args/4/notation": "implicit",
-        "/args/4/args/0/op": "number",
-        "/args/4/args/0/literal": "3",
-        "/args/4/args/1/op": "power",
-        "/args/4/args/1/args/0/op": "symbol",
-        "/args/4/args/1/args/0/name": "t",
-        "/args/4/args/1/args/1/op": "number",
-        "/args/4/args/1/args/1/literal": "2"
-      },
       "speech": {
         "language": "pt-BR",
         "evaluation_status": "specified; relation-level speech assessment is not implemented by the current evaluator",
@@ -4784,10 +4156,11 @@
           "nos dois limites h tende a zero; preservar divisão por h, fator comum e etapas de substituição"
         ],
         "acceptable_examples": [
-          "V de t é o limite em h tendendo a zero de h vezes a soma, entre parênteses, de três t ao quadrado, três t h e h ao quadrado, tudo sobre h; é igual ao limite, também em h zero, de três t ao quadrado mais três t h mais h ao quadrado; é igual a três t ao quadrado mais zero mais zero; é igual a três t ao quadrado.",
-          "A velocidade v de t coincide com o limite do produto de h por toda a soma três t ao quadrado mais três t h mais h ao quadrado, dividido por h, quando h tende a zero. A cadeia continua com o limite da soma, na mesma aproximação h zero, depois três t ao quadrado mais zero mais zero e finalmente três t ao quadrado."
+          "V de t é igual ao limite, quando h tende a zero, da fração cujo numerador é h multiplicado pela soma de três vezes t ao quadrado, três vezes t vezes h e h ao quadrado, e cujo denominador é h. É igual ao limite, quando h tende a zero, da soma três vezes t ao quadrado mais três vezes t vezes h mais h ao quadrado. É igual a três vezes t ao quadrado mais zero mais zero. É igual a três vezes t ao quadrado.",
+          "V de t é igual ao limite do quociente do produto de h por toda a soma três multiplicado pelo quadrado de t mais três multiplicado por t e por h mais o quadrado de h, dividido por h, quando h tende a zero. É igual ao limite da soma três multiplicado pelo quadrado de t mais três multiplicado por t e por h mais o quadrado de h, quando h tende a zero. É igual à soma de três multiplicado pelo quadrado de t, zero e zero. É igual a três multiplicado pelo quadrado de t."
         ],
-        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation"
+        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation",
+        "examples_role": "complete illustrative readings; not pedagogical summaries or exact-match acceptance strings"
       },
       "segmentation": {
         "allowed": "one block or multiple associated ordered blocks",
@@ -4856,32 +4229,6 @@
           }
         ]
       },
-      "node_counts": {
-        "add": 1,
-        "call": 2,
-        "divide": 1,
-        "subtract": 1,
-        "symbol": 6
-      },
-      "semantic_invariants": {
-        "/op": "divide",
-        "/args/0/op": "subtract",
-        "/args/0/args/0/op": "call",
-        "/args/0/args/0/args/0/op": "symbol",
-        "/args/0/args/0/args/0/name": "s",
-        "/args/0/args/0/args/1/op": "add",
-        "/args/0/args/0/args/1/args/0/op": "symbol",
-        "/args/0/args/0/args/1/args/0/name": "t",
-        "/args/0/args/0/args/1/args/1/op": "symbol",
-        "/args/0/args/0/args/1/args/1/name": "h",
-        "/args/0/args/1/op": "call",
-        "/args/0/args/1/args/0/op": "symbol",
-        "/args/0/args/1/args/0/name": "s",
-        "/args/0/args/1/args/1/op": "symbol",
-        "/args/0/args/1/args/1/name": "t",
-        "/args/1/op": "symbol",
-        "/args/1/name": "h"
-      },
       "speech": {
         "language": "pt-BR",
         "evaluation_status": "specified; relation-level speech assessment is not implemented by the current evaluator",
@@ -4890,10 +4237,11 @@
           "associação ao item 1, antes da continuação de modo a descobrir; não reiniciar lista"
         ],
         "acceptable_examples": [
-          "S de t mais h menos s de t, tudo dividido por h.",
-          "O numerador é s avaliada na soma de t e h menos s de t, e o denominador é h."
+          "A fração tem como numerador a diferença entre s avaliada na soma de t e h e s de t; seu denominador é h.",
+          "O quociente da diferença s na soma t mais h menos s de t por h, com toda essa diferença no numerador."
         ],
-        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation"
+        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation",
+        "examples_role": "complete illustrative readings; not pedagogical summaries or exact-match acceptance strings"
       },
       "segmentation": {
         "allowed": "one block or multiple associated ordered blocks",
@@ -4963,34 +4311,6 @@
           }
         ]
       },
-      "node_counts": {
-        "call": 1,
-        "divide": 1,
-        "equality_chain": 1,
-        "greater_than": 1,
-        "number": 2,
-        "symbol": 4,
-        "with_condition": 1
-      },
-      "semantic_invariants": {
-        "/op": "with_condition",
-        "/args/0/op": "equality_chain",
-        "/args/0/args/0/op": "call",
-        "/args/0/args/0/args/0/op": "symbol",
-        "/args/0/args/0/args/0/name": "s",
-        "/args/0/args/0/args/1/op": "symbol",
-        "/args/0/args/0/args/1/name": "t",
-        "/args/0/args/1/op": "divide",
-        "/args/0/args/1/args/0/op": "number",
-        "/args/0/args/1/args/0/literal": "1",
-        "/args/0/args/1/args/1/op": "symbol",
-        "/args/0/args/1/args/1/name": "t",
-        "/args/1/op": "greater_than",
-        "/args/1/args/0/op": "symbol",
-        "/args/1/args/0/name": "t",
-        "/args/1/args/1/op": "number",
-        "/args/1/args/1/literal": "0"
-      },
       "speech": {
         "language": "pt-BR",
         "evaluation_status": "specified; relation-level speech assessment is not implemented by the current evaluator",
@@ -4998,10 +4318,11 @@
           "s(t) igual ao quociente 1/t; condição t maior que zero"
         ],
         "acceptable_examples": [
-          "S de t é um dividido por t, para t maior que zero.",
-          "Para t positivo, a posição s de t é o inverso de t."
+          "S de t é igual à fração de numerador um e denominador t, com t maior que zero.",
+          "Para t maior que zero, a posição s de t é igual a um dividido por t."
         ],
-        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation"
+        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation",
+        "examples_role": "complete illustrative readings; not pedagogical summaries or exact-match acceptance strings"
       },
       "segmentation": {
         "allowed": "one block or multiple associated ordered blocks",
@@ -5170,72 +4491,6 @@
           }
         ]
       },
-      "node_counts": {
-        "add": 3,
-        "call": 2,
-        "divide": 5,
-        "ellipsis": 1,
-        "equality_chain": 1,
-        "group": 1,
-        "multiply": 1,
-        "negate": 1,
-        "number": 9,
-        "subtract": 2,
-        "symbol": 7
-      },
-      "semantic_invariants": {
-        "/op": "equality_chain",
-        "/args/0/op": "divide",
-        "/args/0/args/0/op": "subtract",
-        "/args/0/args/0/args/0/op": "call",
-        "/args/0/args/0/args/0/args/0/op": "symbol",
-        "/args/0/args/0/args/0/args/0/name": "s",
-        "/args/0/args/0/args/0/args/1/op": "add",
-        "/args/0/args/0/args/0/args/1/args/0/op": "number",
-        "/args/0/args/0/args/0/args/1/args/0/literal": "3",
-        "/args/0/args/0/args/0/args/1/args/1/op": "symbol",
-        "/args/0/args/0/args/0/args/1/args/1/name": "h",
-        "/args/0/args/0/args/1/op": "call",
-        "/args/0/args/0/args/1/args/0/op": "symbol",
-        "/args/0/args/0/args/1/args/0/name": "s",
-        "/args/0/args/0/args/1/args/1/op": "number",
-        "/args/0/args/0/args/1/args/1/literal": "3",
-        "/args/0/args/1/op": "symbol",
-        "/args/0/args/1/name": "h",
-        "/args/1/op": "divide",
-        "/args/1/args/0/op": "subtract",
-        "/args/1/args/0/args/0/op": "divide",
-        "/args/1/args/0/args/0/args/0/op": "number",
-        "/args/1/args/0/args/0/args/0/literal": "1",
-        "/args/1/args/0/args/0/args/1/op": "add",
-        "/args/1/args/0/args/0/args/1/args/0/op": "number",
-        "/args/1/args/0/args/0/args/1/args/0/literal": "3",
-        "/args/1/args/0/args/0/args/1/args/1/op": "symbol",
-        "/args/1/args/0/args/0/args/1/args/1/name": "h",
-        "/args/1/args/0/args/1/op": "divide",
-        "/args/1/args/0/args/1/args/0/op": "number",
-        "/args/1/args/0/args/1/args/0/literal": "1",
-        "/args/1/args/0/args/1/args/1/op": "number",
-        "/args/1/args/0/args/1/args/1/literal": "3",
-        "/args/1/args/1/op": "symbol",
-        "/args/1/args/1/name": "h",
-        "/args/2/op": "ellipsis",
-        "/args/2/meaning": "omitted intermediate steps",
-        "/args/3/op": "negate",
-        "/args/3/args/0/op": "divide",
-        "/args/3/args/0/args/0/op": "number",
-        "/args/3/args/0/args/0/literal": "1",
-        "/args/3/args/0/args/1/op": "multiply",
-        "/args/3/args/0/args/1/notation": "implicit",
-        "/args/3/args/0/args/1/args/0/op": "group",
-        "/args/3/args/0/args/1/args/0/args/0/op": "add",
-        "/args/3/args/0/args/1/args/0/args/0/args/0/op": "number",
-        "/args/3/args/0/args/1/args/0/args/0/args/0/literal": "3",
-        "/args/3/args/0/args/1/args/0/args/0/args/1/op": "symbol",
-        "/args/3/args/0/args/1/args/0/args/0/args/1/name": "h",
-        "/args/3/args/0/args/1/args/1/op": "number",
-        "/args/3/args/0/args/1/args/1/literal": "3"
-      },
       "speech": {
         "language": "pt-BR",
         "evaluation_status": "specified; relation-level speech assessment is not implemented by the current evaluator",
@@ -5247,10 +4502,11 @@
           "associação ao segundo item da lista"
         ],
         "acceptable_examples": [
-          "S avaliada na soma três mais h, menos s de três, tudo sobre h, é igual a uma fração de denominador h cujo numerador é um dividido pela soma de três e h, menos um terço; seguem reticências de etapas omitidas; é igual a menos um sobre o produto da soma três mais h, entre parênteses, por três.",
-          "A razão da diferença s de três mais h menos s de três por h é a diferença entre o inverso da soma de três e h e um terço, toda dividida por h; após passos omitidos, menos o inverso do produto da soma três mais h por três."
+          "A fração cujo numerador é s avaliada na soma de três e h menos s de três e cujo denominador é h é igual a uma fração externa de denominador h. O numerador dessa fração externa é a diferença entre duas frações internas: a primeira tem numerador um e denominador igual à soma de três e h; a segunda tem numerador um e denominador três. A cadeia prossegue com reticências de etapas omitidas e é igual a menos uma fração de numerador um e denominador igual ao produto da soma de três e h, entre parênteses, por três.",
+          "O quociente da diferença entre s na soma três mais h e s de três por h é igual ao quociente cujo numerador é um dividido pela soma de três e h menos um dividido por três, e cujo denominador externo é h. Segue uma igualdade com reticências que representam passos omitidos e outra igualdade com o negativo do quociente de um pelo produto da soma três mais h por três."
         ],
-        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation"
+        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation",
+        "examples_role": "complete illustrative readings; not pedagogical summaries or exact-match acceptance strings"
       },
       "segmentation": {
         "allowed": "one block or multiple associated ordered blocks",
@@ -5412,73 +4668,6 @@
           }
         ]
       },
-      "node_counts": {
-        "add": 2,
-        "call": 3,
-        "divide": 2,
-        "ellipsis": 1,
-        "equality_chain": 1,
-        "group": 1,
-        "limit": 2,
-        "multiply": 1,
-        "negate": 1,
-        "number": 3,
-        "subtract": 1,
-        "symbol": 13
-      },
-      "semantic_invariants": {
-        "/op": "equality_chain",
-        "/args/0/op": "call",
-        "/args/0/args/0/op": "symbol",
-        "/args/0/args/0/name": "v",
-        "/args/0/args/1/op": "symbol",
-        "/args/0/args/1/name": "t",
-        "/args/1/op": "limit",
-        "/args/1/direction": "two-sided",
-        "/args/1/args/0/op": "symbol",
-        "/args/1/args/0/name": "h",
-        "/args/1/args/1/op": "number",
-        "/args/1/args/1/literal": "0",
-        "/args/1/args/2/op": "divide",
-        "/args/1/args/2/args/0/op": "subtract",
-        "/args/1/args/2/args/0/args/0/op": "call",
-        "/args/1/args/2/args/0/args/0/args/0/op": "symbol",
-        "/args/1/args/2/args/0/args/0/args/0/name": "s",
-        "/args/1/args/2/args/0/args/0/args/1/op": "add",
-        "/args/1/args/2/args/0/args/0/args/1/args/0/op": "symbol",
-        "/args/1/args/2/args/0/args/0/args/1/args/0/name": "t",
-        "/args/1/args/2/args/0/args/0/args/1/args/1/op": "symbol",
-        "/args/1/args/2/args/0/args/0/args/1/args/1/name": "h",
-        "/args/1/args/2/args/0/args/1/op": "call",
-        "/args/1/args/2/args/0/args/1/args/0/op": "symbol",
-        "/args/1/args/2/args/0/args/1/args/0/name": "s",
-        "/args/1/args/2/args/0/args/1/args/1/op": "symbol",
-        "/args/1/args/2/args/0/args/1/args/1/name": "t",
-        "/args/1/args/2/args/1/op": "symbol",
-        "/args/1/args/2/args/1/name": "h",
-        "/args/2/op": "ellipsis",
-        "/args/2/meaning": "omitted intermediate steps",
-        "/args/3/op": "limit",
-        "/args/3/direction": "two-sided",
-        "/args/3/args/0/op": "symbol",
-        "/args/3/args/0/name": "h",
-        "/args/3/args/1/op": "number",
-        "/args/3/args/1/literal": "0",
-        "/args/3/args/2/op": "divide",
-        "/args/3/args/2/args/0/op": "negate",
-        "/args/3/args/2/args/0/args/0/op": "number",
-        "/args/3/args/2/args/0/args/0/literal": "1",
-        "/args/3/args/2/args/1/op": "multiply",
-        "/args/3/args/2/args/1/notation": "implicit",
-        "/args/3/args/2/args/1/args/0/op": "group",
-        "/args/3/args/2/args/1/args/0/args/0/op": "add",
-        "/args/3/args/2/args/1/args/0/args/0/args/0/op": "symbol",
-        "/args/3/args/2/args/1/args/0/args/0/args/0/name": "t",
-        "/args/3/args/2/args/1/args/0/args/0/args/1/op": "symbol",
-        "/args/3/args/2/args/1/args/0/args/0/args/1/name": "h",
-        "/args/3/args/2/args/1/args/1/op": "symbol",
-        "/args/3/args/2/args/1/args/1/name": "t"
-      },
       "speech": {
         "language": "pt-BR",
         "evaluation_status": "specified; relation-level speech assessment is not implemented by the current evaluator",
@@ -5488,10 +4677,11 @@
           "segundo limite tem numerador −1 e denominador produto (t+h)t; não completar com resultado ausente do exercício"
         ],
         "acceptable_examples": [
-          "V de t é o limite em h tendendo a zero de s de t mais h menos s de t dividido por h; há reticências; é igual ao limite em h tendendo a zero de menos um dividido pelo produto da soma de t e h por t.",
-          "A velocidade v de t é o limite da razão incremental da posição, com numerador s de t mais h menos s de t e denominador h, quando h tende a zero; depois de etapas omitidas, o limite nessa mesma aproximação de menos um sobre o produto da soma de t e h por t."
+          "V de t é igual ao limite, quando h tende a zero, da fração cujo numerador é s avaliada na soma de t e h menos s de t e cujo denominador é h. A cadeia prossegue com reticências de etapas omitidas e é igual ao limite, quando h tende a zero, da fração cujo numerador é menos um e cujo denominador é o produto da soma de t e h, entre parênteses, por t.",
+          "V de t é igual ao limite do quociente da diferença entre s na soma t mais h e s de t por h, quando h tende a zero. Segue uma igualdade com reticências de passos omitidos e outra igualdade com o limite do quociente de menos um pelo produto da soma t mais h por t, quando h tende a zero."
         ],
-        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation"
+        "acceptance_rule": "preserve all required relations and their scope/order; examples illustrate paraphrases and are not exact-match strings; isolated keywords never demonstrate full preservation",
+        "examples_role": "complete illustrative readings; not pedagogical summaries or exact-match acceptance strings"
       },
       "segmentation": {
         "allowed": "one block or multiple associated ordered blocks",
@@ -6566,7 +5756,8 @@
       "relational-pt-BR-speech",
       "full-document-associations-and-structure",
       "independent-format-semantic-gates"
-    ]
+    ],
+    "follow_up_issue": "https://github.com/A11yDevs/acessilia/issues/884"
   },
   "controls": {
     "status": "specifications for the future semantic output evaluator; not implemented by validate.py",
@@ -6700,7 +5891,8 @@
           "\\operatorname{Dom}(vm_2)"
         ],
         "expected": "accept-if-complete",
-        "reason": "named domain operator remains one operator"
+        "reason": "named domain operator remains one operator",
+        "equivalence_level": "structural"
       },
       {
         "id": "pos-neq-ge-macros",
@@ -6710,7 +5902,8 @@
           "h\\ge -2\\text{ e }h\\ne0"
         ],
         "expected": "accept-if-complete",
-        "reason": "same inclusive relation, nonzero relation and conjunction"
+        "reason": "same inclusive relation, nonzero relation and conjunction",
+        "equivalence_level": "structural"
       },
       {
         "id": "pos-fraction-macros",
@@ -6720,7 +5913,8 @@
           "\\dfrac{s(t+h)-s(t)}{h}"
         ],
         "expected": "accept-if-complete",
-        "reason": "same numerator, denominator and scope"
+        "reason": "same numerator, denominator and scope",
+        "equivalence_level": "structural"
       },
       {
         "id": "pos-split-aligned-chain",
@@ -6730,7 +5924,8 @@
           "two adjacent linked ordered math blocks, second continuing the equality"
         ],
         "expected": "accept-if-complete",
-        "reason": "all four stages and equalities survive in order"
+        "reason": "all four stages and equalities survive in order",
+        "equivalence_level": "structural"
       },
       {
         "id": "pos-product-notation",
@@ -6740,17 +5935,20 @@
           "3\\cdot(3+h)"
         ],
         "expected": "accept-if-complete",
-        "reason": "same grouped factors in denominator; source order is recorded, commuted scalar product is an equivalent rendering"
+        "reason": "same grouped factors in denominator; source order is recorded, commuted scalar product is an equivalent rendering",
+        "equivalence_level": "semantic",
+        "scope": "mathematical meaning only; commuted scalar factors require reporting a change in printed structure"
       },
       {
         "id": "pos-speech-paraphrase",
         "target": "p3-d01",
         "variants": [
-          "O domínio de v m índice dois é o intervalo fechado em menos dois e aberto em zero, unido ao intervalo aberto de zero a mais infinito. É o conjunto dos h reais tais que h é maior ou igual a menos dois e h é diferente de zero.",
-          "Para vm subscrito dois, o domínio inclui menos dois, exclui zero e segue até infinito positivo: de menos dois a zero com a primeira ponta fechada e a segunda aberta, união com zero a mais infinito aberto; equivalentemente, h pertence aos reais, h é pelo menos menos dois e não é zero."
+          "O domínio de v m subscrito dois é igual à união de dois intervalos: de menos dois, incluído, a zero, excluído; e de zero, excluído, a mais infinito, aberto. É igual ao conjunto dos h pertencentes aos números reais tais que h é maior ou igual a menos dois e h é diferente de zero.",
+          "O domínio da função v m índice dois é o intervalo fechado à esquerda em menos dois e aberto à direita em zero, união com o intervalo aberto de zero a infinito positivo. Esse domínio é igual ao conjunto de h nos reais que satisfazem conjuntamente h maior ou igual a menos dois e h não igual a zero."
         ],
         "expected": "accept-if-complete",
-        "reason": "all intervals, endpoints, domain, membership and relations must survive"
+        "reason": "all intervals, endpoints, domain, membership and relations must survive",
+        "equivalence_level": "structural"
       },
       {
         "id": "pos-empty-exercise",
@@ -6760,7 +5958,8 @@
           "five blank navigable slots with positional association"
         ],
         "expected": "accept-if-complete",
-        "reason": "no result is supplied for an empty source cell"
+        "reason": "no result is supplied for an empty source cell",
+        "equivalence_level": "structural"
       },
       {
         "id": "pos-equation-label-placement",
@@ -6770,7 +5969,8 @@
           "separate associated equation label (1)"
         ],
         "expected": "accept-if-complete",
-        "reason": "label remains linked to the formula, never an operand"
+        "reason": "label remains linked to the formula, never an operand",
+        "equivalence_level": "structural"
       },
       {
         "id": "pos-unit-speech",
@@ -6780,7 +5980,8 @@
           "60 km/h"
         ],
         "expected": "accept-if-complete",
-        "reason": "same physical quantity and unit"
+        "reason": "same physical quantity and unit",
+        "equivalence_level": "semantic"
       }
     ]
   },
@@ -6860,5 +6061,289 @@
       "prose_relation": "approaches 0",
       "list_item": "p5-list01-item3"
     }
+  },
+  "representation_authority": {
+    "primary": "original PDF",
+    "literal": "CSV expected_latex is the transcription; formula literal_latex references the same content; math_latex excludes only the associated equation tag",
+    "structure": "ast is the principal curated structural representation; node counts are computed on demand and not stored",
+    "independent_checks": "source_checks selects particular source facts checked visually by the auditor; it is not a flattened copy or digest of the whole AST",
+    "limits": "passing schema and selected checks does not prove full equivalence of PDF, LaTeX, AST, MathML and speech"
+  },
+  "equivalence_levels": {
+    "literal": {
+      "criterion": "preserve printed symbols, notation and documentary content, including source errors",
+      "allowed": "equivalent serialization and typographic encodings; no silent symbol or value changes"
+    },
+    "structural": {
+      "criterion": "preserve operator/operand relationships, grouping and all printed equality-chain stages",
+      "allowed": "frac/dfrac, equivalent function/operator markup, linked ordered blocks for one source chain",
+      "not_automatic": "moving a factor into the numerator changes the printed tree even when the value is equivalent"
+    },
+    "semantic": {
+      "criterion": "mathematical equivalence subject to the selected benchmark dimension and source/pedagogical restrictions",
+      "example": {
+        "source": "\\frac{1}{2}at^2",
+        "variant": "\\frac{at^2}{2}",
+        "mathematically_equivalent": true,
+        "same_printed_structure": false,
+        "acceptance": "may pass mathematical meaning, must be reported as a structural transformation; not a blanket structure-preservation pass"
+      },
+      "restrictions": [
+        "do not suppress printed derivation stages",
+        "do not repair printed 2^8",
+        "do not alter exercise statements, fill blanks or erase occurrences",
+        "preserve equation references and ordered associations"
+      ]
+    },
+    "output_evaluator_status": "criteria specified for future evaluation; no output-equivalence evaluator implemented in this dataset"
+  },
+  "reading_order": {
+    "1": [
+      "p1-i19",
+      "p1-i01",
+      "p1-i02",
+      "p1-i03",
+      "p1-i04",
+      "p1-i05",
+      "p1-i06",
+      "p1-i07",
+      "p1-d01",
+      "p1-i20",
+      "p1-d02",
+      "p1-i08",
+      "p1-i09",
+      "p1-i10",
+      "p1-i11",
+      "p1-i12",
+      "p1-i13",
+      "p1-i14",
+      "p1-i15",
+      "p1-i16",
+      "p1-i17",
+      "p1-i18"
+    ],
+    "2": [
+      "p2-i01",
+      "p2-i02",
+      "p2-i03",
+      "p2-i04",
+      "p2-d01",
+      "p2-i05",
+      "p2-i19",
+      "p2-i06",
+      "p2-i20",
+      "p2-d02",
+      "p2-i07",
+      "p2-i08",
+      "p2-i09",
+      "p2-t01",
+      "p2-t02",
+      "p2-t03",
+      "p2-t04",
+      "p2-t05",
+      "p2-t06",
+      "p2-t07",
+      "p2-t08",
+      "p2-t09",
+      "p2-t10",
+      "p2-t11",
+      "p2-t12",
+      "p2-t13",
+      "p2-t14",
+      "p2-t15",
+      "p2-t16",
+      "p2-t17",
+      "p2-t18",
+      "p2-t19",
+      "p2-t20",
+      "p2-t21",
+      "p2-i21",
+      "p2-i10",
+      "p2-i11",
+      "p2-i12",
+      "p2-i13",
+      "p2-d03",
+      "p2-i22",
+      "p2-i14",
+      "p2-i15",
+      "p2-i23",
+      "p2-i16",
+      "p2-i17",
+      "p2-i18"
+    ],
+    "3": [
+      "p3-i01",
+      "p3-i02",
+      "p3-d01",
+      "p3-i03",
+      "p3-i19",
+      "p3-i04",
+      "p3-i20",
+      "p3-i05",
+      "p3-i06",
+      "p3-i07",
+      "p3-d02",
+      "p3-d03",
+      "p3-i21",
+      "p3-i08",
+      "p3-i09",
+      "p3-i10",
+      "p3-i11",
+      "p3-i22",
+      "p3-i12",
+      "p3-i13",
+      "p3-i14",
+      "p3-d04",
+      "p3-i15",
+      "p3-i16",
+      "p3-i17",
+      "p3-i18",
+      "p3-d05",
+      "p3-d06",
+      "p3-d07"
+    ],
+    "4": [
+      "p4-i01",
+      "p4-i02",
+      "p4-i03",
+      "p4-i12",
+      "p4-i04",
+      "p4-i05",
+      "p4-i06",
+      "p4-i07",
+      "p4-d01",
+      "p4-i13",
+      "p4-i08",
+      "p4-i14",
+      "p4-i09",
+      "p4-i10",
+      "p4-i15",
+      "p4-i11"
+    ],
+    "5": [
+      "p5-d01",
+      "p5-i01",
+      "p5-t01",
+      "p5-t02",
+      "p5-t03",
+      "p5-t05",
+      "p5-t06",
+      "p5-t04",
+      "p5-t07",
+      "p5-t08",
+      "p5-t09",
+      "p5-t10",
+      "p5-d02",
+      "p5-i04",
+      "p5-i02",
+      "p5-d03",
+      "p5-i03"
+    ]
+  },
+  "source_checks": [
+    {
+      "id": "printed-eighth-power",
+      "formula_id": "p2-d03",
+      "page": 2,
+      "evidence_literal": "(2+h)^3 - 2^8",
+      "bbox_pt": [
+        64,
+        628,
+        535,
+        662
+      ],
+      "rationale": "The original prints exponent eight even though the following derivation uses three.",
+      "assertions": {
+        "/args/2/args/0/args/1/op": "power",
+        "/args/2/args/0/args/1/args/0/literal": "2",
+        "/args/2/args/0/args/1/args/1/literal": "8",
+        "/args/2/args/1/name": "h"
+      }
+    },
+    {
+      "id": "domain-endpoints-and-predicate",
+      "formula_id": "p3-d01",
+      "page": 3,
+      "evidence_literal": "Dom(vm_2)=[-2,0)\\cup(0,+\\infty)=\\{h\\in\\mathbb{R}:h\\geq-2\\text{ e }h\\neq0\\}",
+      "bbox_pt": [
+        64,
+        111,
+        535,
+        132
+      ],
+      "rationale": "Domain operator, subscript, inclusive -2, excluded zero, union and conjunction were checked visually.",
+      "assertions": {
+        "/args/0/op": "domain",
+        "/args/0/named_operator": "Dom",
+        "/args/0/args/0/op": "subscript",
+        "/args/0/args/0/args/1/literal": "2",
+        "/args/1/op": "union",
+        "/args/1/args/0/left_closed": true,
+        "/args/1/args/0/right_closed": false,
+        "/args/1/args/0/args/0/literal": "-2",
+        "/args/1/args/0/args/1/literal": "0",
+        "/args/1/args/1/left_closed": false,
+        "/args/1/args/1/right_closed": false,
+        "/args/1/args/1/args/0/literal": "0",
+        "/args/1/args/1/args/1/op": "infinity",
+        "/args/1/args/1/args/1/sign": "+",
+        "/args/2/args/1/op": "member",
+        "/args/2/args/1/set_name": "real numbers",
+        "/args/2/args/2/op": "and",
+        "/args/2/args/2/args/0/op": "greater_equal",
+        "/args/2/args/2/args/0/args/1/literal": "-2",
+        "/args/2/args/2/args/1/op": "not_equal",
+        "/args/2/args/2/args/1/args/1/literal": "0"
+      }
+    },
+    {
+      "id": "nested-fractions-and-final-product",
+      "formula_id": "p5-d02",
+      "page": 5,
+      "evidence_literal": "\\frac{\\frac1{3+h}-\\frac13}{h}=\\cdots=-\\frac1{(3+h)3}",
+      "bbox_pt": [
+        64,
+        403,
+        535,
+        451
+      ],
+      "rationale": "The middle member has two inner fractions under an external division by h; final denominator is a product and the sign is negative.",
+      "assertions": {
+        "/args/1/op": "divide",
+        "/args/1/args/1/name": "h",
+        "/args/1/args/0/op": "subtract",
+        "/args/1/args/0/args/0/op": "divide",
+        "/args/1/args/0/args/0/args/0/literal": "1",
+        "/args/1/args/0/args/0/args/1/op": "add",
+        "/args/1/args/0/args/0/args/1/args/0/literal": "3",
+        "/args/1/args/0/args/0/args/1/args/1/name": "h",
+        "/args/1/args/0/args/1/op": "divide",
+        "/args/1/args/0/args/1/args/0/literal": "1",
+        "/args/1/args/0/args/1/args/1/literal": "3",
+        "/args/2/op": "ellipsis",
+        "/args/3/op": "negate",
+        "/args/3/args/0/op": "divide",
+        "/args/3/args/0/args/0/literal": "1",
+        "/args/3/args/0/args/1/op": "multiply",
+        "/args/3/args/0/args/1/args/0/op": "group",
+        "/args/3/args/0/args/1/args/0/args/0/op": "add",
+        "/args/3/args/0/args/1/args/0/args/0/args/0/literal": "3",
+        "/args/3/args/0/args/1/args/0/args/0/args/1/name": "h",
+        "/args/3/args/0/args/1/args/1/literal": "3"
+      }
+    }
+  ],
+  "change_policy": {
+    "baseline_commit": "8e51a1f599056a6eb30dcbb05491f622a4d25eb1",
+    "mode": "preserve-baseline-latex",
+    "corrections": [],
+    "future_corrections": "to correct a transcription, switch to documented-corrections and record id, before, after, source_evidence {page,bbox_pt,quotation}, and justification; keep IDs stable; this records source-grounded editorial changes, not approval inferred by the validator"
+  },
+  "review": {
+    "reviewed_commit": "05b575dac039fceb11f166b16ecc65ffba621c1d",
+    "comment_url": "https://github.com/A11yDevs/acessilia-dataset/pull/13#issuecomment-7174992254",
+    "scope": "all 32 display speech examples, all occurrence order/ordinal groups, representation authority, localization and change policy",
+    "date": "2026-11-25",
+    "speech_review": "manual comparison of complete readings with the rendered PDF, literal LaTeX and AST; not an automated proof or independent listening study"
   }
 }

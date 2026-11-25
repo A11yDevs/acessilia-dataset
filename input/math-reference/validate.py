@@ -82,12 +82,97 @@ def baseline_file(root, commit, name):
     return subprocess.check_output(['git', 'show', commit + ':input/math-reference/' + name], cwd=root)
 
 
+
+def validate_transcription_changes(before, by, policy, baseline):
+    """Require either literal preservation or an explicit source-grounded change record."""
+    require(policy['baseline_commit'] == baseline, 'change-policy baseline mismatch')
+    changed = {rid for rid in before if by[rid]['expected_latex'] != before[rid]['expected_latex']}
+    corrections = policy['corrections']
+    require(isinstance(corrections, list), 'corrections must be a list')
+    if policy['mode'] == 'preserve-baseline-latex':
+        require(not changed and not corrections, 'baseline LaTeX changed without a documented correction policy')
+        return
+    require(policy['mode'] == 'documented-corrections', 'unknown transcription change policy')
+    require(len({item['id'] for item in corrections}) == len(corrections), 'duplicate correction ID')
+    require({item['id'] for item in corrections} == changed, 'correction records must cover exactly the changed IDs')
+    for item in corrections:
+        rid = item['id']
+        require(item['before'] == before[rid]['expected_latex'] and item['after'] == by[rid]['expected_latex'],
+                'correction before/after mismatch')
+        evidence = item['source_evidence']
+        require(evidence['page'] == int(by[rid]['page']) and box_ok(evidence['bbox_pt'])
+                and bool(evidence['quotation'].strip()) and bool(item['justification'].strip()),
+                'correction requires source evidence and justification')
+
+
+def validate_occurrence_order(rows, sem):
+    """Validate literal groups using curated source order, independent of CSV/ID ordering."""
+    by = {r['id']: r for r in rows}
+    grouping = sem['conventions']['ordinal_grouping']
+    require(grouping['key'] == ['page', 'kind', 'expected_latex'] and grouping['normalization'] ==
+            {'unicode': 'none', 'whitespace': 'preserve', 'case': 'preserve',
+             'latex_macros': 'literal', 'mathematical_equivalence': 'not used'}, 'literal grouping convention')
+    order = sem['reading_order']
+    require(set(order) == {'1', '2', '3', '4', '5'}, 'reading-order page coverage')
+    all_ids = [rid for ids in order.values() for rid in ids]
+    require(len(all_ids) == len(set(all_ids)) == len(by) and set(all_ids) == set(by),
+            'reading-order occurrence coverage')
+    group_ordinals = {}
+    for page, ids in order.items():
+        for rid in ids:
+            row = by[rid]
+            require(row['page'] == page, 'reading-order occurrence page')
+            occ = sem['occurrences'][rid]
+            ordinal = occ['same_latex_ordinal_on_page']
+            require(type(ordinal) is int and ordinal > 0, 'ordinal must be a positive integer, not bool')
+            key = (int(page), row['kind'], row['expected_latex'])  # exact Unicode, no normalization
+            group_ordinals.setdefault(key, []).append(ordinal)
+            expected_granularity = ('cell' if row['kind'].startswith('table-') else
+                                    'expression' if row['kind'] == 'display' else 'line')
+            require(occ['localization_granularity'] == expected_granularity, 'localization granularity')
+        # Source page has one text flow. Non-overlapping line bands give independent order evidence.
+        # Overlap is intentionally resolved by the audited editorial sequence, never output geometry.
+        for index, earlier in enumerate(ids):
+            earlier_box = sem['occurrences'][earlier]['bbox_pt']
+            for later in ids[index + 1:]:
+                later_box = sem['occurrences'][later]['bbox_pt']
+                require(earlier_box[1] <= later_box[3], 'reading order contradicts disjoint source regions')
+    for ordinals in group_ordinals.values():
+        require(len(set(ordinals)) == len(ordinals), 'duplicate ordinal in literal occurrence group')
+        require(sorted(ordinals) == list(range(1, len(ordinals) + 1)), 'nonconsecutive occurrence ordinals')
+        require(ordinals == list(range(1, len(ordinals) + 1)), 'ordinals contradict editorial reading order')
+
+
+def pointer_value(node, pointer):
+    require(pointer.startswith('/'), 'source check must use a JSON pointer')
+    for part in pointer[1:].split('/'):
+        part = part.replace('~1', '/').replace('~0', '~')
+        node = node[int(part)] if isinstance(node, list) else node[part]
+    return node
+
+
+def validate_source_checks(sem):
+    """Selected auditor assertions; not a mechanical mirror of the entire AST."""
+    checks = sem['source_checks']
+    require({x['id'] for x in checks} == {'printed-eighth-power', 'domain-endpoints-and-predicate',
+                                         'nested-fractions-and-final-product'} and len(checks) == 3,
+            'selected source-check coverage')
+    for check in checks:
+        formula = sem['display_formulas'][check['formula_id']]
+        require(check['page'] == formula['page'] and box_ok(check['bbox_pt'])
+                and check['evidence_literal'] and check['rationale'] and check['assertions'], 'source-check evidence')
+        for pointer, expected in check['assertions'].items():
+            actual = pointer_value(formula['ast'], pointer)
+            require(type(actual) is type(expected) and actual == expected,
+                    'selected source check failed: ' + check['id'] + pointer)
+
+
 def validate(root):
     case = root / 'input/math-reference'
     rows = read_rows((case / 'ground_truth.csv').read_text(encoding='utf-8'))
     exp = read_json(case / 'expectations.json')
     sem = read_json(case / 'semantic_reference.json')
-    require(sem['schema_version'] == '1.0.0', 'semantic schema version')
+    require(sem['schema_version'] == '2.0.0', 'semantic schema version')
     require(exp['manifest_id'] == sem['manifest_id'] == '036', 'manifest ID')
     require(sem['source']['sha256'] == PDF_SHA, 'declared PDF hash')
     require(hashlib.sha256((case / 'velocidade-instantanea.pdf').read_bytes()).hexdigest() == PDF_SHA,
@@ -106,6 +191,7 @@ def validate(root):
     require(len(by) == len(rows), 'duplicate CSV ID')
     require(before.keys() <= by.keys(), 'missing baseline ID')
     require(len(before) == 91, 'unexpected baseline inventory')
+    validate_transcription_changes(before, by, sem['change_policy'], base)
     require({int(r['page']) for r in rows} == set(range(1, 6)), 'five-page coverage')
     require([int(r['page']) for r in rows] == sorted(int(r['page']) for r in rows), 'CSV page order')
     kinds = {'i': 'inline', 'd': 'display', 't': ('table-header', 'table-cell')}
@@ -120,7 +206,7 @@ def validate(root):
     for rid, occ in occurrences.items():
         require(occ['page'] == int(by[rid]['page']) and occ['kind'] == by[rid]['kind'], 'occurrence page/kind')
         require(occ['anchor'] == by[rid]['context'] and box_ok(occ['bbox_pt']), 'occurrence anchor/region')
-        require(occ['same_latex_ordinal_on_page'] >= 1, 'occurrence ordinal')
+    validate_occurrence_order(rows, sem)
     for rid in sem['inline_constraints']:
         require(rid in by and by[rid]['kind'] == 'inline', 'inline constraint reference')
     require(sem['inline_constraints']['p4-i10']['listed_variables'] == ['s_0', 'a'], 'inline membership variables')
@@ -134,14 +220,9 @@ def validate(root):
         require(formula['math_latex'] == re.sub(r'\s*\\tag\{1\}', '', formula['literal_latex']),
                 'equation label included in mathematical content')
         require(formula['page'] == int(by[rid]['page']) and box_ok(formula['bbox_pt']), 'formula page/region')
-        nodes = list(tree_nodes(formula['ast']))
-        require(dict(Counter(node['op'] for _, node in nodes)) == formula['node_counts'], 'AST node counts')
-        invariants = [{'path': path + '/' + key, 'equals': node[key]}
-                      for path, node in nodes for key in node if key != 'args']
-        stored = formula['semantic_invariants']
-        require(isinstance(stored, dict), 'AST invariants must map paths to values')
-        require({x['path']: x['equals'] for x in invariants} == stored,
-                'AST semantic invariant changed')
+        list(tree_nodes(formula['ast']))  # schema/arity only, not proof of source equivalence
+        require('node_counts' not in formula and 'semantic_invariants' not in formula,
+                'derived AST mirrors must not be stored as competing references')
         speech = formula['speech']
         require(speech['language'] == 'pt-BR' and len(speech['required_relations']) >= 1,
                 'missing relational speech specification')
@@ -149,6 +230,7 @@ def validate(root):
         main = formula['ast']['args'][0] if formula['ast']['op'] == 'with_condition' else formula['ast']
         count = len(main['args']) if main['op'] == 'equality_chain' else 1
         require(formula['segmentation']['ordered_stages'] == count, 'equality chain stage count')
+    validate_source_checks(sem)
     require('2^8' in by['p2-d03']['expected_latex'] and r'\tag{1}' in by['p2-d03']['expected_latex'],
             'printed exponent or equation label silently changed')
     require(by['p4-i10']['expected_latex'] == r's_0, a \in \mathbb{R}', 'printed variable list altered')
@@ -315,13 +397,15 @@ def self_test(root):
             fn(value)
             (case / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
-        def run(name, mutate):
+        def run(name, mutate, expected_reason=None):
             reset()
             mutate()
             try:
                 with contextlib.redirect_stdout(io.StringIO()):
                     validate(target)
             except (ValueError, KeyError, TypeError, IndexError) as error:
+                require(expected_reason is None or expected_reason in str(error),
+                        'negative control failed for an unexpected reason: ' + name + ': ' + str(error))
                 failures.append({'control': name, 'result': 'rejected', 'reason': str(error)})
             else:
                 raise ValueError('negative validator control unexpectedly passed: ' + name)
@@ -351,6 +435,103 @@ def self_test(root):
         run('formula/list item link', lambda: sem(lambda s: s['document_structure']['lists'][0]['items'][0]['contains'].remove('p4-d01')))
         run('table/list item link', lambda: sem(lambda s: s['tables'][1].update(list_item='p5-list01-item2')))
         run('stale comparison', lambda: mutate_csv(lambda rows: rows[0].update(notes='unreported change')))
+        def ordinal(rid, value):
+            sem(lambda reference: reference['occurrences'][rid].update(same_latex_ordinal_on_page=value))
+
+        run('duplicate occurrence ordinal', lambda: ordinal('p1-i11', 1), 'duplicate ordinal')
+        run('gap in occurrence ordinals', lambda: ordinal('p1-i13', 6), 'nonconsecutive')
+        run('zero occurrence ordinal', lambda: ordinal('p1-i08', 0), 'positive integer')
+        run('boolean occurrence ordinal', lambda: ordinal('p1-i08', True), 'positive integer')
+        run('fractional occurrence ordinal', lambda: ordinal('p1-i08', 1.5), 'positive integer')
+        run('string occurrence ordinal', lambda: ordinal('p1-i08', '1'), 'positive integer')
+
+        def invert_ordinals():
+            ordinal('p1-i08', 5)
+            ordinal('p1-i18', 1)
+        run('consecutive ordinals in wrong reading order', invert_ordinals, 'editorial reading order')
+
+        def recompute_ordinals(reference):
+            csv_rows = {r['id']: r for r in read_rows((case / 'ground_truth.csv').read_text())}
+            groups = Counter()
+            for page, ids in reference['reading_order'].items():
+                for rid in ids:
+                    row = csv_rows[rid]
+                    key = (int(page), row['kind'], row['expected_latex'])
+                    groups[key] += 1
+                    reference['occurrences'][rid]['same_latex_ordinal_on_page'] = groups[key]
+
+        def invert_source_order(reference):
+            ids = reference['reading_order']['1']
+            first, last = ids.index('p1-i08'), ids.index('p1-i18')
+            ids[first], ids[last] = ids[last], ids[first]
+            recompute_ordinals(reference)
+        run('reading order contradicts geometric evidence', lambda: sem(invert_source_order), 'disjoint source regions')
+        run('localization granularity contradicts convention', lambda: sem(
+            lambda reference: reference['occurrences']['p3-i05'].update(localization_granularity='expression')),
+            'localization granularity')
+
+        def regenerate_diff():
+            reference = read_json(case / 'semantic_reference.json')
+            old_rows = {r['id']: r for r in read_rows(baseline_file(
+                target, reference['source']['baseline_commit'], 'ground_truth.csv').decode('utf-8'))}
+            new_rows = read_rows((case / 'ground_truth.csv').read_text())
+            with (case / 'AUDIT_DIFF.csv').open('w', encoding='utf-8', newline='') as out:
+                writer = csv.writer(out, lineterminator='\n')
+                writer.writerow(['id', 'page', 'change', 'field', 'before', 'after'])
+                for row in new_rows:
+                    prev = old_rows.get(row['id'])
+                    for field in FIELDS:
+                        if prev is None or row[field] != prev[field]:
+                            writer.writerow([row['id'], row['page'], 'added' if prev is None else 'modified',
+                                             field, prev[field] if prev else '', row[field]])
+
+        def undocumented_change():
+            mutate_csv(lambda rs: next(r for r in rs if r['id'] == 'p4-i11').update(expected_latex='v(t) = v_0 + a t'))
+            regenerate_diff()
+        run('unrecorded LaTeX change with regenerated diff', undocumented_change, 'documented correction policy')
+
+        def missing_change_record():
+            undocumented_change()
+            sem(lambda reference: reference['change_policy'].update(mode='documented-corrections'))
+        run('changed LaTeX without editorial record', missing_change_record, 'exactly the changed IDs')
+
+        def documented_change():
+            undocumented_change()
+            sem(lambda reference: reference['change_policy'].update(
+                mode='documented-corrections', corrections=[{
+                    'id': 'p4-i11', 'before': 'v(t) = v_0 + at', 'after': 'v(t) = v_0 + a t',
+                    'source_evidence': {'page': 4, 'bbox_pt': [64, 551, 535, 568],
+                                        'quotation': 'v(t) = v_0 + at'},
+                    'justification': 'Explicit spacing between scalar factors; temporary test of auditable editorial policy.'}]))
+
+        def bad_change_record():
+            documented_change()
+            sem(lambda reference: reference['change_policy']['corrections'][0].update(before='not the baseline'))
+        run('editorial record with wrong prior value', bad_change_record, 'before/after mismatch')
+
+        # Positive: two distinct printed occurrences of t = 2 remain two occurrences.
+        reset()
+        reference = read_json(case / 'semantic_reference.json')
+        first, second = (reference['occurrences'][rid] for rid in ('p1-i15', 'p1-i17'))
+        require(first['anchor'] != second['anchor'] and first['bbox_pt'] != second['bbox_pt']
+                and (first['same_latex_ordinal_on_page'], second['same_latex_ordinal_on_page']) == (1, 2),
+                'positive repeated-occurrence fixture')
+        with contextlib.redirect_stdout(io.StringIO()):
+            validate(target)
+
+        # Positive: CSV order within a page is not source reading order.
+        reset()
+        mutate_csv(lambda rs: rs.sort(key=lambda row: (int(row['page']), row['id']), reverse=False))
+        regenerate_diff()
+        with contextlib.redirect_stdout(io.StringIO()):
+            validate(target)
+
+        # Positive: future corrections remain possible when recorded with source evidence.
+        reset()
+        documented_change()
+        with contextlib.redirect_stdout(io.StringIO()):
+            validate(target)
+
         # Data-equivalent serializations must remain valid.
         reset()
         for name in ('expectations.json', 'semantic_reference.json'):
@@ -366,7 +547,10 @@ def self_test(root):
         with contextlib.redirect_stdout(io.StringIO()):
             validate(target)
     print(json.dumps({'validator_negative_controls': failures,
-                      'validator_positive_controls': ['equivalent JSON serialization', 'equivalent CSV serialization'],
+                      'validator_positive_controls': ['equivalent JSON serialization', 'equivalent CSV serialization',
+                                                      'two legitimate repeated source occurrences',
+                                                      'CSV order independent from source order',
+                                                      'documented source-grounded correction'],
                       'output_semantic_controls': 'specifications only; not executed by this validator'},
                      ensure_ascii=False, indent=2))
 

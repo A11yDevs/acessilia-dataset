@@ -351,7 +351,7 @@
   },
   "semantic_reference": {
     "file": "semantic_reference.json",
-    "schema_version": "1.0.0",
+    "schema_version": "2.0.0",
     "status": "specified; current math_case.py does not consume this reference"
   },
   "audit": {
