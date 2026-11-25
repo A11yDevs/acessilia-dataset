@@ -111,7 +111,7 @@
         "title": "Composição percentual em massa"
       }
     ],
-    "tables": "ground_truth.csv rows of kind 'table' give each table's slide, rows, columns and header; 'table-header' and 'table-row' give its cells",
+    "tables": "'table' rows describe semantic data rows (excluding captions), columns and the presence of semantic column headers (header=0 or 1). A styled group title is a caption, not a column header; legacy IDs ending in -h may have been reclassified. See audit.table_semantics.",
     "chemical_structures_are_descriptions": {
       "pages": [
         25,
@@ -129,8 +129,619 @@
     }
   },
   "degraded": {
-    "description": "What a run whose vision provider fails must still deliver. The 'text' kind of ground_truth.csv must appear even then, and the run must not be cached.",
+    "description": "Content preservation remains required when the vision provider fails, including literal text embedded in raster images. The text kind is a content role, not proof of a native text layer; provenance is in audit.provenance and source= notes. Such a run must not be cached.",
     "text_ids_always_present": "every ground_truth.csv row of kind 'text'",
     "not_cacheable": true
+  },
+  "audit": {
+    "date": "2026-11-25",
+    "source_pdf": "input/006.pdf",
+    "source_sha256": "ce9874fd3219241766772904c84f7eed3e340befa9a6beee6ca206308b8a549f",
+    "baseline_commit": "9ed07b28aeddb69721228f2dd66de6f9794c0001",
+    "report": "AUDIT.md",
+    "comparison": "AUDIT_DIFF.csv",
+    "metadata_status": "Descriptive audit metadata. The current slide_case evaluator does not enforce the audit block; integration requirements are documented in AUDIT.md.",
+    "representation": {
+      "text": "literal printed content; whitespace and layout line breaks flattened; original errors retained",
+      "formula": "semantic LaTeX representation, not raw LaTeX to be spoken",
+      "image_and_chemical_structure": "semantic concepts; semicolon separates required concepts, pipe separates alternatives within one concept; original labels may also have separate text rows",
+      "tables": "rows counts data rows only; captions do not provide semantic column headers; no invented column names"
+    },
+    "provenance": {
+      "method": "PyMuPDF text extraction plus visual inspection of all 42 rendered pages at 115.2 dpi, with enlarged inspection of dense raster content; content_source describes educational content, not decorative backgrounds. Resource image/drawing counts include the template and are not semantic object counts. Per-object source= notes override page-level source.",
+      "pages": [
+        {
+          "page": 1,
+          "text_chars": 19,
+          "images": 4,
+          "drawings": 2,
+          "content_source": "mixed"
+        },
+        {
+          "page": 2,
+          "text_chars": 363,
+          "images": 3,
+          "drawings": 3,
+          "content_source": "mixed"
+        },
+        {
+          "page": 3,
+          "text_chars": 0,
+          "images": 5,
+          "drawings": 2,
+          "content_source": "raster"
+        },
+        {
+          "page": 4,
+          "text_chars": 0,
+          "images": 4,
+          "drawings": 3,
+          "content_source": "raster"
+        },
+        {
+          "page": 5,
+          "text_chars": 0,
+          "images": 6,
+          "drawings": 1,
+          "content_source": "raster"
+        },
+        {
+          "page": 6,
+          "text_chars": 0,
+          "images": 4,
+          "drawings": 1,
+          "content_source": "raster"
+        },
+        {
+          "page": 7,
+          "text_chars": 0,
+          "images": 4,
+          "drawings": 1,
+          "content_source": "raster"
+        },
+        {
+          "page": 8,
+          "text_chars": 0,
+          "images": 4,
+          "drawings": 1,
+          "content_source": "raster"
+        },
+        {
+          "page": 9,
+          "text_chars": 305,
+          "images": 3,
+          "drawings": 2,
+          "content_source": "mixed"
+        },
+        {
+          "page": 10,
+          "text_chars": 234,
+          "images": 5,
+          "drawings": 1,
+          "content_source": "mixed"
+        },
+        {
+          "page": 11,
+          "text_chars": 60,
+          "images": 4,
+          "drawings": 1,
+          "content_source": "mixed"
+        },
+        {
+          "page": 12,
+          "text_chars": 0,
+          "images": 5,
+          "drawings": 1,
+          "content_source": "raster"
+        },
+        {
+          "page": 13,
+          "text_chars": 13,
+          "images": 4,
+          "drawings": 1,
+          "content_source": "mixed"
+        },
+        {
+          "page": 14,
+          "text_chars": 17,
+          "images": 4,
+          "drawings": 1,
+          "content_source": "mixed"
+        },
+        {
+          "page": 15,
+          "text_chars": 337,
+          "images": 5,
+          "drawings": 1,
+          "content_source": "mixed"
+        },
+        {
+          "page": 16,
+          "text_chars": 24,
+          "images": 4,
+          "drawings": 1,
+          "content_source": "mixed"
+        },
+        {
+          "page": 17,
+          "text_chars": 0,
+          "images": 4,
+          "drawings": 1,
+          "content_source": "raster"
+        },
+        {
+          "page": 18,
+          "text_chars": 485,
+          "images": 3,
+          "drawings": 49,
+          "content_source": "text-layer+vector"
+        },
+        {
+          "page": 19,
+          "text_chars": 383,
+          "images": 3,
+          "drawings": 1,
+          "content_source": "mixed"
+        },
+        {
+          "page": 20,
+          "text_chars": 809,
+          "images": 3,
+          "drawings": 1,
+          "content_source": "mixed"
+        },
+        {
+          "page": 21,
+          "text_chars": 254,
+          "images": 3,
+          "drawings": 2,
+          "content_source": "mixed"
+        },
+        {
+          "page": 22,
+          "text_chars": 311,
+          "images": 3,
+          "drawings": 4,
+          "content_source": "mixed"
+        },
+        {
+          "page": 23,
+          "text_chars": 0,
+          "images": 4,
+          "drawings": 1,
+          "content_source": "raster"
+        },
+        {
+          "page": 24,
+          "text_chars": 97,
+          "images": 9,
+          "drawings": 1,
+          "content_source": "mixed"
+        },
+        {
+          "page": 25,
+          "text_chars": 29,
+          "images": 6,
+          "drawings": 1,
+          "content_source": "mixed"
+        },
+        {
+          "page": 26,
+          "text_chars": 39,
+          "images": 5,
+          "drawings": 1,
+          "content_source": "mixed"
+        },
+        {
+          "page": 27,
+          "text_chars": 16,
+          "images": 5,
+          "drawings": 1,
+          "content_source": "mixed"
+        },
+        {
+          "page": 28,
+          "text_chars": 336,
+          "images": 4,
+          "drawings": 1,
+          "content_source": "mixed"
+        },
+        {
+          "page": 29,
+          "text_chars": 88,
+          "images": 5,
+          "drawings": 1,
+          "content_source": "mixed"
+        },
+        {
+          "page": 30,
+          "text_chars": 64,
+          "images": 5,
+          "drawings": 2,
+          "content_source": "mixed"
+        },
+        {
+          "page": 31,
+          "text_chars": 0,
+          "images": 4,
+          "drawings": 1,
+          "content_source": "raster"
+        },
+        {
+          "page": 32,
+          "text_chars": 330,
+          "images": 3,
+          "drawings": 72,
+          "content_source": "text-layer+vector"
+        },
+        {
+          "page": 33,
+          "text_chars": 0,
+          "images": 4,
+          "drawings": 1,
+          "content_source": "raster"
+        },
+        {
+          "page": 34,
+          "text_chars": 33,
+          "images": 7,
+          "drawings": 1,
+          "content_source": "mixed"
+        },
+        {
+          "page": 35,
+          "text_chars": 408,
+          "images": 3,
+          "drawings": 1,
+          "content_source": "mixed"
+        },
+        {
+          "page": 36,
+          "text_chars": 220,
+          "images": 3,
+          "drawings": 2,
+          "content_source": "mixed"
+        },
+        {
+          "page": 37,
+          "text_chars": 248,
+          "images": 4,
+          "drawings": 1,
+          "content_source": "mixed"
+        },
+        {
+          "page": 38,
+          "text_chars": 443,
+          "images": 3,
+          "drawings": 2,
+          "content_source": "mixed"
+        },
+        {
+          "page": 39,
+          "text_chars": 128,
+          "images": 4,
+          "drawings": 2,
+          "content_source": "mixed"
+        },
+        {
+          "page": 40,
+          "text_chars": 382,
+          "images": 3,
+          "drawings": 2,
+          "content_source": "mixed"
+        },
+        {
+          "page": 41,
+          "text_chars": 0,
+          "images": 4,
+          "drawings": 1,
+          "content_source": "raster"
+        },
+        {
+          "page": 42,
+          "text_chars": 482,
+          "images": 3,
+          "drawings": 2,
+          "content_source": "mixed"
+        }
+      ],
+      "raster_text_overrides": [
+        "s10-x02",
+        "s10-x06",
+        "s10-x07",
+        "s10-x08",
+        "s13-x02",
+        "s13-x03",
+        "s13-x04",
+        "s15-x02",
+        "s15-x05",
+        "s39-x01"
+      ]
+    },
+    "chart_data": {
+      "object_id": "s07-i01",
+      "page": 7,
+      "title_literal": "Metals : Density",
+      "category_axis_literal": "Metal",
+      "value_axis_literal": "Density (gram/cm3)",
+      "unit_literal": "gram/cm3",
+      "unit_semantic": "g/cm³",
+      "pairs": [
+        {
+          "category": "Aluminum",
+          "category_pt_BR": "Alumínio",
+          "density": "2.70"
+        },
+        {
+          "category": "Cadmium",
+          "category_pt_BR": "Cádmio",
+          "density": "8.65"
+        },
+        {
+          "category": "Chromium",
+          "category_pt_BR": "Cromo",
+          "density": "7.19"
+        },
+        {
+          "category": "Cobalt",
+          "category_pt_BR": "Cobalto",
+          "density": "8.90"
+        },
+        {
+          "category": "Copper",
+          "category_pt_BR": "Cobre",
+          "density": "8.96"
+        },
+        {
+          "category": "Gold",
+          "category_pt_BR": "Ouro",
+          "density": "19.30"
+        },
+        {
+          "category": "Iron",
+          "category_pt_BR": "Ferro",
+          "density": "7.87"
+        },
+        {
+          "category": "Lead",
+          "category_pt_BR": "Chumbo",
+          "density": "11.34"
+        },
+        {
+          "category": "Magnesium",
+          "category_pt_BR": "Magnésio",
+          "density": "1.74"
+        },
+        {
+          "category": "Manganese",
+          "category_pt_BR": "Manganês",
+          "density": "7.21"
+        },
+        {
+          "category": "Mercury",
+          "category_pt_BR": "Mercúrio",
+          "density": "13.53"
+        },
+        {
+          "category": "Molybdenum",
+          "category_pt_BR": "Molibdênio",
+          "density": "10.28"
+        },
+        {
+          "category": "Nickel",
+          "category_pt_BR": "Níquel",
+          "density": "8.91"
+        },
+        {
+          "category": "Platinum",
+          "category_pt_BR": "Platina",
+          "density": "21.45"
+        },
+        {
+          "category": "Silver",
+          "category_pt_BR": "Prata",
+          "density": "10.49"
+        },
+        {
+          "category": "Tin",
+          "category_pt_BR": "Estanho",
+          "density": "7.37"
+        },
+        {
+          "category": "Titanium",
+          "category_pt_BR": "Titânio",
+          "density": "4.51"
+        },
+        {
+          "category": "Tungsten",
+          "category_pt_BR": "Tungstênio",
+          "density": "19.25"
+        },
+        {
+          "category": "Uranium",
+          "category_pt_BR": "Urânio",
+          "density": "19.10"
+        },
+        {
+          "category": "Zinc",
+          "category_pt_BR": "Zinco",
+          "density": "7.14"
+        }
+      ],
+      "valid_representations": [
+        "object-scoped description that keeps each category associated with its density and common unit",
+        "accessible data table derived from the chart, keeping all 20 pairs and common unit"
+      ],
+      "legacy_limitation": "Independent term recall in expected does not validate category/value association or completeness at the 0.6 threshold."
+    },
+    "table_semantics": [
+      {
+        "object_id": "s32-t01",
+        "caption_id": "s32-x01",
+        "data_rows": 13,
+        "columns": 2,
+        "semantic_headers": [],
+        "column_roles": [
+          "ion formula",
+          "ion name"
+        ],
+        "source_note": "F⁻ / Fluoreto is the first data row; legacy ID s32-t01-h retained"
+      },
+      {
+        "object_id": "s32-t02",
+        "caption_id": "s32-t02-h",
+        "data_rows": 7,
+        "columns": 2,
+        "semantic_headers": [],
+        "column_roles": [
+          "ion formula",
+          "ion name"
+        ],
+        "source_note": "FÓSFORO is a group title in the top visual row"
+      },
+      {
+        "object_id": "s33-t01",
+        "caption_id": "s33-t01-h",
+        "data_rows": 6,
+        "columns": 2,
+        "semantic_headers": [],
+        "column_roles": [
+          "ion formula",
+          "ion name"
+        ],
+        "source_note": "ENXOFRE is a group title in the top visual row"
+      },
+      {
+        "object_id": "s33-t02",
+        "caption_id": "s33-t02-h",
+        "data_rows": 4,
+        "columns": 2,
+        "semantic_headers": [],
+        "column_roles": [
+          "ion formula",
+          "ion name"
+        ],
+        "source_note": "NITROGÊNIO is a group title in the top visual row"
+      }
+    ],
+    "integration_pending": [
+      "scientific-symbol-normalization",
+      "formula-semantics",
+      "object-scoped-image-matching",
+      "table-structure",
+      "chart-category-value-association",
+      "independent-txt-and-pdfua-gates"
+    ],
+    "object_associations": [
+      {
+        "object_id": "s17-i01",
+        "peaks": [
+          {
+            "ion": "[³⁵Cl]⁺",
+            "m_over_z": 35
+          },
+          {
+            "ion": "[³⁷Cl]⁺",
+            "m_over_z": 37
+          },
+          {
+            "ion": "[³⁵Cl³⁵Cl]⁺",
+            "m_over_z": 70
+          },
+          {
+            "ion": "[³⁵Cl³⁷Cl]⁺",
+            "m_over_z": 72
+          },
+          {
+            "ion": "[³⁷Cl³⁷Cl]⁺",
+            "m_over_z": 74
+          }
+        ],
+        "note": "No exact bar intensities are printed; do not infer exact numerical intensities from pixel heights."
+      },
+      {
+        "object_id": "s18-i01",
+        "source_value_pairs": [
+          {
+            "source": "Tabela Periódica SBQ 2010",
+            "value": "12.011"
+          },
+          {
+            "source": "CRC Handbook of Chemistry, 3ª. ed.",
+            "value": "12.011"
+          },
+          {
+            "source": "Chang e Goldsby Química, 11ª. ed.",
+            "value": "12.01"
+          },
+          {
+            "source": "IUPAC 2016",
+            "value": "12.0107(8)"
+          }
+        ]
+      },
+      {
+        "object_id": "s29-i01",
+        "legend": [
+          {
+            "ion": "Cl⁻",
+            "colour": "blue"
+          },
+          {
+            "ion": "Na⁺",
+            "colour": "red"
+          }
+        ]
+      },
+      {
+        "object_id": "s29-i02",
+        "legend": [
+          {
+            "ion": "Cloreto",
+            "colour": "green"
+          },
+          {
+            "ion": "Sódio",
+            "colour": "purple"
+          }
+        ]
+      },
+      {
+        "object_id": "s24-i01",
+        "label_id": "s24-x03",
+        "substance_literal": "H₂SO₄",
+        "state_literal": "l"
+      },
+      {
+        "object_id": "s24-i02",
+        "label_id": "s24-x04",
+        "substance_literal": "SiC",
+        "state_literal": "s"
+      },
+      {
+        "object_id": "s24-i03",
+        "label_id": "s24-x05",
+        "substance_literal": "Si",
+        "state_literal": "s"
+      },
+      {
+        "object_id": "s24-i04",
+        "label_id": "s24-x06",
+        "substance_literal": "NaCl",
+        "state_literal": "s"
+      },
+      {
+        "object_id": "s24-i05",
+        "label_id": "s24-x07",
+        "substance_literal": "Tartrazina",
+        "state_literal": "s"
+      },
+      {
+        "object_id": "s24-i06",
+        "label_id": "s24-x08",
+        "substance_literal": "Cu",
+        "state_literal": "s"
+      }
+    ]
   }
 }

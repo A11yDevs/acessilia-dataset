@@ -1,8 +1,8 @@
 id,manifest_id,page,kind,expected,context,notes
 s01-x01,006,1,text,Grandezas e Medidas,slide title,
 s01-i01,006,1,image,Átomo;ADN;Proteínas;Vírus|Virus;Células;1 Å|1Å|angstrom;1 nm|1nm;10 nm|10nm;100 nm|100nm;1 µm|1µm|1 μm|1μm;10 µm|10µm|10 μm|10μm;Nanotubos;Transistor;NANO|nano;MICRO|micro,size scale from the atom to the cell,"the labels are in Spanish (ADN, Virus, Resolución Litográfica)"
-s02-x01,006,2,text,"Observações qualitativas: cor, aparência",first bullet,
-s02-x02,006,2,text,Observações quantitativas: informação numérica da propriedade observada,second bullet,
+s02-x01,006,2,text,"Observações qualitativas: cor, aparência, liberação ou não de calor em uma transformação química, processo rápido ou lento, formação de um gás numa reação química, etc...",first bullet,
+s02-x02,006,2,text,"Observações quantitativas: informação numérica da propriedade observada, por exemplo: quanto de produto foi formado em uma reação química, quanto calor foi liberado no processo, etc...",second bullet,
 s02-i01,006,2,image,seta,green arrow pointing down,decorative; a short description is enough
 s03-t01,006,3,table,rows=7;columns=3;header=1,SISTEMA INTERNACIONAL DE UNIDADES (SI) — Grandezas e Unidades de Base,"two side-by-side boxes on the slide (name/unit, definition) are one table; European Portuguese spellings kept"
 s03-t01-h,006,3,table-header,Grandeza física de base (símbolo) | Unidade de base (símbolo) | Definição da unidade de base,SISTEMA INTERNACIONAL DE UNIDADES (SI) — Grandezas e Unidades de Base,
@@ -13,6 +13,8 @@ s03-t01-r04,006,3,table-row,"intensidade de corrente eléctrica (I) | ampere (A)
 s03-t01-r05,006,3,table-row,"temperatura (T) | kelvin (K) | 1 K é 1/273,16 da temperatura termodinâmica do ponto triplo da água (1967).",SISTEMA INTERNACIONAL DE UNIDADES (SI) — Grandezas e Unidades de Base,
 s03-t01-r06,006,3,table-row,"quantidade de matéria (n) | mole (mol) | a mole é a quantidade de matéria de um sistema contendo tantas entidades elementares quanto os átomos que existem em 0,012 kg de ¹²C (1971).",SISTEMA INTERNACIONAL DE UNIDADES (SI) — Grandezas e Unidades de Base,
 s03-t01-r07,006,3,table-row,intensidade luminosa (Iᵥ) | candela (cd) | 1 cd é a intensidade luminosa numa dada direcção de fonte que emite radiação monocromática de frequência 540x10¹² Hz e cuja intensidade nessa direcção é 1/683 W.sr⁻¹ (1979).,SISTEMA INTERNACIONAL DE UNIDADES (SI) — Grandezas e Unidades de Base,
+s03-x01,006,3,text,SISTEMA INTERNACIONAL DE UNIDADES (SI),printed table caption,"source=raster; caption, not a column header"
+s03-x02,006,3,text,Grandezas e Unidades de Base,printed table caption,"source=raster; caption, not a column header"
 s04-t01,006,4,table,rows=8;columns=3;header=1,Tabela 1.2 - Grandezas derivadas do Sistema Internacional de Unidades (SI),empty Definição for Área and Volume
 s04-t01-h,006,4,table-header,Grandeza | Definição | Unidade SI,Tabela 1.2 - Grandezas derivadas do Sistema Internacional de Unidades (SI),
 s04-t01-r01,006,4,table-row,Área |  | m²,Tabela 1.2 - Grandezas derivadas do Sistema Internacional de Unidades (SI),
@@ -23,6 +25,7 @@ s04-t01-r05,006,4,table-row,Força | Massa x aceleração | N (Newton) = kg m s�
 s04-t01-r06,006,4,table-row,Pressão | Força/área | Pa (Pascal) = N m⁻²,Tabela 1.2 - Grandezas derivadas do Sistema Internacional de Unidades (SI),
 s04-t01-r07,006,4,table-row,Energia | Força x distância | J (Joule) = N m,Tabela 1.2 - Grandezas derivadas do Sistema Internacional de Unidades (SI),
 s04-t01-r08,006,4,table-row,Potência | Energia/tempo | W (Watt) = J s⁻¹,Tabela 1.2 - Grandezas derivadas do Sistema Internacional de Unidades (SI),
+s04-x01,006,4,text,Tabela 1.2 - Grandezas derivadas do Sistema Internacional de Unidades (SI),printed table caption,"source=raster; caption, not a column header"
 s05-t01,006,5,table,rows=10;columns=3;header=1,SISTEMA INTERNACIONAL DE UNIDADES (SI) — Prefixos dos Múltiplos e Submúltiplos das Unidades — Múltiplos,"printed spellings kept (yota, zeta); the extractor collapsed it into one row of ten values per cell (#295)"
 s05-t01-h,006,5,table-header,Prefixo | símbolo | potência,SISTEMA INTERNACIONAL DE UNIDADES (SI) — Prefixos dos Múltiplos e Submúltiplos das Unidades — Múltiplos,
 s05-t01-r01,006,5,table-row,yota | Y | 10²⁴,SISTEMA INTERNACIONAL DE UNIDADES (SI) — Prefixos dos Múltiplos e Submúltiplos das Unidades — Múltiplos,
@@ -47,6 +50,10 @@ s05-t02-r07,006,5,table-row,fento | f | 10⁻¹⁵,SISTEMA INTERNACIONAL DE UNID
 s05-t02-r08,006,5,table-row,ato | a | 10⁻¹⁸,SISTEMA INTERNACIONAL DE UNIDADES (SI) — Prefixos dos Múltiplos e Submúltiplos das Unidades — Submúltiplos,
 s05-t02-r09,006,5,table-row,zepto | z | 10⁻²¹,SISTEMA INTERNACIONAL DE UNIDADES (SI) — Prefixos dos Múltiplos e Submúltiplos das Unidades — Submúltiplos,
 s05-t02-r10,006,5,table-row,yocto | y | 10⁻²⁴,SISTEMA INTERNACIONAL DE UNIDADES (SI) — Prefixos dos Múltiplos e Submúltiplos das Unidades — Submúltiplos,
+s05-x01,006,5,text,SISTEMA INTERNACIONAL DE UNIDADES (SI),printed table caption,"source=raster; caption, not a column header"
+s05-x02,006,5,text,Prefixos dos Múltiplos e Submúltiplos das Unidades,printed table caption,"source=raster; caption, not a column header"
+s05-x03,006,5,text,Múltiplos,printed table caption,"source=raster; caption, not a column header"
+s05-x04,006,5,text,Submúltiplos,printed table caption,"source=raster; caption, not a column header"
 s06-t01,006,6,table,rows=12;columns=2;header=1,ORDENS DE GRANDEZA — Alguns Exemplos — Distâncias,a raster image of a table; exponents read at 400 dpi
 s06-t01-h,006,6,table-header,Ordem de Grandeza (m) | Facto,ORDENS DE GRANDEZA — Alguns Exemplos — Distâncias,
 s06-t01-r01,006,6,table-row,10⁻¹⁵ m | raio de um núcleo atómico,ORDENS DE GRANDEZA — Alguns Exemplos — Distâncias,
@@ -61,7 +68,10 @@ s06-t01-r09,006,6,table-row,10¹⁷ m | distância da Terra à estrela mais pró
 s06-t01-r10,006,6,table-row,10²⁰ m | distância da Terra ao centro da Via Láctea,ORDENS DE GRANDEZA — Alguns Exemplos — Distâncias,
 s06-t01-r11,006,6,table-row,10²² m | distância da Terra à galáxia mais próxima,ORDENS DE GRANDEZA — Alguns Exemplos — Distâncias,
 s06-t01-r12,006,6,table-row,10²⁶ m | dimensão do universo,ORDENS DE GRANDEZA — Alguns Exemplos — Distâncias,
-s07-i01,006,7,image,"Density|Densidade|densidade;Platinum|Platina;21.45|21,45;Gold|Ouro;19.30|19,30|19,3;Uranium|Urânio;19.10|19,10|19,1;Magnesium|Magnésio;1.74|1,74;Aluminum|Alumínio;2.70|2,70|2,7",bar chart 'Metals : Density' (gram/cm3) of 20 metals,"values: Aluminum 2.70, Cadmium 8.65, Chromium 7.19, Cobalt 8.90, Copper 8.96, Gold 19.30, Iron 7.87, Lead 11.34, Magnesium 1.74, Manganese 7.21, Mercury 13.53, Molybdenum 10.28, Nickel 8.91, Platinum 21.45, Silver 10.49, Tin 7.37, Titanium 4.51, Tungsten 19.25, Uranium 19.10, Zinc 7.14"
+s06-x01,006,6,text,ORDENS DE GRANDEZA,printed table caption,"source=raster; caption, not a column header"
+s06-x02,006,6,text,Alguns Exemplos,printed table caption,"source=raster; caption, not a column header"
+s06-x03,006,6,text,Distâncias,printed table caption,"source=raster; caption, not a column header"
+s07-i01,006,7,image,"Density|Densidade;gram/cm3|g/cm³|g/cm3|gramas por centímetro cúbico;Aluminum|Alumínio;2.70|2,70;Cadmium|Cádmio;8.65|8,65;Chromium|Cromo;7.19|7,19;Cobalt|Cobalto;8.90|8,90;Copper|Cobre;8.96|8,96;Gold|Ouro;19.30|19,30;Iron|Ferro;7.87|7,87;Lead|Chumbo;11.34|11,34;Magnesium|Magnésio;1.74|1,74;Manganese|Manganês;7.21|7,21;Mercury|Mercúrio;13.53|13,53;Molybdenum|Molibdênio;10.28|10,28;Nickel|Níquel;8.91|8,91;Platinum|Platina;21.45|21,45;Silver|Prata;10.49|10,49;Tin|Estanho;7.37|7,37;Titanium|Titânio;4.51|4,51;Tungsten|Tungstênio;19.25|19,25;Uranium|Urânio;19.10|19,10;Zinc|Zinco;7.14|7,14",bar chart 'Metals : Density' (gram/cm3) of 20 metals,source=raster; all 20 category/value pairs and their unit are recorded in expectations.json audit.chart_data; legacy recall does not enforce pair association
 s08-t01,006,8,table,rows=14;columns=3;header=1,Table 12-9 — Experimental Bond Lengths (in nanometers),a photographed textbook table; the CH₃I molecule spans two rows
 s08-t01-h,006,8,table-header,Molecule | Bond | Length,Table 12-9 — Experimental Bond Lengths (in nanometers),
 s08-t01-r01,006,8,table-row,BCl₃ | B—Cl | 0.174,Table 12-9 — Experimental Bond Lengths (in nanometers),
@@ -78,80 +88,120 @@ s08-t01-r11,006,8,table-row,OF₂ | O—F | 0.141,Table 12-9 — Experimental Bo
 s08-t01-r12,006,8,table-row,O₃ | O—O | 0.128,Table 12-9 — Experimental Bond Lengths (in nanometers),
 s08-t01-r13,006,8,table-row,H₂SAlBr₃ | S—Al | 0.243,Table 12-9 — Experimental Bond Lengths (in nanometers),
 s08-t01-r14,006,8,table-row,(H₃Si)₂NN(SiH₃)₂ | Si—N | 0.173,Table 12-9 — Experimental Bond Lengths (in nanometers),
+s08-x01,006,8,text,Table 12-9,printed table caption,"source=raster; caption, not a column header"
+s08-x02,006,8,text,Experimental Bond Lengths (in nanometers),printed table caption,"source=raster; caption, not a column header"
 s09-x01,006,9,text,O que é importante:,,
 s09-x02,006,9,text,Toda grandeza física tem sua unidade.,,
-s09-x03,006,9,text,Expressar corretamente o número de algarismos significativos,,
+s09-x03,006,9,text,Expressar corretamente o número de algarismos significativos de medidas experimentais e quando fizer operações matemáticas.,,
+s09-x04,006,9,text,Conhecer as unidades fundamentais do SI,,
+s09-x05,006,9,text,Interconverter unidades,,
+s09-x06,006,9,text,Usar a notação científica (exponencial..... x 10ⁿ),,source=text-layer; n is an exponent in the original
 s10-x01,006,10,text,Número Atômico / Número de Massa / Massa Atômica relativa/Massa Molar,slide title,
 s10-t01,006,10,table,rows=3;columns=6;header=1,Tabela 1.1. Partículas subatômicas de relevância à química,a raster image of a table with its footnotes
 s10-t01-h,006,10,table-header,Partícula | Símbolo | Massa/u* | Nº massa | Carga/e† | Spin,Tabela 1.1. Partículas subatômicas de relevância à química,
 s10-t01-r01,006,10,table-row,"Elétron | e⁻ | 5,486x10⁻⁴ | 0 | -1 | ½",Tabela 1.1. Partículas subatômicas de relevância à química,
 s10-t01-r02,006,10,table-row,"Próton | p | 1,0078 | 1 | +1 | ½",Tabela 1.1. Partículas subatômicas de relevância à química,
 s10-t01-r03,006,10,table-row,"Nêutron | n | 1,0087 | 1 | 0 | ½",Tabela 1.1. Partículas subatômicas de relevância à química,
-s10-x02,006,10,text,"1u = 1,6605 x 10⁻²⁷ Kg",table footnote *,inside the table image
+s10-x02,006,10,text,"Massas expressas em unidades de massa atômica, u, com 1u = 1,6605 x 10⁻²⁷ Kg",table footnote *,source=raster; footnote *; preserve printed Kg (SI symbol is kg)
 s10-x03,006,10,text,1u = corresponde a 1/12 da massa de um átomo de Carbono-12,,
 s10-x04,006,10,text,"Massa de 1 átomo de carbono (6 prótons e 6 nêutrons) = 12,000 u",,
+s10-x05,006,10,text,"Átomo : prótons, nêutrons e elétrons",introductory bullet,
+s10-x06,006,10,text,"A carga elementar e é 1,602 x 10⁻¹⁹ C",table footnote †,source=raster; printed approximation preserved
+s10-x07,006,10,text,Fonte: Química Inorgânica - Shiver e Atkins 3ª Ed.,table source,"source=raster; Shiver is printed, not silently corrected to Shriver"
+s10-x08,006,10,text,Tabela 1.1. Partículas subatômicas de relevância à química,table caption,source=raster
 s11-i01,006,11,image,NIST;Fundamental Physical Constants|constantes físicas fundamentais;mass|massa,browser screenshot of the NIST CODATA search results for 'mass',the URL https://physics.nist.gov/cgi-bin/cuu/Results?search_for=mass is printed above the screenshot
+s11-x01,006,11,text,https://physics.nist.gov/cgi-bin/cuu/Results?search_for=mass,URL above screenshot,
 s12-x01,006,12,text,Recordando,slide title,
 s12-i01,006,12,image,lâmpada,light bulb icon pasted with the title and the notation,
 s12-i02,006,12,image,A;Z;E;sobrescrito|acima|superior|em cima;subscrito|abaixo|inferior|embaixo,nuclide notation: A as a superscript and Z as a subscript to the left of E,drawn as text but meaningless as 'E Z' (#293); its description must place A above and Z below
 s12-x03,006,12,text,Z = número atômico do elemento = número de prótons = carga nuclear,,
 s12-x04,006,12,text,A = número de massa = nº de prótons + nº de nêutrons = número de núcleons,,
 s13-x01,006,13,text,Massa atômica,slide title,
-s13-x02,006,13,text,Quando dizemos que um átomo de enxofre tem massa 32 u,,the extractor garbled this sentence in an earlier output ('o pao oo ao o so o')
-s14-i01,006,14,image,tabela periódica;isótopos|Há isótopos;H|hidrogênio;O|oxigênio,periodic table on parchment with water molecules; 'Há isótopos......' is printed on the image,
-s15-x01,006,15,text,elemento químico é o conjunto de átomos que possuem mesmo número atômico,,
+s13-x02,006,13,text,"Quando dizemos que um átomo de enxofre tem massa 32 u, estamos dizendo que sua massa é 32 vezes maior que 1/12 da massa do isótopo 12 do carbono.",,source=raster; preserve the original comparison wording
+s13-x03,006,13,text,"A massa de um átomo, medida em unidades de massa atômica, corresponde a quantas vezes esse átomo é mais pesado que 1/12 do isótopo 12 do carbono.",,source=raster
+s13-x04,006,13,text,"Corresponde, portanto, a quantas vezes o átomo em questão é mais pesado que o padrão (1/12 do isótopo 12 do carbono).",,source=raster
+s14-i01,006,14,image,tabela periódica;H|hidrogênio;O|oxigênio;água|H₂O|H2O,periodic table on parchment with water molecules; 'Há isótopos......' is printed on the image,source=raster; red overlay is separately annotated by s14-x01
+s14-x01,006,14,text,Há isótopos......,red text above periodic table,
+s15-x01,006,15,text,Deve-se lembrar que elemento químico é o conjunto de átomos que possuem mesmo número atômico.,,
 s15-i01,006,15,image,"17;Cl;CLORO|cloro;35.453|35,453",periodic table tile of chlorine with arrows to 'Número Atômico' and 'Massa Atômica',"the caption 'A massa atômica do cloro é aproximadamente 35,5u.' belongs to the tile"
 s15-x02,006,15,text,"A massa atômica do cloro é aproximadamente 35,5u.",under the tile,
 s15-t01,006,15,table,rows=2;columns=3;header=1,Naturally Occurring Isotopes of Chlorine,the extractor doubled every cell (#295)
 s15-t01-h,006,15,table-header,Isotopes | Atomic Mass of the Isotope (u) | Natural Abundance (%),Naturally Occurring Isotopes of Chlorine,
 s15-t01-r01,006,15,table-row,³⁵Cl | 34.97 | 75.76,Naturally Occurring Isotopes of Chlorine,
 s15-t01-r02,006,15,table-row,³⁷Cl | 36.97 | 24.24,Naturally Occurring Isotopes of Chlorine,
+s15-x03,006,15,text,"Dentro desse conjunto, existem isótopos, ou seja, átomos que apresentam igual número atômico mas diferente massa atômica.",,
+s15-x04,006,15,text,"Por exemplo, o elemento cloro, de número atômico 17, existem dois isótopos, um com número de massa 35 e outro com 37.",,source=text-layer; printed grammar and two-isotope simplification preserved
+s15-x05,006,15,text,Naturally Occurring Isotopes of Chlorine,table caption,source=raster
 s16-x01,006,16,text,Espectrometria de massas,slide title,
-s16-i01,006,16,image,Injetor;Aquecedor;Feixe de elétrons|feixe de elétrons;Magnéto|magneto|ímã|íman;Detector|detector;leves;pesadas;carga/massa|massa/carga,mass spectrometer diagram with Portuguese labels,
-s17-i01,006,17,image,m/z;35;37;70;72;74;Cl,"mass spectrum of chlorine Cl2 (relative molecular mass 35.45): peaks [35Cl]+ m/z 35, [37Cl]+ 37, [35Cl35Cl]+ 70, [35Cl37Cl]+ 72, [37Cl37Cl]+ 74",
-s18-x01,006,18,text,"aceito pela IUPAC é 12,0107 ± 8 com a incerteza no ultimo dígito",,
+s16-i01,006,16,image,Injetor;Aquecedor;Feixe de elétrons|feixe de elétrons;Magnéto|magneto|ímã|íman;Detector|detector;leves;pesadas;carga/massa,mass spectrometer diagram with Portuguese labels,source=raster; the printed ratio is carga/massa; its inverse is not an interchangeable alternative
+s17-i01,006,17,image,m/z;35;37;70;72;74;Cl;intensidade relativa|relative intensity,"chlorine Cl₂ mass spectrum; atomic-ion peaks [³⁵Cl]⁺ 35 and [³⁷Cl]⁺ 37; molecular-ion peaks [³⁵Cl³⁵Cl]⁺ 70, [³⁵Cl³⁷Cl]⁺ 72, [³⁷Cl³⁷Cl]⁺ 74","source=raster; original caption incorrectly calls 35.45 the relative molecular mass of Cl₂; retain literal caption in s17-x02; atomic relative mass ≈35.45, molecular relative mass ≈70.90 (audit note, not replacement text)"
+s17-x01,006,17,text,The mass spectrum of chlorine,yellow caption,source=raster
+s17-x02,006,17,text,Relative molecular mass 35.45,yellow caption beside Cl₂,"source=raster; scientific error preserved; 35.45 is an atomic relative mass, not the molecular relative mass of Cl₂"
+s17-x03,006,17,text,five main peaks three molecular ion peaks other isotopes ignored,central graph annotation,source=raster
+s18-x01,006,18,text,"O valor mais recente da massa atômica para o carbono obtido por espectrometria de massas (MS, do inglês: Mass Spectrometry) e aceito pela IUPAC é 12,0107 ± 8 com a incerteza no ultimo dígito.",,"source=text-layer; retain printed ± 8 and ultimo; 12.0107(8) means uncertainty 0.0008, not 8; most recent is a historical source claim"
 s18-i01,006,18,image,"12.011|12,011;12.01|12,01;12.0107|12,0107;SBQ;CRC;Chang;IUPAC","four carbon tiles (6, C) with their values and sources: Tabela Periódica SBQ 2010 12.011; CRC Handbook of Chemistry, 3a. ed. 12.011; Chang e Goldsby Química, 11a. ed. 12.01; IUPAC 2016 12.0107(8)",may be four pictures or one; each value must stay with its source
 s19-x01,006,19,text,O conceito de MOL,slide title,
 s19-x02,006,19,text,"Constante (número) de Avogadro = 6,02214076 x 10²³",,
+s19-x03,006,19,text,"Um mol é a quantidade de substância (ou matéria) que possui um número de unidades fundamentais (átomos, moléculas ou outras partículas) igual ao número de átomos presentem em exatamente 12 g do isótopo carbono -12.",,source=text-layer; preserve presentem and the historical carbon-12 definition
+s19-x04,006,19,text,"1 mol contém sempre o mesmo número de partículas (entidades), não importa de qual substância",,
 s20-x01,006,20,text,Novo conceito de mol,slide title,
 s20-f01,006,20,formula,n(B) = (N_A)^{-1} N(B),"A quantidade de B, n(B), é proporcional ao número de entidades de B",
 s20-x02,006,20,text,6.022 140 76 · 10²³ mol⁻¹,NA = …,the dot is a middle dot
+s20-x03,006,20,text,Definition of the mole (IUPAC Recommendation 2017),citation heading,
+s20-x04,006,20,text,Pure Appl. Chem. 2018; 90(1): 175–180,citation,
+s20-x05,006,20,text,"A quantidade de B, n(B), é proporcional ao número de entidades de B, N(B), com",sentence preceding formula,
+s20-x06,006,20,text,"D. B. Newell, F. Cabiati, J. Fischer, K. Fujii, S. G. Karshenboim, H. S. Margolis, E. de Mirandes, P. J. Mohr, F. Nez, K. Pachucki, T. J. Quinn, B. N. Taylor, M. Wang, B. Wood, Z. Zhang. “The CODATA 2017 Values of h, e, k, and NA for the Revision of the SI,” Metrologia, accepted, online 20 Oct 2017, https://doi.org/10.1088/1681-7575/aa950a (2017).",first bibliography entry,
+s20-x07,006,20,text,"Kuramoto N, Mizushima S, Zhang L, Fujita K, Azuma Y, Kurokawa A, Okubo S, Inaba H and Fujii K. A new 28Si single crystal: counting the atoms for the new kilogram definition Metrologia 54 716 (2017)",second bibliography entry,
 s21-x01,006,21,text,O conceito de Massa Molar,slide title,
 s21-f01,006,21,formula,n(B) = M(B)^{-1} m(B),left formula,
 s21-f02,006,21,formula,n = \frac{\text{massa}}{\text{Massa molar}},"right formula, drawn as a fraction",
+s21-x02,006,21,text,É a massa em gramas de 1 mol de átomos de qualquer elemento ou 1 mol de moléculas de qualquer substância...,first bullet,
+s21-x03,006,21,text,É a quantidade em gramas numericamente igual à massa atômica ou molecular.,second bullet,source=text-layer; pedagogical shorthand preserved; molar mass and atomic/molecular mass have distinct dimensions
 s22-f01,006,22,formula,m_u = m_a(^{12}\text{C})/12,mu é a constante de massa atômica,
 s22-f02,006,22,formula,M_u = N_A m_u,constante de massa molar,
 s22-f03,006,22,formula,M(B) = N_A m_a(B) = N_A A_r(B) m_u,Massa molar da substância B,
 s22-x01,006,22,text,Quantas vezes a massa de B é maior que 1/12 da massa do Carbono-12,,
+s22-x02,006,22,text,mᵤ é a constante de massa atômica = massa atômica do Carbono-12 dividido por 12,,
+s22-x03,006,22,text,Mᵤ= constante de massa molar,definition preceding formula,
+s22-f04,006,22,formula,1\ M_u = 1\ \mathrm{g\ mol}^{-1},,source=text-layer; printed equality retained; molar mass constant is no longer exactly 1 g mol⁻¹ in the revised SI
+s22-x04,006,22,text,Massa molar da substância B,underlined heading,
+s22-x05,006,22,text,Aᵣ(B) é massa atômica relativa de B,definition above arrow,
 s23-i01,006,23,image,tabela periódica;Elementos Representativos|representativos;Elementos de Transição|transição;Lantanídeos|lantanídeos;Actinídeos|actinídeos,periodic table 'Tabela Periódica dos Elementos Químicos — Massas atômicas referentes ao isótopo 12 do Carbono (¹²C)',
 s24-x01,006,24,text,"Fórmulas, moléculas e íons",slide title,
-s24-i01,006,24,image,H₂SO₄|H2SO4|Ácido Sulfúrico|ácido sulfúrico,"bottle of sulfuric acid, labelled H₂SO₄ (l)",a photo; its printed label is next to it
-s24-i02,006,24,image,SiC|carbeto|preto|pó,"black powder, labelled SiC (s)",a photo; its printed label is next to it
-s24-i03,006,24,image,Si|silício|lingote|cilíndrico|cilindro,"silicon ingot, labelled Si (s)",a photo; its printed label is next to it
-s24-i04,006,24,image,NaCl|sal|cristais|cubos,"salt crystals, labelled NaCl (s)",a photo; its printed label is next to it
-s24-i05,006,24,image,Tartrazina|tartrazina|amarelo|amarela,"yellow powder, labelled Tartrazina (s) C₁₆H₉N₄Na₃O₉S₂",a photo; its printed label is next to it
-s24-i06,006,24,image,Cu|cobre|metálico|avermelhad,"copper shavings, labelled Cu (s)",a photo; its printed label is next to it
+s24-i01,006,24,image,H₂SO₄|H2SO4|ácido sulfúrico;frasco|garrafa,"bottle of sulfuric acid, labelled H₂SO₄ (l)","source=raster; semicolon separates substance identification, form and colour; printed label/state separately annotated; object identity must not be borrowed from another photo"
+s24-i02,006,24,image,SiC|carbeto de silício;pó;preto|negro|escuro,"black powder, labelled SiC (s)","source=raster; semicolon separates substance identification, form and colour; printed label/state separately annotated; object identity must not be borrowed from another photo"
+s24-i03,006,24,image,Si|silício;lingote|cilindro|cilíndric,"silicon ingot, labelled Si (s)","source=raster; semicolon separates substance identification, form and colour; printed label/state separately annotated; object identity must not be borrowed from another photo"
+s24-i04,006,24,image,NaCl|cloreto de sódio|sal;cristais|cristal|cubos|cúbic,"salt crystals, labelled NaCl (s)","source=raster; semicolon separates substance identification, form and colour; printed label/state separately annotated; object identity must not be borrowed from another photo"
+s24-i05,006,24,image,Tartrazina;pó;amarelo|amarela,"yellow powder, labelled Tartrazina (s) C₁₆H₉N₄Na₃O₉S₂","source=raster; semicolon separates substance identification, form and colour; printed label/state separately annotated; object identity must not be borrowed from another photo"
+s24-i06,006,24,image,Cu|cobre;grânulos|granul|aparas|partículas;avermelhad|acobread|marrom,"copper particles, labelled Cu (s)","source=raster; semicolon separates substance identification, form and colour; printed label/state separately annotated; object identity must not be borrowed from another photo"
 s24-x02,006,24,text,C₁₆H₉N₄Na₃O₉S₂,tartrazina formula,
+s24-x03,006,24,text,H₂SO₄ (l),printed photo label/state,
+s24-x04,006,24,text,SiC (s),printed photo label/state,
+s24-x05,006,24,text,Si (s),printed photo label/state,
+s24-x06,006,24,text,NaCl (s),printed photo label/state,
+s24-x07,006,24,text,Tartrazina (s),printed photo label/state,
+s24-x08,006,24,text,Cu (s),printed photo label/state,
 s25-c01,006,25,chemical-structure,S;O;OH|HO|hidroxila,structural formula of H₂SO₄ with wedge bonds,"must be a description, never LaTeX (#284)"
 s25-x01,006,25,text,Fórmulas estrutural,caption under the drawing,printed as is
-s25-i01,006,25,image,tridimensional|3D|esferas|esfera|bastões|bolas;átomo|átomos|esfera|esferas,ball-and-stick model of H₂SO₄,
-s25-i02,006,25,image,tridimensional|3D|esferas|esfera|preenchimento;vermelh|amarel,space-filling model of H₂SO₄ on black,
+s25-i01,006,25,image,esferas|bolas;bastões|varetas|ligações;amarel;vermelh;branc,ball-and-stick model of H₂SO₄,"source=raster; ball-and-stick model, separate shape and colour concepts"
+s25-i02,006,25,image,preenchimento|compacto|esferas sobrepostas|esferas unidas;vermelh;amarel;branc,space-filling model of H₂SO₄ on black,"source=raster; space-filling model, distinct from the ball-and-stick model"
 s25-x02,006,25,text,Molécula,,
 s26-x01,006,26,text,Tartrazina,,
-s26-c01,006,26,chemical-structure,N=N|azo;Na⁺|Na+|sódio;SO|sulfon|S,structural formula of tartrazine,"must be a description, never LaTeX (#284)"
+s26-c01,006,26,chemical-structure,N=N|azo;Na⁺|Na+|sódio;sulfon|SO₃|SO3,structural formula of tartrazine,"source=raster; azo bond, sodium counterions and sulfonate groups are separate concepts; elemental S alone does not identify sulfonate"
 s26-x02,006,26,text,PET,,
-s26-c02,006,26,chemical-structure,colchetes|repet|polímero;n;benzeno|anel|aromático,repeating unit of PET between brackets with n,"must be a description, never \chemfig (#284)"
+s26-c02,006,26,chemical-structure,colchetes;repet|unidade repetitiva;n;benzeno|anel aromático,repeating unit of PET between brackets with n,"source=raster; brackets, repetition and aromatic ring are separate concepts; drawn polymer must be described, never raw chemfig"
 s26-x03,006,26,text,macromolécula,caption under PET,
+s26-x04,006,26,text,Molécula,caption below tartrazine,
 s27-i01,006,27,image,balão|frasco|recipiente;roxo|roxa|violeta|púrpura,round flask with purple iodine vapour,
-s27-i02,006,27,image,cristais|grãos|granul|pó;escur|pret|cinza,dark iodine crystals in a Petri dish,
+s27-i02,006,27,image,cristais|grãos|granul;escur|pret|cinza,dark iodine crystals in a Petri dish,source=raster; dark granular iodine crystals; a powder is not an interchangeable physical-form label
 s27-x01,006,27,text,I₂ (s),,
 s27-x02,006,27,text,molecular,,
-s28-i01,006,28,image,pentaceno|pentacene;quatro|4|painéis,four panels: a model of pentacene and its STM/AFM images,
+s28-i01,006,28,image,pentaceno|pentacene;quatro|4;painéis|imagens,four panels: a model of pentacene and its STM/AFM images,
 s28-x01,006,28,text,STM and AFM imaging of pentacene on Cu(111).,,
-s28-x02,006,28,text,Imagem da molécula de pentaceno imobilizada numa superfície resfriada próximo do zero absoluto,,
+s28-x02,006,28,text,"Imagem da molécula de pentaceno imobilizada numa superfície resfriada próximo do zero absoluto (L. Gross, F. Mohn, N. Moll, P. Liljeroth e G. Meyer, The Chemical Structure of a Molecule Resolved by Atomic Force Microscopy, Science (2009), 325 (5944), 1110-1114; DOI: 10.1126/science.1176210)",,
 s29-x01,006,29,text,iônico,slide title,
-s29-i01,006,29,image,esferas|esfera;cubo|cúbic;vermelh|azul|azuis,NaCl unit cell with a Cl⁻/Na⁺ legend,
-s29-i02,006,29,image,esferas|esfera;verde|verdes|roxa|roxas|lilás,space-filling NaCl lattice with a Cloreto/Sódio legend,
+s29-i01,006,29,image,NaCl|cloreto de sódio;esferas|esfera;cubo|cúbic;azul|azuis;vermelh;Cl⁻|Cl-;Na⁺|Na+,NaCl unit cell with a Cl⁻/Na⁺ legend,"source=raster; legend: blue Cl⁻, red Na⁺; semantic associations documented in audit"
+s29-i02,006,29,image,esferas|esfera;verde|verdes;roxa|roxas|lilás;Cloreto;Sódio,space-filling NaCl lattice with a Cloreto/Sódio legend,"source=raster; legend: green chloride, purple sodium"
 s29-x02,006,29,text,Cela unitária - agrupamento mínimo de íons ou átomos que representa a estrutura,,
 s30-i01,006,30,image,Sulfato|sulfato;Cobre|cobre,CuSO₄ lattice with a Sulfato/Cobre legend,
 s30-x01,006,30,text,Íon Cu²⁺,,
@@ -160,9 +210,10 @@ s30-x02,006,30,text,SO₄⁻,under the structure,printed with a single minus (th
 s30-x03,006,30,text,Íon sulfato,,
 s30-x04,006,30,text,Íon poliatômico,,
 s30-x05,006,30,text,Íon molecular,,
+s30-x06,006,30,text,Iônico,caption below copper sulfate lattice,
 s31-i01,006,31,image,Li⁺|Li+;Mg²⁺|Mg2+;Fe³⁺|Fe3+;Cu²⁺|Cu2+;Cl⁻|Cl-;O²⁻|O2-;Gases Nobres|gases nobres|Nobres,"periodic table of the common ions of each element (groups 1 to 18, lanthanides, actinides)",a raster image; its ~120 fragments must not reach the text (#283)
-s32-t01,006,32,table,rows=12;columns=2;header=1,HALOGÊNIOS,'HALOGÊNIOS' is a caption above; the first row (F⁻ Fluoreto) is styled as the header
-s32-t01-h,006,32,table-header,F⁻ | Fluoreto,HALOGÊNIOS,
+s32-t01,006,32,table,rows=13;columns=2;header=0,HALOGÊNIOS,13 data rows; no printed semantic column header; HALOGÊNIOS is the caption; the green styling of F⁻ does not make it a header
+s32-t01-h,006,32,table-row,F⁻ | Fluoreto,HALOGÊNIOS,"legacy ID preserved; first data row, not a semantic header"
 s32-t01-r01,006,32,table-row,Cl⁻ | Cloreto,HALOGÊNIOS,
 s32-t01-r02,006,32,table-row,Br⁻ | Brometo,HALOGÊNIOS,
 s32-t01-r03,006,32,table-row,I⁻ | Iodeto,HALOGÊNIOS,
@@ -175,8 +226,8 @@ s32-t01-r09,006,32,table-row,BrO₃⁻ | Bromato,HALOGÊNIOS,
 s32-t01-r10,006,32,table-row,IO⁻ | Hipoiodito,HALOGÊNIOS,
 s32-t01-r11,006,32,table-row,IO₃⁻ | Iodato,HALOGÊNIOS,
 s32-t01-r12,006,32,table-row,IO₄⁻ | Periodato,HALOGÊNIOS,
-s32-t02,006,32,table,rows=7;columns=2;header=1,FÓSFORO,
-s32-t02-h,006,32,table-header,FÓSFORO | ,FÓSFORO,
+s32-t02,006,32,table,rows=7;columns=2;header=0,FÓSFORO,
+s32-t02-h,006,32,text,FÓSFORO,table caption for s32-t02,legacy ID preserved; group title occupies the top visual row but does not name either semantic column
 s32-t02-r01,006,32,table-row,PO₃⁻ | Metafosfato,FÓSFORO,
 s32-t02-r02,006,32,table-row,H₂PO₂⁻ | Hipofosfito,FÓSFORO,
 s32-t02-r03,006,32,table-row,HPO₃²⁻ | Fosfito,FÓSFORO,
@@ -184,32 +235,38 @@ s32-t02-r04,006,32,table-row,PO₄³⁻ | Ortofosfato,FÓSFORO,
 s32-t02-r05,006,32,table-row,P³⁻ | Fosfeto,FÓSFORO,
 s32-t02-r06,006,32,table-row,P₂O₇⁴⁻ | Pirofosfato,FÓSFORO,
 s32-t02-r07,006,32,table-row,P₂O₆⁴⁻ | Hipofosfato,FÓSFORO,
-s33-t01,006,33,table,rows=6;columns=2;header=1,ENXOFRE,S²⁻ is printed as 'Sulfito' (the name is sulfeto); kept as printed
-s33-t01-h,006,33,table-header,ENXOFRE | ,ENXOFRE,
+s32-x01,006,32,text,HALOGÊNIOS,caption above s32-t01,
+s33-t01,006,33,table,rows=6;columns=2;header=0,ENXOFRE,S²⁻ is printed as 'Sulfito' (the name is sulfeto); kept as printed
+s33-t01-h,006,33,text,ENXOFRE,table caption for s33-t01,legacy ID preserved; group title occupies the top visual row but does not name either semantic column
 s33-t01-r01,006,33,table-row,S²⁻ | Sulfito,ENXOFRE,
 s33-t01-r02,006,33,table-row,SO₄²⁻ | Sulfato,ENXOFRE,
 s33-t01-r03,006,33,table-row,SO₃²⁻ | Sulfito,ENXOFRE,
 s33-t01-r04,006,33,table-row,S₂O₃²⁻ | Tiossulfato,ENXOFRE,
 s33-t01-r05,006,33,table-row,S₂O₈²⁻ | Persulfato,ENXOFRE,
 s33-t01-r06,006,33,table-row,S₄O₆²⁻ | Tetrationato,ENXOFRE,
-s33-t02,006,33,table,rows=4;columns=2;header=1,NITROGÊNIO,
-s33-t02-h,006,33,table-header,NITROGÊNIO | ,NITROGÊNIO,
+s33-t02,006,33,table,rows=4;columns=2;header=0,NITROGÊNIO,
+s33-t02-h,006,33,text,NITROGÊNIO,table caption for s33-t02,legacy ID preserved; group title occupies the top visual row but does not name either semantic column
 s33-t02-r01,006,33,table-row,NO₂⁻ | Nitrito,NITROGÊNIO,
 s33-t02-r02,006,33,table-row,NO₃⁻ | Nitrato,NITROGÊNIO,
 s33-t02-r03,006,33,table-row,N₃⁻ | Azida,NITROGÊNIO,
 s33-t02-r04,006,33,table-row,N³⁻ | Nitreto,NITROGÊNIO,
-s34-i01,006,34,image,Si;C|carbono;cubo|cúbic|célula,'Silicon carbide structure' unit cell (Figure 11) with Si and C legend,
+s34-i01,006,34,image,Si;C|carbono;cubo|cúbic,'Silicon carbide structure' unit cell (Figure 11) with Si and C legend,source=raster; cubic unit-cell geometry is distinct from the generic concept cell
 s34-x01,006,34,text,REDE Covalente estendida,,
 s34-i02,006,34,image,Ferro|ferro;esferas|esfera,metallic iron lattice of grey spheres with a 'Ferro' legend,
 s34-x02,006,34,text,metálico,,
-s34-i03,006,34,image,cúbic|cubo|esferas,body-centred cubic cell drawing,
-s34-i04,006,34,image,esferas|vermelh,red spheres of the body-centred cubic packing,
+s34-i03,006,34,image,cúbic|cubo;esferas|esfera;centro|corpo centrado,body-centred cubic cell drawing,"source=raster; cubic geometry, spheres and body-centred position are separate concepts"
+s34-i04,006,34,image,esferas|esfera;vermelh,red spheres of the body-centred cubic packing,source=raster; spherical form and red colour are separate concepts
 s35-x01,006,35,text,Determinação da fórmula química,slide title,
-s35-x02,006,35,text,fórmulas empíricas: menor relação dos átomos contidos em um composto,,
+s35-x02,006,35,text,"fórmulas empíricas: menor relação dos átomos contidos em um composto. Os compostos iônicos, metálicos e de rede covalente estendida são geralmente representados por fórmulas empíricas.",,
 s35-x03,006,35,text,Al₂O₃,,
-s35-x04,006,35,text,Fe₃O₄,,
-s35-x05,006,35,text,CaCO₃,,
+s35-x04,006,35,text,Fe₃O₄,,"source=text-layer; Fe₃O₄ and CaCO₃ are visually adjacent with no separator; separate chemical examples, no invented punctuation"
+s35-x05,006,35,text,CaCO₃,,source=text-layer; follows Fe₃O₄ without a printed separator
 s35-x06,006,35,text,"H₂O₂, porém sua fórmula empírica ou fórmula mínima é HO.",,
+s35-x07,006,35,text,fórmulas moleculares: descreve o número exato de átomos de cada elemento de uma molécula.,,source=text-layer; preserve printed agreement descreve
+s35-x08,006,35,text,NaCl,empirical formula examples,source=text-layer; entries belong to the printed sequence NaCl ; C ; Na ; Fe; Al₂O₃ ; Fe₃O₄CaCO₃
+s35-x09,006,35,text,C,empirical formula examples,source=text-layer; entries belong to the printed sequence NaCl ; C ; Na ; Fe; Al₂O₃ ; Fe₃O₄CaCO₃
+s35-x10,006,35,text,Na,empirical formula examples,source=text-layer; entries belong to the printed sequence NaCl ; C ; Na ; Fe; Al₂O₃ ; Fe₃O₄CaCO₃
+s35-x11,006,35,text,Fe,empirical formula examples,source=text-layer; entries belong to the printed sequence NaCl ; C ; Na ; Fe; Al₂O₃ ; Fe₃O₄CaCO₃
 s36-x01,006,36,text,Composição percentual em massa,slide title,
 s36-f01,006,36,formula,\% \text{elemento} = \frac{n \times \text{massa molar do elemento}}{\text{massa molar do composto}} \times 100\%,,
 s36-x02,006,36,text,n é o número de mols de elemento em 1 mol de composto.,,
@@ -221,18 +278,28 @@ s37-x04,006,37,text,c) composição percentual em massa da fórmula molecular,,
 s37-c01,006,37,chemical-structure,vitamina C|ácido ascórbico;OH|HO|hidroxila;anel,"structural formula of ascorbic acid, 'Figura 1: molécula do ácido ascórbico'",
 s37-x05,006,37,text,Fórmula estrutural,,
 s38-f01,006,38,formula,\text{Massa percentual do elemento} = \frac{\text{massa do elemento na amostra}}{\text{massa total da amostra}} \times 100\%,,
-s38-x01,006,38,text,uma amostra de 8 g vitamina C,,
+s38-x01,006,38,text,"Por exemplo, uma amostra de 8 g vitamina C, quando analisada, possui os seguintes valores:",,
 s38-x02,006,38,text,"Carbono 3,270 g",,
 s38-x03,006,38,text,"Hidrogênio 0,366 g",,
 s38-x04,006,38,text,"Oxigênio 4,360 g",,
+s38-x05,006,38,text,"Na verdade, ocorre o contrário, ou seja, a determinação da fórmula molecular de um composto começa pela medida da massa percentual de cada elemento presente na amostra. Calculado por meio da seguinte expressão:",,
 s39-x01,006,39,text,1- Calcular a massa de cada em elemento para 100 g de amostra,,printed as is ('de cada em elemento')
 s39-f01,006,39,formula,n = \frac{\text{massa do elemento em 100 g de amostra}}{\text{massa molar do elemento}},,
+s39-x02,006,39,text,2- O número de mols é calculado por meio da seguinte expressão:,,
 s40-x01,006,40,text,"3,41 mol de átomos de C",,
 s40-x02,006,40,text,"4,54 mol de átomos de H",,
 s40-x03,006,40,text,"razão molar de 3,41C : 4,54H : 3,41O",,
 s40-x04,006,40,text,C₃H₄O₃ ???,,
+s40-x05,006,40,text,"3,41 mol de átomos de O","third quantity, linked to Em 100 gramas",
+s40-x06,006,40,text,"o número de mols é proporcional ao número de átomos, nós conhecemos agora quantos átomos de cada elemento estão presentes na vitamina C:",,
+s40-x07,006,40,text,Em 100 gramas,"brace grouping C, H and O quantities",
+s40-x08,006,40,text,"Desse modo, somos capaz de escrever a seguinte fórmula empírica para a vitamina C:",,source=text-layer; preserve somos capaz
+s40-f01,006,40,formula,"\mathrm{C}_{3,41}\mathrm{H}_{4,54}\mathrm{O}_{3,41}",,source=text-layer; fractional atom counts printed as subscripts before the tentative C₃H₄O₃
 s41-x01,006,41,text,A fórmula química encontrada para a vitamina C nesse procedimento é sua fórmula empírica.,,the slide is a picture of text; a failed description lost it in v5
-s41-x02,006,41,text,"C₆H₈O₆, C₉H₁₂O₉, C₁₂H₁₆O₁₂",,
+s41-x02,006,41,text,"A mesma fórmula empírica seria obtida das seguintes composições, C₆H₈O₆, C₉H₁₂O₉, C₁₂H₁₆O₁₂ ou qualquer outro múltiplo da fórmula empírica.",,"source=raster; remaining sentence, including the three examples"
 s42-x01,006,42,text,"A massa molar da vitamina C obtida por espectrometria de massa é 176,14 g mol⁻¹",,
-s42-f01,006,42,formula,"\frac{176{,}14\ \text{g mol}^{-1}}{88{,}06\ \text{g mol}^{-1}} = 2{,}000",,
+s42-f01,006,42,formula,"\frac{176{,}14\ \text{g mol}^{-1}}{88{,}06\ \text{g mol}^{-1}} = 2{,}000",,"source=text-layer; preserve original 2,000; 176.14 / 88.06 = 2.000227..., rounded to the printed precision"
 s42-x02,006,42,text,a fórmula molecular da vitamina C é 2 x (C₃H₄O₃) ou melhor C₆H₈O₆.,,
+s42-x03,006,42,text,Para chegarmos a fórmula molecular da vitamina C é preciso conhecer a massa molar da substância.,,
+s42-x04,006,42,text,"enquanto a calculada a partir da sua fórmula empírica é 88,06 g mol⁻¹.",,"source=text-layer; preserve 88,06 as printed"
+s42-x05,006,42,text,"Por inspeção simples, é fácil observar que a massa molar determinada é duas vezes a massa calculada pela fórmula empírica.",,
