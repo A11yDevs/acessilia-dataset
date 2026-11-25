@@ -1,0 +1,288 @@
+id,page,change,field,before,after
+p1-i19,1,added,id,,p1-i19
+p1-i19,1,added,manifest_id,,036
+p1-i19,1,added,page,,1
+p1-i19,1,added,kind,,inline
+p1-i19,1,added,expected_latex,,"60\,\mathrm{km/h}"
+p1-i19,1,added,context,,velocidade constante e igual a 60 km/h.
+p1-i19,1,added,notes,,visual occurrence; source PDF text layer is auxiliary only; see semantic_reference.json occurrences
+p1-i20,1,added,id,,p1-i20
+p1-i20,1,added,manifest_id,,036
+p1-i20,1,added,page,,1
+p1-i20,1,added,kind,,inline
+p1-i20,1,added,expected_latex,,a
+p1-i20,1,added,context,,"aceleração é igual a a, podemos facilmente deduzir"
+p1-i20,1,added,notes,,visual occurrence; source PDF text layer is auxiliary only; see semantic_reference.json occurrences
+p2-d03,2,modified,notes,"equation number (1); the source prints 2^8, a typo for 2^3 that must be kept","source prints 2^8, inconsistent with s(t)=t^3 and the 2^3 expansion on page 3; retain 2^8; tag (1) is an equation label, not a mathematical operand; see semantic_reference.json"
+p2-i19,2,added,id,,p2-i19
+p2-i19,2,added,manifest_id,,036
+p2-i19,2,added,page,,2
+p2-i19,2,added,kind,,inline
+p2-i19,2,added,expected_latex,,"2\,\text{horas}"
+p2-i19,2,added,context,,estamos deixando um intervalo de 2 horas
+p2-i19,2,added,notes,,visual occurrence; source PDF text layer is auxiliary only; see semantic_reference.json occurrences
+p2-i20,2,added,id,,p2-i20
+p2-i20,2,added,manifest_id,,036
+p2-i20,2,added,page,,2
+p2-i20,2,added,kind,,inline
+p2-i20,2,added,expected_latex,,"1\,\text{hora}"
+p2-i20,2,added,context,,esse intervalo de tempo para 1 hora somente
+p2-i20,2,added,notes,,visual occurrence; source PDF text layer is auxiliary only; see semantic_reference.json occurrences
+p2-i21,2,added,id,,p2-i21
+p2-i21,2,added,manifest_id,,036
+p2-i21,2,added,page,,2
+p2-i21,2,added,kind,,inline
+p2-i21,2,added,expected_latex,,h
+p2-i21,2,added,context,,o intervalo de tempo h se torna mais próximo
+p2-i21,2,added,notes,,visual occurrence; source PDF text layer is auxiliary only; see semantic_reference.json occurrences
+p2-i22,2,added,id,,p2-i22
+p2-i22,2,added,manifest_id,,036
+p2-i22,2,added,page,,2
+p2-i22,2,added,kind,,inline
+p2-i22,2,added,expected_latex,,h
+p2-i22,2,added,context,,Observe que o valor de h nunca pode ser igual a zero
+p2-i22,2,added,notes,,visual occurrence; source PDF text layer is auxiliary only; see semantic_reference.json occurrences
+p2-i23,2,added,id,,p2-i23
+p2-i23,2,added,manifest_id,,036
+p2-i23,2,added,page,,2
+p2-i23,2,added,kind,,inline
+p2-i23,2,added,expected_latex,,h
+p2-i23,2,added,context,,os valores possiveis para h são todos
+p2-i23,2,added,notes,,visual occurrence; source PDF text layer is auxiliary only; see semantic_reference.json occurrences
+p2-t04,2,added,id,,p2-t04
+p2-t04,2,added,manifest_id,,036
+p2-t04,2,added,page,,2
+p2-t04,2,added,kind,,table-cell
+p2-t04,2,added,expected_latex,,2
+p2-t04,2,added,context,,table p2-table01; data row 1; column 1; h = 2
+p2-t04,2,added,notes,,literal filled cell; do not match against a different row or column
+p2-t05,2,added,id,,p2-t05
+p2-t05,2,added,manifest_id,,036
+p2-t05,2,added,page,,2
+p2-t05,2,added,kind,,table-cell
+p2-t05,2,added,expected_latex,,4
+p2-t05,2,added,context,,table p2-table01; data row 1; column 2; h = 2
+p2-t05,2,added,notes,,literal filled cell; do not match against a different row or column
+p2-t06,2,added,id,,p2-t06
+p2-t06,2,added,manifest_id,,036
+p2-t06,2,added,page,,2
+p2-t06,2,added,kind,,table-cell
+p2-t06,2,added,expected_latex,,28
+p2-t06,2,added,context,,table p2-table01; data row 1; column 3; h = 2
+p2-t06,2,added,notes,,literal filled cell; do not match against a different row or column
+p2-t07,2,added,id,,p2-t07
+p2-t07,2,added,manifest_id,,036
+p2-t07,2,added,page,,2
+p2-t07,2,added,kind,,table-cell
+p2-t07,2,added,expected_latex,,1
+p2-t07,2,added,context,,table p2-table01; data row 2; column 1; h = 1
+p2-t07,2,added,notes,,literal filled cell; do not match against a different row or column
+p2-t08,2,added,id,,p2-t08
+p2-t08,2,added,manifest_id,,036
+p2-t08,2,added,page,,2
+p2-t08,2,added,kind,,table-cell
+p2-t08,2,added,expected_latex,,3
+p2-t08,2,added,context,,table p2-table01; data row 2; column 2; h = 1
+p2-t08,2,added,notes,,literal filled cell; do not match against a different row or column
+p2-t09,2,added,id,,p2-t09
+p2-t09,2,added,manifest_id,,036
+p2-t09,2,added,page,,2
+p2-t09,2,added,kind,,table-cell
+p2-t09,2,added,expected_latex,,19
+p2-t09,2,added,context,,table p2-table01; data row 2; column 3; h = 1
+p2-t09,2,added,notes,,literal filled cell; do not match against a different row or column
+p2-t10,2,added,id,,p2-t10
+p2-t10,2,added,manifest_id,,036
+p2-t10,2,added,page,,2
+p2-t10,2,added,kind,,table-cell
+p2-t10,2,added,expected_latex,,"0{,}5"
+p2-t10,2,added,context,,"table p2-table01; data row 3; column 1; h = 0,5"
+p2-t10,2,added,notes,,literal filled cell; do not match against a different row or column
+p2-t11,2,added,id,,p2-t11
+p2-t11,2,added,manifest_id,,036
+p2-t11,2,added,page,,2
+p2-t11,2,added,kind,,table-cell
+p2-t11,2,added,expected_latex,,"2{,}5"
+p2-t11,2,added,context,,"table p2-table01; data row 3; column 2; h = 0,5"
+p2-t11,2,added,notes,,literal filled cell; do not match against a different row or column
+p2-t12,2,added,id,,p2-t12
+p2-t12,2,added,manifest_id,,036
+p2-t12,2,added,page,,2
+p2-t12,2,added,kind,,table-cell
+p2-t12,2,added,expected_latex,,"15{,}25"
+p2-t12,2,added,context,,"table p2-table01; data row 3; column 3; h = 0,5"
+p2-t12,2,added,notes,,literal filled cell; do not match against a different row or column
+p2-t13,2,added,id,,p2-t13
+p2-t13,2,added,manifest_id,,036
+p2-t13,2,added,page,,2
+p2-t13,2,added,kind,,table-cell
+p2-t13,2,added,expected_latex,,"0{,}1"
+p2-t13,2,added,context,,"table p2-table01; data row 4; column 1; h = 0,1"
+p2-t13,2,added,notes,,literal filled cell; do not match against a different row or column
+p2-t14,2,added,id,,p2-t14
+p2-t14,2,added,manifest_id,,036
+p2-t14,2,added,page,,2
+p2-t14,2,added,kind,,table-cell
+p2-t14,2,added,expected_latex,,"2{,}1"
+p2-t14,2,added,context,,"table p2-table01; data row 4; column 2; h = 0,1"
+p2-t14,2,added,notes,,literal filled cell; do not match against a different row or column
+p2-t15,2,added,id,,p2-t15
+p2-t15,2,added,manifest_id,,036
+p2-t15,2,added,page,,2
+p2-t15,2,added,kind,,table-cell
+p2-t15,2,added,expected_latex,,"12{,}61"
+p2-t15,2,added,context,,"table p2-table01; data row 4; column 3; h = 0,1"
+p2-t15,2,added,notes,,literal filled cell; do not match against a different row or column
+p2-t16,2,added,id,,p2-t16
+p2-t16,2,added,manifest_id,,036
+p2-t16,2,added,page,,2
+p2-t16,2,added,kind,,table-cell
+p2-t16,2,added,expected_latex,,"0{,}01"
+p2-t16,2,added,context,,"table p2-table01; data row 5; column 1; h = 0,01"
+p2-t16,2,added,notes,,literal filled cell; do not match against a different row or column
+p2-t17,2,added,id,,p2-t17
+p2-t17,2,added,manifest_id,,036
+p2-t17,2,added,page,,2
+p2-t17,2,added,kind,,table-cell
+p2-t17,2,added,expected_latex,,"2{,}01"
+p2-t17,2,added,context,,"table p2-table01; data row 5; column 2; h = 0,01"
+p2-t17,2,added,notes,,literal filled cell; do not match against a different row or column
+p2-t18,2,added,id,,p2-t18
+p2-t18,2,added,manifest_id,,036
+p2-t18,2,added,page,,2
+p2-t18,2,added,kind,,table-cell
+p2-t18,2,added,expected_latex,,"12{,}0601"
+p2-t18,2,added,context,,"table p2-table01; data row 5; column 3; h = 0,01"
+p2-t18,2,added,notes,,literal filled cell; do not match against a different row or column
+p2-t19,2,added,id,,p2-t19
+p2-t19,2,added,manifest_id,,036
+p2-t19,2,added,page,,2
+p2-t19,2,added,kind,,table-cell
+p2-t19,2,added,expected_latex,,"0{,}001"
+p2-t19,2,added,context,,"table p2-table01; data row 6; column 1; h = 0,001"
+p2-t19,2,added,notes,,literal filled cell; do not match against a different row or column
+p2-t20,2,added,id,,p2-t20
+p2-t20,2,added,manifest_id,,036
+p2-t20,2,added,page,,2
+p2-t20,2,added,kind,,table-cell
+p2-t20,2,added,expected_latex,,"2{,}001"
+p2-t20,2,added,context,,"table p2-table01; data row 6; column 2; h = 0,001"
+p2-t20,2,added,notes,,literal filled cell; do not match against a different row or column
+p2-t21,2,added,id,,p2-t21
+p2-t21,2,added,manifest_id,,036
+p2-t21,2,added,page,,2
+p2-t21,2,added,kind,,table-cell
+p2-t21,2,added,expected_latex,,"12{,}006001"
+p2-t21,2,added,context,,"table p2-table01; data row 6; column 3; h = 0,001"
+p2-t21,2,added,notes,,literal filled cell; do not match against a different row or column
+p3-d01,3,modified,notes,set braces and the word 'e' inside the set,"named domain operator Dom; subscript 2; left endpoint -2 included, zero excluded; positive infinity; union; real membership; conjunction of >= and !=; keyword infinito alone is insufficient"
+p3-d02,3,modified,notes,two aligned lines (eqnarray); an extractor may split it into two formulas,"two aligned lines, one equality chain; one or multiple ordered associated math blocks are valid if all four stages and equalities survive; page 3 prints 2^3 despite 2^8 in (1)"
+p3-i19,3,added,id,,p3-i19
+p3-i19,3,added,manifest_id,,036
+p3-i19,3,added,page,,3
+p3-i19,3,added,kind,,inline
+p3-i19,3,added,expected_latex,,h
+p3-i19,3,added,context,,quando h fica próximo de zero
+p3-i19,3,added,notes,,visual occurrence; source PDF text layer is auxiliary only; see semantic_reference.json occurrences
+p3-i20,3,added,id,,p3-i20
+p3-i20,3,added,manifest_id,,036
+p3-i20,3,added,page,,3
+p3-i20,3,added,kind,,inline
+p3-i20,3,added,expected_latex,,h
+p3-i20,3,added,context,,à medida em que h se aproxima de zero
+p3-i20,3,added,notes,,visual occurrence; source PDF text layer is auxiliary only; see semantic_reference.json occurrences
+p3-i21,3,added,id,,p3-i21
+p3-i21,3,added,manifest_id,,036
+p3-i21,3,added,page,,3
+p3-i21,3,added,kind,,inline
+p3-i21,3,added,expected_latex,,h
+p3-i21,3,added,context,,"para qualquer valor de h, o domínio"
+p3-i21,3,added,notes,,visual occurrence; source PDF text layer is auxiliary only; see semantic_reference.json occurrences
+p3-i22,3,added,id,,p3-i22
+p3-i22,3,added,manifest_id,,036
+p3-i22,3,added,page,,3
+p3-i22,3,added,kind,,inline
+p3-i22,3,added,expected_latex,,h
+p3-i22,3,added,context,,o que acontence com vm₂(h) quando h se aproxima de zero
+p3-i22,3,added,notes,,visual occurrence; source PDF text layer is auxiliary only; see semantic_reference.json occurrences
+p4-d01,4,modified,notes,,belongs to page 4 ordered-list item 1; formula must not restart or interrupt list numbering
+p4-i09,4,modified,notes,,preserve grouping (a/2)t^2 and implicit products; parentheses do not mean a function call
+p4-i10,4,modified,notes,,source literally lists s_0 and a in R; do not add v_0 to this occurrence
+p4-i12,4,added,id,,p4-i12
+p4-i12,4,added,manifest_id,,036
+p4-i12,4,added,page,,4
+p4-i12,4,added,kind,,inline
+p4-i12,4,added,expected_latex,,h
+p4-i12,4,added,context,,quando h se aproxima de zero. Assim
+p4-i12,4,added,notes,,visual occurrence; source PDF text layer is auxiliary only; see semantic_reference.json occurrences
+p4-i13,4,added,id,,p4-i13
+p4-i13,4,added,manifest_id,,036
+p4-i13,4,added,page,,4
+p4-i13,4,added,kind,,inline
+p4-i13,4,added,expected_latex,,h
+p4-i13,4,added,context,,item 1: quociente quando h se aproxima de zero
+p4-i13,4,added,notes,,visual occurrence; source PDF text layer is auxiliary only; see semantic_reference.json occurrences
+p4-i14,4,added,id,,p4-i14
+p4-i14,4,added,manifest_id,,036
+p4-i14,4,added,page,,4
+p4-i14,4,added,kind,,inline
+p4-i14,4,added,expected_latex,,h
+p4-i14,4,added,context,,item 2: para valores h que são próximos
+p4-i14,4,added,notes,,visual occurrence; source PDF text layer is auxiliary only; see semantic_reference.json occurrences
+p4-i15,4,added,id,,p4-i15
+p4-i15,4,added,manifest_id,,036
+p4-i15,4,added,page,,4
+p4-i15,4,added,kind,,inline
+p4-i15,4,added,expected_latex,,h
+p4-i15,4,added,context,,item 4: velocidade média quando h se aproxima de zero
+p4-i15,4,added,notes,,visual occurrence; source PDF text layer is auxiliary only; see semantic_reference.json occurrences
+p5-d02,5,modified,notes,"nested fraction; (3 + h)3 means 3(3 + h), as printed","external fraction containing subtraction of two inner fractions; retain omitted-step ellipsis, leading minus and implicit product (3+h)3; belongs to ordered-list item 2"
+p5-i04,5,added,id,,p5-i04
+p5-i04,5,added,manifest_id,,036
+p5-i04,5,added,page,,5
+p5-i04,5,added,kind,,inline
+p5-i04,5,added,expected_latex,,h
+p5-i04,5,added,context,,item 3: Fazendo h se aproximar de 0
+p5-i04,5,added,notes,,visual occurrence; source PDF text layer is auxiliary only; see semantic_reference.json occurrences
+p5-t05,5,added,id,,p5-t05
+p5-t05,5,added,manifest_id,,036
+p5-t05,5,added,page,,5
+p5-t05,5,added,kind,,table-cell
+p5-t05,5,added,expected_latex,,1
+p5-t05,5,added,context,,table p5-table01; data row 1; column 1; h = 1
+p5-t05,5,added,notes,,literal filled cell; do not match against a different row or column
+p5-t06,5,added,id,,p5-t06
+p5-t06,5,added,manifest_id,,036
+p5-t06,5,added,page,,5
+p5-t06,5,added,kind,,table-cell
+p5-t06,5,added,expected_latex,,4
+p5-t06,5,added,context,,table p5-table01; data row 1; column 2; h = 1
+p5-t06,5,added,notes,,literal filled cell; do not match against a different row or column
+p5-t07,5,added,id,,p5-t07
+p5-t07,5,added,manifest_id,,036
+p5-t07,5,added,page,,5
+p5-t07,5,added,kind,,table-cell
+p5-t07,5,added,expected_latex,,"0{,}1"
+p5-t07,5,added,context,,"table p5-table01; data row 2; column 1; h = 0,1"
+p5-t07,5,added,notes,,literal filled cell; do not match against a different row or column
+p5-t08,5,added,id,,p5-t08
+p5-t08,5,added,manifest_id,,036
+p5-t08,5,added,page,,5
+p5-t08,5,added,kind,,table-cell
+p5-t08,5,added,expected_latex,,"3{,}1"
+p5-t08,5,added,context,,"table p5-table01; data row 2; column 2; h = 0,1"
+p5-t08,5,added,notes,,literal filled cell; do not match against a different row or column
+p5-t09,5,added,id,,p5-t09
+p5-t09,5,added,manifest_id,,036
+p5-t09,5,added,page,,5
+p5-t09,5,added,kind,,table-cell
+p5-t09,5,added,expected_latex,,"0{,}01"
+p5-t09,5,added,context,,"table p5-table01; data row 3; column 1; h = 0,01"
+p5-t09,5,added,notes,,literal filled cell; do not match against a different row or column
+p5-t10,5,added,id,,p5-t10
+p5-t10,5,added,manifest_id,,036
+p5-t10,5,added,page,,5
+p5-t10,5,added,kind,,table-cell
+p5-t10,5,added,expected_latex,,"0{,}001"
+p5-t10,5,added,context,,"table p5-table01; data row 4; column 1; h = 0,001"
+p5-t10,5,added,notes,,literal filled cell; do not match against a different row or column
