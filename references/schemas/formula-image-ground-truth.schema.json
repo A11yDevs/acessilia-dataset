@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:a11ydevs:acessilia-dataset:formula-image-ground-truth:1.0.0",
+  "title": "Formula image ground-truth CSV row",
+  "description": "CSV values are strings; filename remains relative to input/formula-images/ by its basename.",
+  "x-schema-version": "1.0.0",
+  "x-csv-columns": ["id", "filename", "kind", "variant", "format", "expected_latex", "source", "notes", "manifest_id"],
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "filename", "kind", "variant", "format", "expected_latex", "source", "notes", "manifest_id"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^(?:f[0-9]{3}[a-z]*|nf[0-9]{3})$"},
+    "filename": {"type": "string", "minLength": 1},
+    "kind": {"enum": ["formula", "formula_pdf", "non_formula"]},
+    "variant": {"type": "string", "minLength": 1},
+    "format": {"enum": ["png", "jpg", "pdf"]},
+    "expected_latex": {"type": "string"},
+    "source": {"type": "string", "minLength": 1},
+    "notes": {"type": "string"},
+    "manifest_id": {"type": "string", "pattern": "^[0-9]{3}$"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"kind": {"const": "formula"}}, "required": ["kind"]},
+      "then": {"properties": {"format": {"enum": ["png", "jpg"]}, "expected_latex": {"minLength": 1}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "formula_pdf"}}, "required": ["kind"]},
+      "then": {"properties": {"format": {"const": "pdf"}, "expected_latex": {"minLength": 1}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "non_formula"}}, "required": ["kind"]},
+      "then": {"properties": {"format": {"const": "png"}, "expected_latex": {"const": ""}}}
+    }
+  ]
+}

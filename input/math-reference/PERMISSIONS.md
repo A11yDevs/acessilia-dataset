@@ -7,4 +7,4 @@
 - **Obtained by:** Marcelo Akira Inuzuka, maintainer, who keeps the record of the permission. Ask him (or the current maintainers) for it before reusing the document outside this repository.
 - **Recorded:** 2026-10-25, in A11yDevs/acessilia-dataset#5.
 
-If the permission is withdrawn, remove the PDF and its row in `input/manifest.csv`; `ground_truth.csv` and `expectations.json` are transcriptions made for this dataset and can stay.
+If the permission is withdrawn, remove the PDF and its row in `input/manifest.csv`; the transcription files in `references/math/036/` are made for this dataset and can remain.

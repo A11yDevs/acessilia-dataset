@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:a11ydevs:acessilia-dataset:math-036-ground-truth:1.0.0",
+  "title": "Math 036 ground-truth CSV row",
+  "description": "CSV values are strings; the reading order follows the printed source.",
+  "x-schema-version": "1.0.0",
+  "x-csv-columns": ["id", "manifest_id", "page", "kind", "expected_latex", "context", "notes"],
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "manifest_id", "page", "kind", "expected_latex", "context", "notes"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^p[1-5]-[a-z][0-9]{2}$"},
+    "manifest_id": {"const": "036"},
+    "page": {"type": "string", "pattern": "^[1-5]$"},
+    "kind": {"enum": ["display", "inline", "table-header", "table-cell"]},
+    "expected_latex": {"type": "string", "minLength": 1},
+    "context": {"type": "string"},
+    "notes": {"type": "string"}
+  }
+}
